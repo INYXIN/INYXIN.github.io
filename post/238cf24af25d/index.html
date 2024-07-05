@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Minio | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="安装1.通过1panel 快速安装 minio (略)使用![image-20240617162518125](创建桶 设置为公开,私有无法访问配置访问规则, 前缀 创建服务账号  代码中使用 2.通过Docker 自己安装1docker pull docker:&#x2F;&#x2F;minio&#x2F;minio # 拉取minio镜像">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Minio">
+<meta property="og:url" content="https://inyxin.github.io/post/238cf24af25d/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装1.通过1panel 快速安装 minio (略)使用![image-20240617162518125](创建桶 设置为公开,私有无法访问配置访问规则, 前缀 创建服务账号  代码中使用 2.通过Docker 自己安装1docker pull docker:&#x2F;&#x2F;minio&#x2F;minio # 拉取minio镜像">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102448868.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102707639.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102812724.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102921408.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102939916.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102958006.png">
+<meta property="og:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240612091412567.png">
+<meta property="article:published_time" content="2024-06-10T15:02:34.660Z">
+<meta property="article:modified_time" content="2024-07-05T15:13:17.243Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://inyxin.github.io/post/238cf24af25d/image-20240611102448868.png">
+  
+    <link rel="alternate" href="../../atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../../favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+  
+    
+<link rel="stylesheet" href="../../fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Hexo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">sub title</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="../../index.html">Home</a>
+        
+          <a class="main-nav-link" href="../../archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="../../atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://inyxin.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Minio" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2024-06-10T15:02:34.660Z" itemprop="datePublished">2024-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../../categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Minio
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="1-通过1panel-快速安装-minio-略"><a href="#1-通过1panel-快速安装-minio-略" class="headerlink" title="1.通过1panel 快速安装 minio (略)"></a>1.通过1panel 快速安装 minio (略)</h3><h3 id="使用-image-20240617162518125"><a href="#使用-image-20240617162518125" class="headerlink" title="使用![image-20240617162518125]("></a>使用![image-20240617162518125](</h3><h5 id="创建桶"><a href="#创建桶" class="headerlink" title="创建桶"></a>创建桶</h5><p><img src="image-20240611102448868.png" alt="image-20240611102448868"></p>
+<h5 id="设置为公开-私有无法访问"><a href="#设置为公开-私有无法访问" class="headerlink" title="设置为公开,私有无法访问"></a>设置为公开,私有无法访问</h5><h5 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="image-20240611102707639.png" alt="image-20240611102707639"></h5><h5 id="配置访问规则-前缀"><a href="#配置访问规则-前缀" class="headerlink" title="配置访问规则, 前缀"></a>配置访问规则, 前缀</h5><p><img src="image-20240611102812724.png" alt="image-20240611102812724"></p>
+<h5 id="创建服务账号"><a href="#创建服务账号" class="headerlink" title="创建服务账号"></a>创建服务账号</h5><p><img src="image-20240611102921408.png" alt="image-20240611102921408"></p>
+<p><img src="image-20240611102939916.png" alt="image-20240611102939916"></p>
+<h5 id="代码中使用"><a href="#代码中使用" class="headerlink" title="代码中使用"></a>代码中使用</h5><p><img src="image-20240611102958006.png" alt="image-20240611102958006"></p>
+<h2 id="2-通过Docker-自己安装"><a href="#2-通过Docker-自己安装" class="headerlink" title="2.通过Docker 自己安装"></a>2.通过Docker 自己安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull docker://minio/minio <span class="comment"># 拉取minio镜像</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="image-20240612091412567.png" alt="image-20240612091412567"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inyxin.github.io/post/238cf24af25d/" data-id="cly8uk4mk000eysrwgly39asf" data-title="Minio" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/default/" rel="tag">default</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../e526539a6419/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="../7c2dcdfbbb1d/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringBoot自定义 Starter</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/default/">default</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/default/" rel="tag">default</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/default/" style="font-size: 10px;">default</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../d10f9d32f564/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="../0786e5739ad0/">计算机图形学期末复习题</a>
+          </li>
+        
+          <li>
+            <a href="../340b8b233e33/">Beelink</a>
+          </li>
+        
+          <li>
+            <a href="../785d8ad0422c/">算法设计fu&#39;xi</a>
+          </li>
+        
+          <li>
+            <a href="../211ddcc8ebfe/">基于AOP实现简单日志记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="../../js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="../../fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

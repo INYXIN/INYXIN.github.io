@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>基于AOP实现简单日志记录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879package org.example.springaoplog.log;import com.fas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于AOP实现简单日志记录">
+<meta property="og:url" content="https://inyxin.github.io/post/211ddcc8ebfe/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879package org.example.springaoplog.log;import com.fas">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-14T02:08:40.000Z">
+<meta property="article:modified_time" content="2024-07-05T15:17:55.566Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="default">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="../../atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="../../favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="../../css/style.css">
+
+  
+    
+<link rel="stylesheet" href="../../fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.html" id="logo">Hexo</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="../../index.html" id="subtitle">sub title</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="../../index.html">Home</a>
+        
+          <a class="main-nav-link" href="../../archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="../../atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://inyxin.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-基于AOP时间简单日志记录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="" class="article-date">
+  <time class="dt-published" datetime="2024-06-14T02:08:40.000Z" itemprop="datePublished">2024-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="../../categories/default/">default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      基于AOP实现简单日志记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> org.example.springaoplog.log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.core.JsonProcessingException;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Around;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.reflect.MethodSignature;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StopWatch;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 日志切面</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 14237</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAspect</span> &#123;</span><br><span class="line">    <span class="meta">@Pointcut</span> ( <span class="string">&quot;@annotation(org.example.springaoplog.log.Log)&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pointcut</span><span class="params">()</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    HttpServletRequest request;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Around</span> ( <span class="string">&quot;pointcut()&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">around</span><span class="params">(ProceedingJoinPoint pjp)</span> <span class="keyword">throws</span> JsonProcessingException &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">MethodSignature</span> <span class="variable">signature</span> <span class="operator">=</span> ((MethodSignature) pjp.getSignature());</span><br><span class="line">        <span class="keyword">final</span> <span class="type">Log</span> <span class="variable">annotation</span> <span class="operator">=</span> signature.getMethod().getAnnotation(Log.class);</span><br><span class="line">        <span class="keyword">final</span> <span class="type">StopWatch</span> <span class="variable">stopWatch</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StopWatch</span>();</span><br><span class="line">        stopWatch.start();</span><br><span class="line">        <span class="type">String</span> <span class="variable">errorMsg</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">final</span> Object proceed;</span><br><span class="line">        <span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            proceed = pjp.proceed();</span><br><span class="line">            result = mapper.writeValueAsString(proceed);<span class="comment">//返回结果</span></span><br><span class="line">            <span class="keyword">return</span> proceed;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Throwable e) &#123;</span><br><span class="line">            errorMsg = e.getLocalizedMessage();</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            stopWatch.stop();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">final</span> <span class="type">SysLog</span> <span class="variable">sysLog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SysLog</span>()</span><br><span class="line">                    .setId(<span class="literal">null</span>)</span><br><span class="line">                    .setRequestMethod(request.getMethod())</span><br><span class="line">                    .setName(annotation.value())</span><br><span class="line">                    .setType(annotation.type().getValue())</span><br><span class="line">                    .setOperator(<span class="string">&quot;sessionId: &quot;</span> + request.getSession().getId())</span><br><span class="line">                    .setOperatingTime(<span class="keyword">new</span> <span class="title class_">Date</span>())</span><br><span class="line">                    .setIp(request.getRemoteHost())</span><br><span class="line">                    .setUrl(request.getRequestURL().toString())</span><br><span class="line">                    .setMethod(signature.toString())</span><br><span class="line">                    .setArgs(mapper.writeValueAsString(pjp.getArgs()))</span><br><span class="line">                    .setMillisecond(stopWatch.getTotalTimeMillis())</span><br><span class="line">                    .setResult(result)</span><br><span class="line">                    .setError(errorMsg);</span><br><span class="line">            <span class="comment">//记录日志</span></span><br><span class="line">            recordLog(sysLog);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 记录日志</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> log 日志</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">recordLog</span><span class="params">(SysLog log)</span> &#123;</span><br><span class="line">        <span class="comment">//保存到数据库</span></span><br><span class="line">        System.err.println(log);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.springaoplog.log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Retention</span> ( RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Log &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 日志类型</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> &#123;<span class="doctag">@link</span> LogType &#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    LogType <span class="title function_">type</span><span class="params">()</span> <span class="keyword">default</span> LogType.DEFAULT;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 日志名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> &#123;<span class="doctag">@link</span> String &#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.springaoplog.log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.AllArgsConstructor;</span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">LogType</span> &#123;</span><br><span class="line">    DEFAULT(<span class="string">&quot;默认&quot;</span>),</span><br><span class="line">    SYSTEM(<span class="string">&quot;系统日志&quot;</span>),</span><br><span class="line">    BUSINESS(<span class="string">&quot;业务日志&quot;</span>),</span><br><span class="line">    OPERATE(<span class="string">&quot;操作日志&quot;</span>),</span><br><span class="line">    TEST(<span class="string">&quot;测试日志&quot;</span>);</span><br><span class="line">    <span class="keyword">final</span> String value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.springaoplog.log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.experimental.Accessors;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 系统日志</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> inyxin</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Accessors</span> ( chain = <span class="literal">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SysLog</span> &#123;</span><br><span class="line">    <span class="comment">/** 日志ID */</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="comment">/** 日志名字 */</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">/** 日志类型 */</span></span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line">    <span class="comment">/** 请求路径 */</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="comment">/** 请求方式 */</span></span><br><span class="line">    <span class="keyword">private</span> String requestMethod;</span><br><span class="line">    <span class="comment">/** 操作者 */</span></span><br><span class="line">    <span class="keyword">private</span> String operator;</span><br><span class="line">    <span class="comment">/** 方法 */</span></span><br><span class="line">    <span class="keyword">private</span> String method;</span><br><span class="line">    <span class="comment">/** 参数 */</span></span><br><span class="line">    <span class="keyword">private</span> String args;</span><br><span class="line">    <span class="comment">/** 远程IP */</span></span><br><span class="line">    <span class="keyword">private</span> String ip;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作时间</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> Date operatingTime;</span><br><span class="line">    <span class="comment">/** 异常信息 */</span></span><br><span class="line">    <span class="keyword">private</span> String error;</span><br><span class="line">    <span class="comment">/** 结果 */</span></span><br><span class="line">    <span class="keyword">private</span> String result;</span><br><span class="line">    <span class="comment">/** 方法执行时间 毫秒 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">long</span> millisecond;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>测试:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Copyright 2013-2018 the original author or authors.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></span><br><span class="line"><span class="comment"> * you may not use this file except in compliance with the License.</span></span><br><span class="line"><span class="comment"> * You may obtain a copy of the License at</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      https://www.apache.org/licenses/LICENSE-2.0</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></span><br><span class="line"><span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></span><br><span class="line"><span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span><br><span class="line"><span class="comment"> * See the License for the specific language governing permissions and</span></span><br><span class="line"><span class="comment"> * limitations under the License.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> org.example.springaoplog.demos.web;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.example.springaoplog.log.Log;</span><br><span class="line"><span class="keyword">import</span> org.example.springaoplog.log.LogType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ModelAttribute;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> &lt;a href=&quot;mailto:chenxilzx1@gmail.com&quot;&gt;theonefx&lt;/a&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BasicController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// http://127.0.0.1:8080/hello?name=lisi</span></span><br><span class="line">    <span class="meta">@RequestMapping</span> ( <span class="string">&quot;/hello&quot;</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@Log</span> (</span><br><span class="line">            value = <span class="string">&quot;Hello&quot;</span>,</span><br><span class="line">            type = LogType.TEST</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">hello</span><span class="params">(</span></span><br><span class="line"><span class="params">            <span class="meta">@RequestParam</span> (</span></span><br><span class="line"><span class="params">                    name = <span class="string">&quot;name&quot;</span>,</span></span><br><span class="line"><span class="params">                    defaultValue = <span class="string">&quot;unknown user&quot;</span></span></span><br><span class="line"><span class="params">            )</span> String name) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// http://127.0.0.1:8080/errortest</span></span><br><span class="line">    <span class="meta">@RequestMapping</span> ( <span class="string">&quot;/errortest&quot;</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@Log</span> (</span><br><span class="line">            value = <span class="string">&quot;异常测试&quot;</span>,</span><br><span class="line">            type = LogType.TEST</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">errortest</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="number">1</span> / <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;12321&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// http://127.0.0.1:8080/user</span></span><br><span class="line">    <span class="meta">@RequestMapping</span> ( <span class="string">&quot;/user&quot;</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@Log</span> ( value = <span class="string">&quot;查询用户&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> User <span class="title function_">user</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">User</span>();</span><br><span class="line">        user.setName(<span class="string">&quot;theonefx&quot;</span>);</span><br><span class="line">        user.setAge(<span class="number">666</span>);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// http://127.0.0.1:8080/save_user?name=newName&amp;age=11</span></span><br><span class="line">    <span class="meta">@RequestMapping</span> ( <span class="string">&quot;/save_user&quot;</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@Log</span> (</span><br><span class="line">            value = <span class="string">&quot;保存用户&quot;</span>,</span><br><span class="line">            type = LogType.OPERATE</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">saveUser</span><span class="params">(User u)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;user will save: name=&quot;</span> + u.getName() + <span class="string">&quot;, age=&quot;</span> + u.getAge();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// http://127.0.0.1:8080/html</span></span><br><span class="line">    <span class="meta">@RequestMapping</span> ( <span class="string">&quot;/html&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">html</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;index.html&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ModelAttribute</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parseUser</span><span class="params">(</span></span><br><span class="line"><span class="params">            <span class="meta">@RequestParam</span> (</span></span><br><span class="line"><span class="params">                    name = <span class="string">&quot;name&quot;</span>,</span></span><br><span class="line"><span class="params">                    defaultValue = <span class="string">&quot;unknown user&quot;</span></span></span><br><span class="line"><span class="params">            )</span> String name</span><br><span class="line">            ,</span><br><span class="line">            <span class="meta">@RequestParam</span> (</span><br><span class="line">                    name = <span class="string">&quot;age&quot;</span>,</span><br><span class="line">                    defaultValue = <span class="string">&quot;12&quot;</span></span><br><span class="line">            ) Integer age, User user) &#123;</span><br><span class="line">        user.setName(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">        user.setAge(<span class="number">18</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SysLog(id=<span class="literal">null</span>, name=查询用户, type=默认, url=http:<span class="comment">//127.0.0.1:8080/user, requestMethod=GET, operator=sessionId: 2F552A00DA410EEE3047B4AEE36927B1, method=User org.example.springaoplog.demos.web.BasicController.user(), args=[], ip=127.0.0.1, operatingTime=Fri Jun 14 10:02:11 CST 2024, error=, result=&#123;&quot;name&quot;:&quot;theonefx&quot;,&quot;age&quot;:666&#125;, millisecond=7)</span></span><br><span class="line">SysLog(id=<span class="literal">null</span>, name=查询用户, type=默认, url=http:<span class="comment">//10.120.1.193:8080/user, requestMethod=GET, operator=sessionId: 39EA319EFCC022E1973A1C9DA452DAE2, method=User org.example.springaoplog.demos.web.BasicController.user(), args=[], ip=10.120.1.193, operatingTime=Fri Jun 14 10:06:46 CST 2024, error=, result=&#123;&quot;name&quot;:&quot;theonefx&quot;,&quot;age&quot;:666&#125;, millisecond=0)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://inyxin.github.io/post/211ddcc8ebfe/" data-id="cly8uk4mn000oysrw415y644l" data-title="基于AOP实现简单日志记录" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="../../tags/default/" rel="tag">default</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="../785d8ad0422c/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          算法设计fu&#39;xi
+        
+      </div>
+    </a>
+  
+  
+    <a href="../d59c21540af1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MapStruct 对象转换框架</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/default/">default</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="../../tags/default/" rel="tag">default</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="../../tags/default/" style="font-size: 10px;">default</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="../d10f9d32f564/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="../0786e5739ad0/">计算机图形学期末复习题</a>
+          </li>
+        
+          <li>
+            <a href="../340b8b233e33/">Beelink</a>
+          </li>
+        
+          <li>
+            <a href="../785d8ad0422c/">算法设计fu&#39;xi</a>
+          </li>
+        
+          <li>
+            <a href="">基于AOP实现简单日志记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="../../index.html" class="mobile-nav-link">Home</a>
+  
+    <a href="../../archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="../../js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="../../fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="../../js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
