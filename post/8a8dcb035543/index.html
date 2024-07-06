@@ -16,15 +16,15 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="镜像 docker version 显示docekr的详细信息  docker info 显示docker的系统信息  docker --help docker的命令帮助手册  docker search &#123;关键字&#125; 搜索镜像 12docker search nginx #搜索nginx镜像docker search openjdk #搜索openjdk镜像  docker p">
+    <meta name="description" content="镜像 docker version 显示 docekr 的详细信息  docker info 显示 docker 的系统信息  docker --help docker 的命令帮助手册  docker search &#123;关键字&#125; 搜索镜像 12docker search nginx #搜索nginx镜像docker search openjdk #搜索openjdk镜像  doc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="https://inyxin.github.io/post/8a8dcb035543/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="镜像 docker version 显示docekr的详细信息  docker info 显示docker的系统信息  docker --help docker的命令帮助手册  docker search &#123;关键字&#125; 搜索镜像 12docker search nginx #搜索nginx镜像docker search openjdk #搜索openjdk镜像  docker p">
+<meta property="og:description" content="镜像 docker version 显示 docekr 的详细信息  docker info 显示 docker 的系统信息  docker --help docker 的命令帮助手册  docker search &#123;关键字&#125; 搜索镜像 12docker search nginx #搜索nginx镜像docker search openjdk #搜索openjdk镜像  doc">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-11T15:41:19.483Z">
-<meta property="article:modified_time" content="2024-07-06T07:43:25.493Z">
+<meta property="article:modified_time" content="2024-07-06T16:15:22.161Z">
 <meta property="article:author" content="Inyxin">
 <meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary_large_image">
@@ -291,11 +291,11 @@
               <div class="markdown-body">
                 
                 <h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><ul>
-<li><p><code>docker version</code> 显示docekr的详细信息</p>
+<li><p><code>docker version</code> 显示 docekr 的详细信息</p>
 </li>
-<li><p><code>docker info</code> 显示docker的系统信息</p>
+<li><p><code>docker info</code> 显示 docker 的系统信息</p>
 </li>
-<li><p><code>docker --help</code> docker的命令帮助手册</p>
+<li><p><code>docker --help</code> docker 的命令帮助手册</p>
 </li>
 <li><p><code>docker search &#123;关键字&#125;</code> 搜索镜像</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker search nginx <span class="hljs-comment">#搜索nginx镜像</span><br>docker search openjdk <span class="hljs-comment">#搜索openjdk镜像</span><br></code></pre></td></tr></table></figure>
@@ -335,9 +335,9 @@
 <li><p><code>docker rm &#123;容器名 或 容器ID&#125;</code> 删除容器</p>
 </li>
 </ul>
-<p>[^{容器名 或 容器ID}]: 以下简称 {容器ID}</p>
+<p>[^{容器名 或 容器 ID}]: 以下简称 {容器ID}</p>
 <ul>
-<li><p><code>docker history &#123;容器ID&#125;</code>  查看docker 镜像的变更历史</p>
+<li><p><code>docker history &#123;容器ID&#125;</code>  查看 docker 镜像的变更历史</p>
 </li>
 <li><p><code>docker start &#123;容器ID&#125;</code> 启动一个容器</p>
 </li>
@@ -359,7 +359,7 @@
 
 <h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 指定基础镜像，例如 node:14。这是 Dockerfile 的第一条指令，定义了新镜像是基于哪个已有镜像创建的。</span><br>FROM &lt;base_image&gt;<br><br><span class="hljs-comment"># 设置作者信息 (可选)</span><br>LABEL maintainer=<span class="hljs-string">&quot;&lt;your_name&gt; &lt;your_email&gt;&quot;</span><br><br><span class="hljs-comment"># 设置工作目录。所有后续的 COPY, ADD, RUN 等指令都将在这个目录下执行。例如 WORKDIR /usr/src/app</span><br>WORKDIR /usr/src/app<br><br><span class="hljs-comment"># 复制文件到镜像中</span><br>COPY &lt;<span class="hljs-built_in">source</span>&gt; &lt;destination&gt;<br><br><span class="hljs-comment"># 下载并安装依赖包</span><br>RUN &lt;<span class="hljs-built_in">command</span>&gt;<br><br><span class="hljs-comment"># 设置环境变量 (可选)</span><br>ENV &lt;key&gt;=&lt;value&gt;<br><br><span class="hljs-comment"># 暴露端口 (可选)</span><br>EXPOSE &lt;port&gt;<br><br><span class="hljs-comment"># 运行容器启动时的命令 ,与 CMD 类似，但 ENTRYPOINT 不会被 docker run 提供的参数覆盖。例如：</span><br>ENTRYPOINT [<span class="hljs-string">&quot;&lt;command&gt;&quot;</span>]<br><br><span class="hljs-comment"># 指定默认参数 (可选) 指定容器启动时要执行的命令。例如，CMD [&quot;npm&quot;, &quot;start&quot;]。注意，CMD 只会有一个生效，如果存在多个 CMD 指令，只有最后一个会被执行。</span><br>CMD [<span class="hljs-string">&quot;&lt;args&gt;&quot;</span>]<br></code></pre></td></tr></table></figure>
 
-<p>通过 &#96;docker build -t {镜像:标签} 即可构建</p>
+<p>通过 &#96;docker build -t {镜像: 标签} 即可构建</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="存储卷"><a href="#存储卷" class="headerlink" title="存储卷"></a>存储卷</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Usage:</span>  <span class="hljs-string">docker</span> <span class="hljs-string">volume</span> <span class="hljs-string">COMMAND</span><br><br><span class="hljs-string">Manage</span> <span class="hljs-string">volumes</span><br><br><span class="hljs-attr">Commands:</span><br>  <span class="hljs-string">create</span>      <span class="hljs-string">Create</span> <span class="hljs-string">a</span> <span class="hljs-string">volume</span><br>  <span class="hljs-string">inspect</span>     <span class="hljs-string">Display</span> <span class="hljs-string">detailed</span> <span class="hljs-string">information</span> <span class="hljs-string">on</span> <span class="hljs-string">one</span> <span class="hljs-string">or</span> <span class="hljs-string">more</span> <span class="hljs-string">volumes</span><br>  <span class="hljs-string">ls</span>          <span class="hljs-string">List</span> <span class="hljs-string">volumes</span><br>  <span class="hljs-string">prune</span>       <span class="hljs-string">Remove</span> <span class="hljs-string">unused</span> <span class="hljs-string">local</span> <span class="hljs-string">volumes</span><br>  <span class="hljs-string">rm</span>          <span class="hljs-string">Remove</span> <span class="hljs-string">one</span> <span class="hljs-string">or</span> <span class="hljs-string">more</span> <span class="hljs-string">volumes</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Usage:</span>  <span class="hljs-string">docker</span> <span class="hljs-string">network</span> <span class="hljs-string">COMMAND</span><br><br><span class="hljs-string">Manage</span> <span class="hljs-string">networks</span><br><br><span class="hljs-attr">Commands:</span><br>  <span class="hljs-string">connect</span>     <span class="hljs-string">Connect</span> <span class="hljs-string">a</span> <span class="hljs-string">container</span> <span class="hljs-string">to</span> <span class="hljs-string">a</span> <span class="hljs-string">network</span><br>  <span class="hljs-string">create</span>      <span class="hljs-string">Create</span> <span class="hljs-string">a</span> <span class="hljs-string">network</span><br>  <span class="hljs-string">disconnect</span>  <span class="hljs-string">Disconnect</span> <span class="hljs-string">a</span> <span class="hljs-string">container</span> <span class="hljs-string">from</span> <span class="hljs-string">a</span> <span class="hljs-string">network</span><br>  <span class="hljs-string">inspect</span>     <span class="hljs-string">Display</span> <span class="hljs-string">detailed</span> <span class="hljs-string">information</span> <span class="hljs-string">on</span> <span class="hljs-string">one</span> <span class="hljs-string">or</span> <span class="hljs-string">more</span> <span class="hljs-string">networks</span><br>  <span class="hljs-string">ls</span>          <span class="hljs-string">List</span> <span class="hljs-string">networks</span><br>  <span class="hljs-string">prune</span>       <span class="hljs-string">Remove</span> <span class="hljs-string">all</span> <span class="hljs-string">unused</span> <span class="hljs-string">networks</span><br>  <span class="hljs-string">rm</span>          <span class="hljs-string">Remove</span> <span class="hljs-string">one</span> <span class="hljs-string">or</span> <span class="hljs-string">more</span> <span class="hljs-string">networks</span><br></code></pre></td></tr></table></figure>
@@ -430,7 +430,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 6, 2024</div>
+          <div>July 7, 2024</div>
         </div>
       
       

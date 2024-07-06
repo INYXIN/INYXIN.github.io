@@ -16,17 +16,17 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="千里之行，始于足下。 cpolar - secure introspectable tunnels to localhost 优点: 不限流量 , 4条隧道 缺点: CPU占用高 , 随机IP 安装12curl -L https:&#x2F;&#x2F;www.cpolar.com&#x2F;static&#x2F;downloads&#x2F;install-release-cpolar.sh | sudo bash   查看版本12inyxi">
+    <meta name="description" content="千里之行，始于足下。 cpolar - secure introspectable tunnels to localhost 优点: 不限流量 , 4 条隧道 缺点: CPU 占用高 , 随机 IP 安装12curl -L https:&#x2F;&#x2F;www.cpolar.com&#x2F;static&#x2F;downloads&#x2F;install-release-cpolar.sh | sudo bash   查看版本12in">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cpolar-使用教程">
 <meta property="og:url" content="https://inyxin.github.io/post/cb717c9eae02/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="千里之行，始于足下。 cpolar - secure introspectable tunnels to localhost 优点: 不限流量 , 4条隧道 缺点: CPU占用高 , 随机IP 安装12curl -L https:&#x2F;&#x2F;www.cpolar.com&#x2F;static&#x2F;downloads&#x2F;install-release-cpolar.sh | sudo bash   查看版本12inyxi">
+<meta property="og:description" content="千里之行，始于足下。 cpolar - secure introspectable tunnels to localhost 优点: 不限流量 , 4 条隧道 缺点: CPU 占用高 , 随机 IP 安装12curl -L https:&#x2F;&#x2F;www.cpolar.com&#x2F;static&#x2F;downloads&#x2F;install-release-cpolar.sh | sudo bash   查看版本12in">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://inyxin.github.io/post/cb717c9eae02/image-20240706160413788.png">
 <meta property="og:image" content="https://inyxin.github.io/post/cb717c9eae02/image-20240706160658210.png">
 <meta property="article:published_time" content="2024-07-06T07:57:41.000Z">
-<meta property="article:modified_time" content="2024-07-06T09:31:43.773Z">
+<meta property="article:modified_time" content="2024-07-06T16:17:11.721Z">
 <meta property="article:author" content="Inyxin">
 <meta property="article:tag" content="Cpolar">
 <meta property="article:tag" content="内网穿透">
@@ -296,20 +296,20 @@
                 
                 <p><code>千里之行，始于足下。</code></p>
 <p><a target="_blank" rel="noopener" href="https://dashboard.cpolar.com/">cpolar - secure introspectable tunnels to localhost</a></p>
-<p>优点: 不限流量 , 4条隧道</p>
-<p>缺点: CPU占用高 , 随机IP</p>
+<p>优点: 不限流量 , 4 条隧道</p>
+<p>缺点: CPU 占用高 , 随机 IP</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">curl</span> <span class="hljs-literal">-L</span> https://www.cpolar.com/<span class="hljs-keyword">static</span>/downloads/<span class="hljs-built_in">install-release</span><span class="hljs-literal">-cpolar</span>.sh | sudo bash<br><br></code></pre></td></tr></table></figure>
 
 <p><img src="image-20240706160413788.png" srcset="/img/loading.gif" lazyload alt="image-20240706160413788"></p>
 <h3 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">inyxin<span class="hljs-meta">@beelink</span>:~$ cpolar version<br>cpolar version <span class="hljs-number">3.3</span><span class="hljs-number">.12</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="token认证"><a href="#token认证" class="headerlink" title="token认证"></a>token认证</h3><p>登录<a target="_blank" rel="noopener" href="https://dashboard.cpolar.com/get-started">cpolar官网后台</a>，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里</p>
+<h3 id="token-认证"><a href="#token-认证" class="headerlink" title="token 认证"></a>token 认证</h3><p>登录 <a target="_blank" rel="noopener" href="https://dashboard.cpolar.com/get-started">cpolar 官网后台</a>，点击左侧的验证，查看自己的认证 token，之后将 token 贴在命令行里</p>
 <p><img src="image-20240706160658210.png" srcset="/img/loading.gif" lazyload alt="image-20240706160658210"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">inyxin@beelink:~$ cpolar authtoken YWVmMDQ0NGEtMTEyZC00Yjg2LTk4ZjktZDRlOThi<br>Authtoken saved to configuration file: /usr/local/etc/cpolar/cpolar.yml<br></code></pre></td></tr></table></figure>
 
-<h3 id="简单穿透测试一下"><a href="#简单穿透测试一下" class="headerlink" title="简单穿透测试一下"></a>简单穿透测试一下</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">cpolar <span class="hljs-number">9998</span><br>    cpolar by <span class="hljs-meta">@bestexpresser</span>                                    (Ctrl+C to quit)                                                                            Tunnel Status       online<br>Account             <span class="hljs-title function_">inyxin</span> <span class="hljs-params">(Plan: Free)</span><br>Version             <span class="hljs-number">3.12</span>/<span class="hljs-number">3.22</span><br>Web Interface       <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">4040</span><br>Forwarding          http:<span class="hljs-comment">//31526c8c.r25.cpolar.top -&gt; http://localhost:9998 Forwarding          https://31526c8c.r25.cpolar.top -&gt; http://localhost:9998# Conn              0</span><br>Avg Conn Time       <span class="hljs-number">0.</span>00ms                                 <br>    <br>    <br></code></pre></td></tr></table></figure>
+<h3 id="简单穿透测试一下"><a href="#简单穿透测试一下" class="headerlink" title="简单穿透测试一下"></a>简单穿透测试一下</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java">cpolar <span class="hljs-number">9998</span><br>    cpolar by <span class="hljs-meta">@bestexpresser</span>                                    (Ctrl+C to quit)                                                                            Tunnel Status       online<br>Account             <span class="hljs-title function_">inyxin</span> <span class="hljs-params">(Plan: Free)</span><br>Version             <span class="hljs-number">3.12</span>/<span class="hljs-number">3.22</span><br>Web Interface       <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">4040</span><br>Forwarding          http:<span class="hljs-comment">//31526c8c.r25.cpolar.top -&gt; http://localhost: 9998 Forwarding          https://31526c8c.r25.cpolar.top -&gt; http://localhost: 9998# Conn              0</span><br>Avg Conn Time       <span class="hljs-number">0.</span>00ms                                 <br>    <br>    <br></code></pre></td></tr></table></figure>
 
-<p>穿透成功 , 只是IP不固定</p>
+<p>穿透成功 , 只是 IP 不固定</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">https:<span class="hljs-comment">//31526c8c.r25.cpolar.top/#/</span><br></code></pre></td></tr></table></figure>
 
 
@@ -385,7 +385,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 6, 2024</div>
+          <div>July 7, 2024</div>
         </div>
       
       
