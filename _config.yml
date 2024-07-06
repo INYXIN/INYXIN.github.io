@@ -47,11 +47,11 @@ future: true #显示未来的文章
 #代码块的设置, 请参考 代码高亮 进行设置
 syntax_highlighter: highlight.js
 highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
+  enable: true
+  hljs: true #新增hljs参数，并设为true，不然无法使用highlight.js 官方的 css
+  line_number: true #暂不支持行号
+  auto_detect: true #这一项也关闭，若开启有可能报错
+  tab_replace:
 prismjs:
   preprocess: true
   line_number: true
@@ -98,7 +98,7 @@ ignore:
 # 扩展
 ## 插件: https://hexo.io/plugins/
 ## 主题: https://hexo.io/themes/
-theme: cactus
+theme: fluid
 # 部署
 ## 文档: https://hexo.io/docs/one-command-deployment
 deploy:
@@ -116,3 +116,12 @@ archive_generator:
   yearly: false
   monthly: false
   daily: false
+  
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true

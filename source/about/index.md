@@ -1,9 +1,9 @@
 ---
 title: about
-date: 2024-07-06 00:56:53
+layout: about
+date: 2024-07-06 18:52:53
 ---
 
-# Hello World !
-
-**Email**: 1423716216@qq.com
-
+```
+这里写关于页的正文，支持 Markdown, HTML
+```
