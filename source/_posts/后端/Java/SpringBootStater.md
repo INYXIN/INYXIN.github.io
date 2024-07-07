@@ -19,7 +19,7 @@ categories: [ 后端, Java, Spring]
 ### 2. 导入 Spring Boot 相关依赖
 
 ```xml
-<properties>
+		<properties>
     <java.version>17</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -97,8 +97,8 @@ SpringBoot 2.7前后配置有所差异
 示例 
 原spring.factories文件
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.xxx.iot.common.config.SaTokenConfigure,\
-  com.xxx.iot.common.config.SecurityProperties
+com.xxx.iot.common.config.SaTokenConfigure,\
+com.xxx.iot.common.config.SecurityProperties
 
 在resource/META-INF目录下新建spring目录，并添加org.springframework.boot.autoconfigure.AutoConfiguration.imports文件
 com.xxx.iot.common.config.SaTokenConfigure
@@ -124,10 +124,10 @@ public class Main {
 
 ```yaml
 custom:
-  user:
-    admin:
-      id: 22
-      username: inyxin
+	user:
+		admin:
+			id: 22
+			username: inyxin
 ```
 
 通过以上步骤，你就创建了一个自定义的 Spring Boot Starter，并能在其他项目中直接使用对应的 Bean。

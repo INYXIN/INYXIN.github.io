@@ -15,9 +15,9 @@ date: 2024-07-06 15:57:41
 
 
 
-优点: 不限流量 , 4条隧道
+**优点**: 不限流量 , 4 条隧道
 
-缺点: CPU占用高 , 随机IP
+**缺点**: CPU 占用高 , 随机 IP
 
 
 
@@ -37,9 +37,9 @@ inyxin@beelink:~$ cpolar version
 cpolar version 3.3.12
 ```
 
-### token认证
+### token 认证
 
-登录[cpolar官网后台](https://dashboard.cpolar.com/get-started)，点击左侧的验证，查看自己的认证token，之后将token贴在命令行里
+登录 [cpolar 官网后台](https://dashboard.cpolar.com/get-started)，点击左侧的验证，查看自己的认证 token，之后将 token 贴在命令行里
 
 ![image-20240706160658210](Cpolar-使用教程/image-20240706160658210.png)
 
@@ -56,13 +56,13 @@ cpolar 9998
 Account             inyxin (Plan: Free)
 Version             3.12/3.22
 Web Interface       127.0.0.1:4040
-Forwarding          http://31526c8c.r25.cpolar.top -> http://localhost:9998 Forwarding          https://31526c8c.r25.cpolar.top -> http://localhost:9998# Conn              0
+Forwarding          http://31526c8c.r25.cpolar.top -> http://localhost: 9998 Forwarding          https://31526c8c.r25.cpolar.top -> http://localhost: 9998# Conn              0
 Avg Conn Time       0.00ms                                 
     
     
 ```
 
-穿透成功 , 只是IP不固定
+穿透成功 , 只是 IP 不固定
 
 ```java
 https://31526c8c.r25.cpolar.top/#/

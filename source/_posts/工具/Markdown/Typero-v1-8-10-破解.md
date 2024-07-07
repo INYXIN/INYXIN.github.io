@@ -7,6 +7,7 @@ categories:
   - 工具
   - Markdown
 date: 2024-07-06 14:35:20
+permalink: /post/0d82c848-4ee7-4650-b0ee-ac9f4aef2ed9/
 ---
 [TOC]
 

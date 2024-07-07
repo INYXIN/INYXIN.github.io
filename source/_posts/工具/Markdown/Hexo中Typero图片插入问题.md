@@ -9,6 +9,7 @@ categories:
   - 工具
   - Markdown
 date: 2024-07-06 14:51:55
+permalink: /post/8fc22e81-ab43-4043-aef1-e9092fc59e87/
 ---
 
 **[Hexo 官网](https://hexo.io/zh-cn/)**
@@ -43,3 +44,5 @@ date: 2024-07-06 14:51:55
 3. 修改typora图片配置
 
 ![image-20240706145214903](Hexo中Typero图片插入问题/image-20240706145214903.png)
+
+这种做法 将当前目录下 与 **abc.md** 同名的文件夹作为 **abc** 的资源目录

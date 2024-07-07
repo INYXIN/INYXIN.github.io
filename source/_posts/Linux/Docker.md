@@ -8,9 +8,9 @@ categories: [ Linux ]
 
 ## 镜像
 
-- `docker version` 显示docekr的详细信息
-- `docker info` 显示docker的系统信息
-- `docker --help` docker的命令帮助手册
+- `docker version` 显示 docekr 的详细信息
+- `docker info` 显示 docker 的系统信息
+- `docker --help` docker 的命令帮助手册
 
 - `docker search {关键字}` 搜索镜像
 
@@ -103,9 +103,9 @@ categories: [ Linux ]
 
 - `docker rm {容器名 或 容器ID}` 删除容器 
 
-[^{容器名 或 容器ID}]: 以下简称 {容器ID}
+[^{容器名 或 容器 ID}]: 以下简称 {容器ID}
 
-- `docker history {容器ID}`  查看docker 镜像的变更历史
+- `docker history {容器ID}`  查看 docker 镜像的变更历史
 
 - `docker start {容器ID}` 启动一个容器
 
@@ -184,7 +184,7 @@ ENTRYPOINT ["<command>"]
 CMD ["<args>"]
 ```
 
-通过 `docker build -t {镜像:标签} 即可构建
+通过 `docker build -t {镜像: 标签} 即可构建
 
 ## 
 

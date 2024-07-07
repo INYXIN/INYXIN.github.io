@@ -30,7 +30,7 @@ categories: [ 后端 , Java  ]
 
 ## 原理
 
-原理与 `lomback` 类似` ,都是通过自动生成代码;
+原理与 `lomback` 类似` , 都是通过自动生成代码;
 
 ## 使用方法
 
@@ -54,7 +54,7 @@ public interface GoodsInfoMapper {
 GoodsInfoPO goodsInfoPO = GoodsInfoMapper.INSTANCE.goodsInfoDtoToPo(goodsInfoDTO);
 ```
 
-### 在Spring中使用
+### 在 Spring 中使用
 
 ##### 定义映射接口
 
