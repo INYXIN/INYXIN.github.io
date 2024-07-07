@@ -16,24 +16,24 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="安装通过 1panel 快速安装 minio (略)使用! [image-20240617162518125](创建桶 设置为公开, 私有无法访问配置访问规则, 前缀 创建服务账号  代码中使用 2.通过 Docker 自己安装1docker pull docker:&#x2F;&#x2F;minio&#x2F;minio # 拉取minio镜像">
+    <meta name="description" content="适用于将独立模块,封装成spring-boot-stater 自动配置的模块 1. 创建 Maven 项目创建一个普通的 Maven 项目 custom-example-starter。 2. 导入 Spring Boot 相关依赖12345678910111213141516171819202122232425262728		&lt;properties&gt;    &lt;java.vers">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Minio">
-<meta property="og:url" content="https://inyxin.github.io/post/9eadc0045e29/index.html">
+<meta property="og:title" content="SpringBoot自定义 Starter">
+<meta property="og:url" content="https://inyxin.github.io/post/1a90966c398a/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装通过 1panel 快速安装 minio (略)使用! [image-20240617162518125](创建桶 设置为公开, 私有无法访问配置访问规则, 前缀 创建服务账号  代码中使用 2.通过 Docker 自己安装1docker pull docker:&#x2F;&#x2F;minio&#x2F;minio # 拉取minio镜像">
+<meta property="og:description" content="适用于将独立模块,封装成spring-boot-stater 自动配置的模块 1. 创建 Maven 项目创建一个普通的 Maven 项目 custom-example-starter。 2. 导入 Spring Boot 相关依赖12345678910111213141516171819202122232425262728		&lt;properties&gt;    &lt;java.vers">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://inyxin.github.io/img/default.png">
-<meta property="article:published_time" content="2024-06-10T15:02:34.660Z">
-<meta property="article:modified_time" content="2024-07-06T19:40:02.187Z">
+<meta property="article:published_time" content="2024-06-08T07:15:02.000Z">
+<meta property="article:modified_time" content="2024-07-06T16:27:34.836Z">
 <meta property="article:author" content="Inyxin">
-<meta property="article:tag" content="Minio">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://inyxin.github.io/img/default.png">
   
   
   
-  <title>Minio - Hexo</title>
+  <title>SpringBoot自定义 Starter - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Minio"></span>
+            <span id="subtitle" data-typed-text="SpringBoot自定义 Starter"></span>
           
         </div>
 
@@ -227,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-10 23:02" pubdate>
-          June 10, 2024 pm
+        <time datetime="2024-06-08 15:15" pubdate>
+          June 8, 2024 pm
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          62 words
+          496 words
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          1 mins
+          5 mins
         
       </span>
     
@@ -287,19 +287,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Minio</h1>
+            <h1 id="seo-header">SpringBoot自定义 Starter</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="通过-1panel-快速安装-minio-略"><a href="#通过-1panel-快速安装-minio-略" class="headerlink" title="通过 1panel 快速安装 minio (略)"></a>通过 1panel 快速安装 minio (略)</h3><h3 id="使用-image-20240617162518125"><a href="#使用-image-20240617162518125" class="headerlink" title="使用! [image-20240617162518125]("></a>使用! [image-20240617162518125](</h3><h5 id="创建桶"><a href="#创建桶" class="headerlink" title="创建桶"></a>创建桶</h5><p><img src="image-20240611102448868.png" srcset="/img/loading.gif" lazyload alt="image-20240611102448868"></p>
-<h5 id="设置为公开-私有无法访问"><a href="#设置为公开-私有无法访问" class="headerlink" title="设置为公开, 私有无法访问"></a>设置为公开, 私有无法访问</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="image-20240611102707639.png" srcset="/img/loading.gif" lazyload alt="image-20240611102707639"></h5><h5 id="配置访问规则-前缀"><a href="#配置访问规则-前缀" class="headerlink" title="配置访问规则, 前缀"></a>配置访问规则, 前缀</h5><p><img src="image-20240611102812724.png" srcset="/img/loading.gif" lazyload alt="image-20240611102812724"></p>
-<h5 id="创建服务账号"><a href="#创建服务账号" class="headerlink" title="创建服务账号"></a>创建服务账号</h5><p><img src="image-20240611102921408.png" srcset="/img/loading.gif" lazyload alt="image-20240611102921408"></p>
-<p><img src="image-20240611102939916.png" srcset="/img/loading.gif" lazyload alt="image-20240611102939916"></p>
-<h5 id="代码中使用"><a href="#代码中使用" class="headerlink" title="代码中使用"></a>代码中使用</h5><p><img src="image-20240611102958006.png" srcset="/img/loading.gif" lazyload alt="image-20240611102958006"></p>
-<h2 id="2-通过-Docker-自己安装"><a href="#2-通过-Docker-自己安装" class="headerlink" title="2.通过 Docker 自己安装"></a>2.通过 Docker 自己安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull docker://minio/minio <span class="hljs-comment"># 拉取minio镜像</span><br></code></pre></td></tr></table></figure>
+                <p>适用于将独立模块,封装成spring-boot-stater 自动配置的模块</p>
+<h3 id="1-创建-Maven-项目"><a href="#1-创建-Maven-项目" class="headerlink" title="1. 创建 Maven 项目"></a>1. 创建 Maven 项目</h3><p>创建一个普通的 Maven 项目 <code>custom-example-starter</code>。</p>
+<h3 id="2-导入-Spring-Boot-相关依赖"><a href="#2-导入-Spring-Boot-相关依赖" class="headerlink" title="2. 导入 Spring Boot 相关依赖"></a>2. 导入 Spring Boot 相关依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs xml">		<span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>17<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">spring-boot.version</span>&gt;</span>3.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">spring-boot.version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-autoconfigure<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.projectlombok<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>lombok<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;spring-boot.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="image-20240612091412567.png" srcset="/img/loading.gif" lazyload alt="image-20240612091412567"></p>
+<h3 id="3-声明需要配置的属性和配置名前缀"><a href="#3-声明需要配置的属性和配置名前缀" class="headerlink" title="3. 声明需要配置的属性和配置名前缀"></a>3. 声明需要配置的属性和配置名前缀</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * admin 属性</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@ConfigurationProperties(prefix = &quot;custom.user.admin&quot;)</span><br><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AdminProperties</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Integer</span> <span class="hljs-variable">id</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;admin&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;password&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-创建自定义配置类，并配置-Bean"><a href="#4-创建自定义配置类，并配置-Bean" class="headerlink" title="4. 创建自定义配置类，并配置 Bean"></a>4. 创建自定义配置类，并配置 Bean</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@EnableConfigurationProperties(AdminProperties.class)</span><br><span class="hljs-meta">@ComponentScan(&quot;com.example.utils&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserAutoConfiguration</span> &#123;<br>    <span class="hljs-meta">@Bean</span><br>    User <span class="hljs-title function_">admin</span><span class="hljs-params">(AdminProperties adminProperties)</span> &#123;<br>        System.err.println(<span class="hljs-string">&quot;adminProperties: &quot;</span> + adminProperties);<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        user.setId(adminProperties.getId());<br>        user.setUsername(adminProperties.getUsername());<br>        user.setPassword(adminProperties.getPassword());<br>        <span class="hljs-keyword">return</span> user;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-导入指定的配置类"><a href="#5-导入指定的配置类" class="headerlink" title="5. 导入指定的配置类"></a>5. 导入指定的配置类</h3><p>创建文件：<code>resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</code>，并添加以下内容：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">com<span class="hljs-selector-class">.example</span><span class="hljs-selector-class">.utils</span>.UserAutoConfiguration<br></code></pre></td></tr></table></figure>
+
+<p>SpringBoot 2.7前后配置有所差异</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs stylus">示例 <br>原spring.factories文件<br>org<span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.boot</span><span class="hljs-selector-class">.autoconfigure</span>.EnableAutoConfiguration=\<br>com<span class="hljs-selector-class">.xxx</span><span class="hljs-selector-class">.iot</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.SaTokenConfigure</span>,\<br>com<span class="hljs-selector-class">.xxx</span><span class="hljs-selector-class">.iot</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.SecurityProperties</span><br><br>在resource/META-INF目录下新建spring目录，并添加org<span class="hljs-selector-class">.springframework</span><span class="hljs-selector-class">.boot</span><span class="hljs-selector-class">.autoconfigure</span><span class="hljs-selector-class">.AutoConfiguration</span>.imports文件<br>com<span class="hljs-selector-class">.xxx</span><span class="hljs-selector-class">.iot</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.config</span><span class="hljs-selector-class">.SaTokenConfigure</span><br>com<span class="hljs-selector-class">.xxx</span><span class="hljs-selector-class">.iot</span><span class="hljs-selector-class">.common</span><span class="hljs-selector-class">.config</span>.SecurityProperties<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="6-在其他-Spring-Boot-项目中引用此模块直接使用-Bean"><a href="#6-在其他-Spring-Boot-项目中引用此模块直接使用-Bean" class="headerlink" title="6. 在其他 Spring Boot 项目中引用此模块直接使用 Bean"></a>6. 在其他 Spring Boot 项目中引用此模块直接使用 Bean</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">ConfigurableApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> SpringApplication.run(Main.class, args);<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> context.getBean(User.class);<br>        System.out.println(<span class="hljs-string">&quot;user = &quot;</span> + user);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-在-YAML-文件中修改默认值"><a href="#7-在-YAML-文件中修改默认值" class="headerlink" title="7. 在 YAML 文件中修改默认值"></a>7. 在 YAML 文件中修改默认值</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">custom:</span><br>	<span class="hljs-attr">user:</span><br>		<span class="hljs-attr">admin:</span><br>			<span class="hljs-attr">id:</span> <span class="hljs-number">22</span><br>			<span class="hljs-attr">username:</span> <span class="hljs-string">inyxin</span><br></code></pre></td></tr></table></figure>
+
+<p>通过以上步骤，你就创建了一个自定义的 Spring Boot Starter，并能在其他项目中直接使用对应的 Bean。</p>
 
                 
               </div>
@@ -323,8 +336,15 @@
   
     <span>></span>
     
-  <a href="../../categories/%E5%90%8E%E7%AB%AF/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
+  <a href="../../categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
   
+  
+    <span>></span>
+    
+  <a href="../../categories/%E5%90%8E%E7%AB%AF/Java/Spring/" class="category-chain-item">Spring</a>
+  
+  
+
   
 
   
@@ -340,7 +360,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../tags/Minio/" class="print-no-link">#Minio</a>
+        <a href="../../tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="../../tags/Spring/" class="print-no-link">#Spring</a>
+      
+        <a href="../../tags/SpringBoot/" class="print-no-link">#SpringBoot</a>
       
     </div>
   
@@ -352,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Minio</div>
-      <div>https://inyxin.github.io/post/9eadc0045e29/</div>
+      <div>SpringBoot自定义 Starter</div>
+      <div>https://inyxin.github.io/post/1a90966c398a/</div>
     </div>
     <div class="license-meta">
       
@@ -365,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 10, 2024</div>
+          <div>June 8, 2024</div>
         </div>
       
       
@@ -412,8 +436,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="../13bb5bc745e1/" title="SpringBoot自定义 Starter">
-                        <span class="hidden-mobile">SpringBoot自定义 Starter</span>
+                      <a href="../52efb45fb389/" title="电力巡检实训项目">
+                        <span class="hidden-mobile">电力巡检实训项目</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
