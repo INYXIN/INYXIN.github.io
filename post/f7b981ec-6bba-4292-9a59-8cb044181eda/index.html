@@ -16,30 +16,25 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="Minio对象存储hexo template generate by typora plugin templater 安装Docker 快速安装 minio 12345678910sudo mkdir -p &#x2F;mnt&#x2F;minio&#x2F;datasudo docker run \   -p 9000:9000 \   -p 9001:9001 \   --name minio_instance \   -">
+    <meta name="description" content="724. 寻找数组的中心下标hexo template generate by typora plugin templater 提示 给你一个整数数组 nums ，请计算数组的 中心下标 。 数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。 如果中心下标位于数组最左端，那么左侧数之和视为 0 ，因为在下标的左侧不存在元素。这一点对于中心下标位于数组最右端同样适用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Minio对象存储">
-<meta property="og:url" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/index.html">
+<meta property="og:title" content="724. 寻找数组的中心下标">
+<meta property="og:url" content="https://inyxin.github.io/post/f7b981ec-6bba-4292-9a59-8cb044181eda/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Minio对象存储hexo template generate by typora plugin templater 安装Docker 快速安装 minio 12345678910sudo mkdir -p &#x2F;mnt&#x2F;minio&#x2F;datasudo docker run \   -p 9000:9000 \   -p 9001:9001 \   --name minio_instance \   -">
+<meta property="og:description" content="724. 寻找数组的中心下标hexo template generate by typora plugin templater 提示 给你一个整数数组 nums ，请计算数组的 中心下标 。 数组 中心下标 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。 如果中心下标位于数组最左端，那么左侧数之和视为 0 ，因为在下标的左侧不存在元素。这一点对于中心下标位于数组最右端同样适用。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240707235948167.png">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240708000100406.png">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240708001654973.png">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240708002956819.png">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240708003312049.png">
-<meta property="og:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240708003356384.png">
-<meta property="article:published_time" content="2024-07-07T15:00:28.000Z">
-<meta property="article:modified_time" content="2024-07-07T16:39:59.925Z">
+<meta property="og:image" content="https://inyxin.github.io/images/leecode.jpg">
+<meta property="article:published_time" content="2024-07-07T16:53:02.000Z">
+<meta property="article:modified_time" content="2024-07-07T17:20:49.883Z">
 <meta property="article:author" content="Inyxin">
-<meta property="article:tag" content="Minio">
-<meta property="article:tag" content="对象存储">
+<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="简单">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/image-20240707235948167.png">
+<meta name="twitter:image" content="https://inyxin.github.io/images/leecode.jpg">
   
   
   
-  <title>Minio对象存储 - Hexo</title>
+  <title>724. 寻找数组的中心下标 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Minio对象存储"></span>
+            <span id="subtitle" data-typed-text="724. 寻找数组的中心下标"></span>
           
         </div>
 
@@ -233,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-07 23:00" pubdate>
-          July 7, 2024 pm
+        <time datetime="2024-07-08 00:53" pubdate>
+          July 8, 2024 am
         </time>
       </span>
     
@@ -245,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          532 words
+          623 words
         
       </span>
     
@@ -256,7 +251,7 @@
         
         
         
-          5 mins
+          6 mins
         
       </span>
     
@@ -293,56 +288,38 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Minio对象存储</h1>
+            <h1 id="seo-header">724. 寻找数组的中心下标</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Minio对象存储"><a href="#Minio对象存储" class="headerlink" title="Minio对象存储"></a>Minio对象存储</h3><p><code>hexo template generate by typora plugin templater</code></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><strong>Docker 快速安装 minio</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">sudo mkdir -p /mnt/minio/data<br><br>sudo docker run \<br>   -p <span class="hljs-number">9000</span>:<span class="hljs-number">9000</span> \<br>   -p <span class="hljs-number">9001</span>:<span class="hljs-number">9001</span> \<br>   --name minio_instance \<br>   -v /mnt/minio/data:/data \<br>   -e <span class="hljs-string">&quot;MINIO_ROOT_USER=minio&quot;</span> \<br>   -e <span class="hljs-string">&quot;MINIO_ROOT_PASSWORD=CYhZ632Fa1DnclQXzvmp&quot;</span> \<br>   quay.io/minio/minio server /data --console-address <span class="hljs-string">&quot;:9001&quot;</span><br></code></pre></td></tr></table></figure>
+                <h3 id="724-寻找数组的中心下标"><a href="#724-寻找数组的中心下标" class="headerlink" title="724. 寻找数组的中心下标"></a>724. 寻找数组的中心下标</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<p><strong>提示</strong></p>
+<p>给你一个整数数组 <code>nums</code> ，请计算数组的 <strong>中心下标</strong> 。</p>
+<p>数组 <strong>中心下标</strong> 是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。</p>
+<p>如果中心下标位于数组最左端，那么左侧数之和视为 <code>0</code> ，因为在下标的左侧不存在元素。这一点对于中心下标位于数组最右端同样适用。</p>
+<p>如果数组有多个中心下标，应该返回 <strong>最靠近左边</strong> 的那一个。如果数组不存在中心下标，返回 <code>-1</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：nums = [1, 7, 3, 6, 5, 6]<br>输出：3<br>解释：<br>中心下标是<span class="hljs-number"> 3 </span>。<br>左侧数之和 sum = nums[0] + nums[1] + nums[2] =<span class="hljs-number"> 1 </span>+<span class="hljs-number"> 7 </span>+<span class="hljs-number"> 3 </span>=<span class="hljs-number"> 11 </span>，<br>右侧数之和 sum = nums[4] + nums[5] =<span class="hljs-number"> 5 </span>+<span class="hljs-number"> 6 </span>=<span class="hljs-number"> 11 </span>，二者相等。<br></code></pre></td></tr></table></figure>
 
-<p><img src="image-20240707235948167.png" srcset="/img/loading.gif" lazyload alt="image-20240707235948167"></p>
-<h2 id="MinIO-root-用户"><a href="#MinIO-root-用户" class="headerlink" title="MinIO root 用户"></a><a target="_blank" rel="noopener" href="https://www.minio.org.cn/docs/minio/container/administration/identity-access-management/minio-user-management.html#id9">MinIO <code>root</code> 用户</a></h2><p>MinIO部署中有一个名为 <code>root</code> 的用户，该用户可以访问部署上的所有 操作和资源，无论配置了哪种 <a target="_blank" rel="noopener" href="https://www.minio.org.cn/docs/minio/container/administration/identity-access-management.html#minio-authentication-and-identity-management">身份管理器（identity manager）</a>。当一个MinIO服务器首次启动时， 它会通过检查以下环境变量的值来设置 <code>root</code> 用户的凭据：</p>
-<ul>
-<li><code>MINIO_ROOT_USER</code></li>
-<li><code>MINIO_ROOT_PASSWORD</code></li>
-</ul>
-<p>要轮换根用户凭据，需要更新部署中所有MinIO服务器上 的一个或两个环境变量。为根凭据指定 <em>长、 唯一且随机</em> 的字符串。 在存储访问密钥和秘密密钥时， 应采取所有可能的预防措施，以确保只有那些已知且受信任且 <em>需要</em> 超级用户访问权限的个人才能检索到 <code>root</code> 凭据。</p>
-<ul>
-<li>MinIO <em>强烈建议</em> 不要在任何环境（开发、测试或生产） 中使用 <code>root</code> 用户进行常规客户端访问。</li>
-<li>MinIO <em>强烈建议</em> 创建用户，以便每个客户端都能访问 到执行其分配的工作负载所需的最小动作和 资源集。</li>
-</ul>
-<p>如果这些变量未设置，<code>minio</code> 将默认使用 <code>minioadmin</code> 作为 访问密钥，以及 <code>minioadmin</code> 作为秘密密钥。 MinIO <em>强烈建议</em> 不要在任何部署环境中 使用默认凭据。</p>
-<h1 id="创建桶"><a href="#创建桶" class="headerlink" title="创建桶"></a>创建桶</h1><p><img src="image-20240708000100406.png" srcset="/img/loading.gif" lazyload alt="image-20240708000100406"></p>
-<p><img src="image-20240708001654973.png" srcset="/img/loading.gif" lazyload alt="image-20240708001654973"></p>
-<p>桶默认可以有三种<strong>Access Policy</strong>策略：</p>
-<ul>
-<li><p><strong>public</strong> : 不经过任何认证可以直接访问资源</p>
-</li>
-<li><p><strong>private</strong>  : 桶设置为<strong>private</strong>后，未经授权不能进行任何操作，所有<strong>Access Rules</strong>失效</p>
-</li>
-<li><p><strong>custom</strong> : 这种<strong>Access Policy</strong>策略是通过如下自定义<strong>Access Rules</strong>出现的</p>
-<ul>
-<li><p><strong>readonly</strong> : 可以设置资源不经过授权，只能读取</p>
-</li>
-<li><p><strong>writeonly</strong> : 资源不经过授权，只能写入</p>
-</li>
-<li><p><strong>readwrite</strong> 资源不经过授权，可读可写</p>
-</li>
-</ul>
-</li>
-</ul>
-<p><img src="image-20240708002956819.png" srcset="/img/loading.gif" lazyload alt="image-20240708002956819"></p>
-<p>手动上传一些测试文件到 <code>minio-example-bucket/images</code> </p>
-<p>设置桶策略为 <strong>public</strong> 时 , 访问资源  <strong>logo.jpg</strong></p>
-<p>路径为 <code>API地址/桶/路径/文件</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">http:<span class="hljs-comment">//192.168.0.104:9000/minio-example-bucket/images/logo.jpg</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [1, 2, 3]</span><br><span class="hljs-string">输出：-1</span><br><span class="hljs-string">解释：</span><br><span class="hljs-string">数组中不存在满足此条件的中心下标。</span><br></code></pre></td></tr></table></figure>
 
-<p>访问成功</p>
-<p><img src="image-20240708003312049.png" srcset="/img/loading.gif" lazyload alt="image-20240708003312049"></p>
-<p>修改成 <strong>private</strong>后再次访问</p>
-<p><img src="image-20240708003356384.png" srcset="/img/loading.gif" lazyload alt="image-20240708003356384"></p>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：nums = [2, 1, -1]<br>输出：0<br>解释：<br>中心下标是<span class="hljs-number"> 0 </span>。<br>左侧数之和 sum =<span class="hljs-number"> 0 </span>，（下标<span class="hljs-number"> 0 </span>左侧不存在元素），<br>右侧数之和 sum = nums[1] + nums[2] =<span class="hljs-number"> 1 </span>+ -1 =<span class="hljs-number"> 0 </span>。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+</ul>
+<p><strong>注意：</strong> 本题与主站 1991 题相同：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-middle-index-in-array/">https://leetcode-cn.com/problems/find-the-middle-index-in-array/</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析:"></a>分析:</h3><p>找到一个位置 , 使得 左右之和相同</p>
+<p>即满足关系 <strong>左侧和 &#x3D; 总和 - nums[i] - 左侧和</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">pivotIndex</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> Arrays.stream(nums).sum();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-number">2</span> * sum + nums[i] == total) &#123;<br>                <span class="hljs-keyword">return</span> i;<br>            &#125;<br>            sum += nums[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br><br>作者：力扣官方题解<br>链接：https:<span class="hljs-comment">//leetcode.cn/problems/find-pivot-index/solutions/579264/xun-zhao-shu-zu-de-zhong-xin-suo-yin-by-gzjle/</span><br>来源：力扣（LeetCode）<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">pivotIndex</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>    <span class="hljs-comment">//1.维护两个变量，分别表示当前位置的前后缀和</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">prefix</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">suffix</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//2.第一个位置的后缀和为[1, n-1]元素和</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>        suffix += nums[i];<br>    &#125;<br>    <span class="hljs-comment">//如果0位置就是中心下标，直接返回</span><br>    <span class="hljs-keyword">if</span>(prefix == suffix) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-comment">//3.每次更新当前位置的前后缀和</span><br>    <span class="hljs-comment">//当前位置前缀和：每次加上i-1的数 当前位置后缀和，每次扣除i位置数</span><br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>        prefix += nums[i - <span class="hljs-number">1</span>];<br>        suffix -= nums[i];<br>        <span class="hljs-keyword">if</span>(prefix == suffix) &#123;<br>            <span class="hljs-keyword">return</span> i;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -361,12 +338,12 @@
     
       <span class="category-chain">
         
-  <a href="../../categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  <a href="../../categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
     <span>></span>
     
-  <a href="../../categories/%E5%90%8E%E7%AB%AF/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
+  <a href="../../categories/%E7%AE%97%E6%B3%95/Leetcode/" class="category-chain-item">Leetcode</a>
   
   
 
@@ -383,9 +360,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../tags/Minio/" class="print-no-link">#Minio</a>
+        <a href="../../tags/Leetcode/" class="print-no-link">#Leetcode</a>
       
-        <a href="../../tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/" class="print-no-link">#对象存储</a>
+        <a href="../../tags/%E7%AE%80%E5%8D%95/" class="print-no-link">#简单</a>
       
     </div>
   
@@ -397,8 +374,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Minio对象存储</div>
-      <div>https://inyxin.github.io/post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/</div>
+      <div>724. 寻找数组的中心下标</div>
+      <div>https://inyxin.github.io/post/f7b981ec-6bba-4292-9a59-8cb044181eda/</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +387,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 7, 2024</div>
+          <div>July 8, 2024</div>
         </div>
       
       
@@ -447,18 +424,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../post/f7b981ec-6bba-4292-9a59-8cb044181eda/" title="724. 寻找数组的中心下标">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">724. 寻找数组的中心下标</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../post/b828993e-4e2e-44ac-8d7f-b449d09b28d7/" title="收藏夹">
-                        <span class="hidden-mobile">收藏夹</span>
+                      <a href="../../post/5ba1c0a2-54bf-4057-b728-bd1ab9191349/" title="Minio对象存储">
+                        <span class="hidden-mobile">Minio对象存储</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
