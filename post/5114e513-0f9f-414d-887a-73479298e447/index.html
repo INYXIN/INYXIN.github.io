@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://inyxin.github.io/images/leecode.jpg">
 <meta property="article:published_time" content="2024-07-08T14:13:39.000Z">
-<meta property="article:modified_time" content="2024-07-08T14:28:20.814Z">
+<meta property="article:modified_time" content="2024-07-08T14:33:46.820Z">
 <meta property="article:author" content="Inyxin">
 <meta property="article:tag" content="Leetcode">
 <meta property="article:tag" content="中等">
@@ -183,6 +183,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexo.io/zh-cn/docs/configuration" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Hexo Doc</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -311,6 +323,12 @@
 <h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">subarraySum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt; nums.length;i++)&#123;<br>             result += formIndexHasSubArraySum(nums,k,i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-comment">//从第 index 位开始寻找, 是否存在一个连续数组和等于 k , </span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">formIndexHasSubArraySum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k , <span class="hljs-type">int</span> index)</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span><span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=index; i&lt;nums.length; i++ )&#123;<br>            sum += nums[i];<br>            <span class="hljs-keyword">if</span>(sum == k)&#123;<br>                count ++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
+
+
+
+
+
+
                 
               </div>
             
@@ -413,6 +431,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="../../post/3d053257-9a1f-4b4c-b2bc-eacffab49599/" title="面向对象设计原则">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">面向对象设计原则</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

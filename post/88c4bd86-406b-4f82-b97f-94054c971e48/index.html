@@ -1,0 +1,872 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/fluid.png">
+  <link rel="icon" href="../../img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Inyxin">
+  <meta name="keywords" content="code,java">
+  
+    <meta name="description" content="设计模式-创建型hexo template generate by typora plugin templater  设计模式（创建型）软件设计模式（Design pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性、程序的重用性。  肯特·贝克和沃德·坎宁安在1987年利用克里斯托">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式-创建型">
+<meta property="og:url" content="https://inyxin.github.io/post/88c4bd86-406b-4f82-b97f-94054c971e48/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="设计模式-创建型hexo template generate by typora plugin templater  设计模式（创建型）软件设计模式（Design pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性、程序的重用性。  肯特·贝克和沃德·坎宁安在1987年利用克里斯托">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://inyxin.github.io/post/88c4bd86-406b-4f82-b97f-94054c971e48/CZbSEekKftDYp25-1720456478594-245.jpg">
+<meta property="article:published_time" content="2024-07-08T16:20:50.000Z">
+<meta property="article:modified_time" content="2024-07-08T17:05:38.418Z">
+<meta property="article:author" content="Inyxin">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://inyxin.github.io/post/88c4bd86-406b-4f82-b97f-94054c971e48/CZbSEekKftDYp25-1720456478594-245.jpg">
+  
+  
+  
+  <title>设计模式-创建型 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"inyxin.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../js/utils.js" ></script>
+  <script  src="../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../index.html">
+      <strong>Hexo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexo.io/zh-cn/docs/configuration" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Hexo Doc</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../images/page-article.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="设计模式-创建型"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Inyxin
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-09 00:20" pubdate>
+          July 9, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">设计模式-创建型</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="设计模式-创建型"><a href="#设计模式-创建型" class="headerlink" title="设计模式-创建型"></a>设计模式-创建型</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<p><img src="CZbSEekKftDYp25-1720456478594-245.jpg" srcset="/img/loading.gif" lazyload alt="image-20230301111626247"></p>
+<h1 id="设计模式（创建型）"><a href="#设计模式（创建型）" class="headerlink" title="设计模式（创建型）"></a>设计模式（创建型）</h1><p>软件设计模式（Design pattern），又称设计模式，是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性、程序的重用性。</p>
+<blockquote>
+<p>肯特·贝克和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%B2%83%E5%BE%B7%C2%B7%E5%9D%8E%E5%AE%81%E5%AE%89/6488429">沃德·坎宁安</a>在1987年利用克里斯托佛·亚历山大在建筑设计领域里的思想开发了设计模式并把此思想应用在Smalltalk中的图形用户接口的生成中。一年后Erich Gamma在他的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%8B%8F%E9%BB%8E%E4%B8%96%E5%A4%A7%E5%AD%A6/1621125">苏黎世大学</a>博士毕业论文中开始尝试把这种思想改写为适用于软件开发。与此同时James Coplien 在1989年至1991 年也在利用相同的思想致力于C++的开发，而后于1991年发表了他的著作Advanced C++ Idioms。就在这一年Erich Gamma 得到了博士学位，然后去了美国，在那与Richard Helm, Ralph Johnson ,John Vlissides合作出版了Design Patterns - Elements of Reusable Object-Oriented Software 一书，在此书中共收录了23个设计模式。这四位作者在软件开发领域里也以他们的匿名著称Gang of Four(四人帮，简称GoF),并且是他们在此书中的协作导致了软件设计模式的突破。</p>
+</blockquote>
+<p>我们先来看看有关对象创建的几种设计模式。</p>
+<h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h2><p>首当其冲的是最简单的一种设计模式——工厂方法模式，我们知道，如果需要创建一个对象，那么最简单的方式就是直接new一个即可。而工厂方法模式代替了传统的直接new的形式，那么为什么要替代传统的new形式呢？</p>
+<p>可以想象一下，如果所有的对象我们都通过new的方式去创建，那么当我们的程序中大量使用此对象时，突然有一天这个对象的构造方法或是类名发生了修改，那我们岂不是得挨个去进行修改？根据迪米特法则，我们应该尽可能地少与其他类进行交互，所以我们可以将那些需要频繁出现的对象创建，封装到一个工厂类中，当我们需要对象时，直接调用工厂类中的工厂方法来为我们生成对象，这样，就算类出现了变动，我们也只需要修改工厂中的代码即可，而不是大面积地进行修改。</p>
+<p>同时，可能某些对象的创建并不只是一个new就可以搞定，可能还需要更多的步骤来准备构造方法需要的参数，所以我们来看看如何使用<code>简单工厂模式</code>来创建对象，既然是工厂，那么我们就来创建点工厂需要生产的东西：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Fruit</span> &#123;   <span class="hljs-comment">//水果抽象类</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String name;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Fruit</span><span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> name+<span class="hljs-string">&quot;@&quot;</span>+hashCode();   <span class="hljs-comment">//打印一下当前水果名称，还有对象的hashCode</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Apple</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fruit</span>&#123;   <span class="hljs-comment">//苹果，继承自水果</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Apple</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-built_in">super</span>(<span class="hljs-string">&quot;苹果&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Orange</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fruit</span>&#123;  <span class="hljs-comment">//橘子，也是继承自水果</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Orange</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-built_in">super</span>(<span class="hljs-string">&quot;橘子&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>正常情况下，我们直接new就可以得到对象了：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Apple</span> <span class="hljs-variable">apple</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Apple</span>();<br>        System.out.println(apple);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在我们将对象的创建封装到工厂中：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FruitFactory</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 这里就直接来一个静态方法根据指定类型进行创建</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> type 水果类型</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 对应的水果对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Fruit <span class="hljs-title function_">getFruit</span><span class="hljs-params">(String type)</span> &#123;<br>        <span class="hljs-keyword">switch</span> (type) &#123;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;苹果&quot;</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Apple</span>();<br>           	<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;橘子&quot;</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Orange</span>();<br>            <span class="hljs-keyword">default</span>:<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在我们就可以使用此工厂来创建对象了：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Fruit</span> <span class="hljs-variable">fruit</span> <span class="hljs-operator">=</span> FruitFactory.getFruit(<span class="hljs-string">&quot;橘子&quot;</span>);   <span class="hljs-comment">//直接问工厂要，而不是我们自己去创建</span><br>        System.out.println(fruit);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不过这样还是有一些问题，我们前面提到了开闭原则，一个软件实体，比如类、模块和函数应该对扩展开放，对修改关闭，但是如果我们现在需要新增一种水果，比如桃子，那么这时我们就得去修改工厂提供的工厂方法了，但是这样是不太符合开闭原则的，因为工厂实际上是针对于调用方提供的，所以我们应该尽可能对修改关闭。</p>
+<p>所以，我们就利用对扩展开放，对修改关闭的性质，将<code>简单工厂模式</code>改进为<code>工厂方法模式</code>，那现在既然不让改，那么我们就看看如何去使用扩展的形式：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FruitFactory</span>&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Fruit</span>&gt; &#123;   <span class="hljs-comment">//将水果工厂抽象为抽象类，添加泛型T由子类指定水果类型</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> T <span class="hljs-title function_">getFruit</span><span class="hljs-params">()</span>;  <span class="hljs-comment">//不同的水果工厂，通过此方法生产不同的水果</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AppleFactory</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">FruitFactory</span>&lt;Apple&gt; &#123;  <span class="hljs-comment">//苹果工厂，直接返回Apple，一步到位</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Apple <span class="hljs-title function_">getFruit</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Apple</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，我们就可以使用不同类型的工厂来生产不同类型的水果了，并且如果新增了水果类型，直接创建一个新的工厂类就行，不需要修改之前已经编写好的内容。</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        test(<span class="hljs-keyword">new</span> <span class="hljs-title class_">AppleFactory</span>()::getFruit);   <span class="hljs-comment">//比如我们现在要吃一个苹果，那么就直接通过苹果工厂来获取苹果</span><br>    &#125;<br><br>    <span class="hljs-comment">//此方法模拟吃掉一个水果</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(Supplier&lt;Fruit&gt; supplier)</span>&#123;<br>        System.out.println(supplier.get()+<span class="hljs-string">&quot; 被吃掉了，真好吃。&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，我们就简单实现了工厂方法模式，通过工厂来屏蔽对象的创建细节，使用者只需要关心如何去使用对象即可。</p>
+<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><p>前面我们介绍了工厂方法模式，通过定义顶层抽象工厂类，通过继承的方式，针对于每一个产品都提供一个工厂类用于创建。</p>
+<p>不过这种模式只适用于简单对象，当我们需要生产许多个产品族的时候，这种模式就有点乏力了，比如：</p>
+<p><img src="leHOprkRiys3WhN.jpg" srcset="/img/loading.gif" lazyload alt="image-20230301111712035"></p>
+<p>实际上这些产品都是成族出现的，比如小米的产品线上有小米12，小米平板等，华为的产品线上也有华为手机、华为平板，但是如果按照我们之前工厂方法模式来进行设计，那就需要单独设计9个工厂来生产上面这些产品，显然这样就比较浪费时间的。</p>
+<p>但是现在有什么方法能够更好地处理这种情况呢？我们就可以使用抽象工厂模式，我们可以将多个产品，都放在一个工厂中进行生成，按不同的产品族进行划分，比如小米，那么我就可以安排一个小米工厂，而这个工厂里面就可以生产整条产品线上的内容，包括小米手机、小米平板、小米路由等。</p>
+<p>所以，我们只需要建立一个抽象工厂即可：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Router</span> &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Table</span> &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Phone</span> &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AbstractFactory</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Phone <span class="hljs-title function_">getPhone</span><span class="hljs-params">()</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Table <span class="hljs-title function_">getTable</span><span class="hljs-params">()</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Router <span class="hljs-title function_">getRouter</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>一个工厂可以生产同一个产品族的所有产品，这样按族进行分类，显然比之前的工厂方法模式更好。</p>
+<p>不过，缺点还是有的，如果产品族新增了产品，那么我就不得不去为每一个产品族的工厂都去添加新产品的生产方法，违背了开闭原则。</p>
+<h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><p>建造者模式也是非常常见的一种设计模式，我们经常看到有很多的框架都为我们提供了形如<code>XXXBuilder</code>的类型，我们一般也是使用这些类来创建我们需要的对象。</p>
+<p>比如，我们在JavaSE中就学习过的<code>StringBuiler</code>类：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();   <span class="hljs-comment">//创建一个StringBuilder来逐步构建一个字符串</span><br>    builder.append(<span class="hljs-number">666</span>);   <span class="hljs-comment">//拼接一个数字</span><br>    builder.append(<span class="hljs-string">&quot;老铁&quot;</span>);   <span class="hljs-comment">//拼接一个字符串</span><br>   	builder.insert(<span class="hljs-number">2</span>, <span class="hljs-string">&#x27;?&#x27;</span>);  <span class="hljs-comment">//在第三个位置插入一个字符</span><br>    System.out.println(builder.toString());   <span class="hljs-comment">//差不多成形了，最后转换为字符串</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>实际上我们是通过建造者来不断配置参数或是内容，当我们配置完所有内容后，最后再进行对象的构建。</p>
+<p>相比直接去new一个新的对象，建造者模式的重心更加关注在如何完成每一步的配置，同时如果一个类的构造方法参数过多，我们通过建造者模式来创建这个对象，会更加优雅。</p>
+<p>比如我们现在有一个学生类：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br>    <span class="hljs-type">int</span> id;<br>    <span class="hljs-type">int</span> age;<br>    <span class="hljs-type">int</span> grade;<br>    String name;<br>    String college;<br>    String profession;<br>    List&lt;String&gt; awards;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Student</span><span class="hljs-params">(<span class="hljs-type">int</span> id, <span class="hljs-type">int</span> age, <span class="hljs-type">int</span> grade, String name, String college, String profession, List&lt;String&gt; awards)</span> &#123;<br>        <span class="hljs-built_in">this</span>.id = id;<br>        <span class="hljs-built_in">this</span>.age = age;<br>        <span class="hljs-built_in">this</span>.grade = grade;<br>        <span class="hljs-built_in">this</span>.name = name;<br>        <span class="hljs-built_in">this</span>.college = college;<br>        <span class="hljs-built_in">this</span>.profession = profession;<br>        <span class="hljs-built_in">this</span>.awards = awards;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到这个学生类的属性是非常多的，所以构造方法不是一般的长，如果我们现在直接通过new的方式去创建：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-number">1</span>, <span class="hljs-number">18</span>, <span class="hljs-number">3</span>, <span class="hljs-string">&quot;小明&quot;</span>, <span class="hljs-string">&quot;计算机学院&quot;</span>, <span class="hljs-string">&quot;计算机科学与技术&quot;</span>, Arrays.asList(<span class="hljs-string">&quot;ICPC-ACM 区域赛 金牌&quot;</span>, <span class="hljs-string">&quot;LPL 2022春季赛 冠军&quot;</span>));<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，我们光是填参数就麻烦，我们还得一个一个对应着去填，一不小心可能就把参数填到错误的位置了。</p>
+<p>所以，我们现在可以使用建造者模式来进行对象的创建：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> &#123;<br>		...<br><br>    <span class="hljs-comment">//一律使用建造者来创建，不对外直接开放</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Student</span><span class="hljs-params">(<span class="hljs-type">int</span> id, <span class="hljs-type">int</span> age, <span class="hljs-type">int</span> grade, String name, String college, String profession, List&lt;String&gt; awards)</span> &#123;<br>        ...<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> StudentBuilder <span class="hljs-title function_">builder</span><span class="hljs-params">()</span>&#123;   <span class="hljs-comment">//通过builder方法直接获取建造者</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StudentBuilder</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StudentBuilder</span>&#123;   <span class="hljs-comment">//这里就直接创建一个内部类</span><br>        <span class="hljs-comment">//Builder也需要将所有的参数都进行暂时保存，所以Student怎么定义的这里就怎么定义</span><br>        <span class="hljs-type">int</span> id;<br>        <span class="hljs-type">int</span> age;<br>        <span class="hljs-type">int</span> grade;<br>        String name;<br>        String college;<br>        String profession;<br>        List&lt;String&gt; awards;<br><br>        <span class="hljs-keyword">public</span> StudentBuilder <span class="hljs-title function_">id</span><span class="hljs-params">(<span class="hljs-type">int</span> id)</span>&#123;    <span class="hljs-comment">//直接调用建造者对应的方法，为对应的属性赋值</span><br>            <span class="hljs-built_in">this</span>.id = id;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;   <span class="hljs-comment">//为了支持链式调用，这里直接返回建造者本身，下同</span><br>        &#125;<br><br>        <span class="hljs-keyword">public</span> StudentBuilder <span class="hljs-title function_">age</span><span class="hljs-params">(<span class="hljs-type">int</span> age)</span>&#123;<br>            <span class="hljs-built_in">this</span>.age = age;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125;<br>      <br>      	...<br><br>        <span class="hljs-keyword">public</span> StudentBuilder <span class="hljs-title function_">awards</span><span class="hljs-params">(String... awards)</span>&#123;<br>            <span class="hljs-built_in">this</span>.awards = Arrays.asList(awards);<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;<br>        &#125;<br>        <br>        <span class="hljs-keyword">public</span> Student <span class="hljs-title function_">build</span><span class="hljs-params">()</span>&#123;    <span class="hljs-comment">//最后我们只需要调用建造者提供的build方法即可根据我们的配置返回一个对象</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(id, age, grade, name, college, profession, awards);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>现在，我们就可以使用建造者来为我们生成对象了：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student</span> <span class="hljs-operator">=</span> Student.builder()   <span class="hljs-comment">//获取建造者</span><br>            .id(<span class="hljs-number">1</span>)    <span class="hljs-comment">//逐步配置各个参数</span><br>            .age(<span class="hljs-number">18</span>)<br>            .grade(<span class="hljs-number">3</span>)<br>            .name(<span class="hljs-string">&quot;小明&quot;</span>)<br>            .awards(<span class="hljs-string">&quot;ICPC-ACM 区域赛 金牌&quot;</span>, <span class="hljs-string">&quot;LPL 2022春季赛 冠军&quot;</span>)<br>            .build();   <span class="hljs-comment">//最后直接建造我们想要的对象</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，我们就可以让这些参数对号入座了，并且也比之前的方式优雅许多。</p>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式其实在之前的课程中已经演示过很多次了，这也是使用频率非常高的一种模式。</p>
+<p>那么，什么是单例模式呢？顾名思义，单例那么肯定就是只有一个实例对象，在我们的整个程序中，同一个类始终只会有一个对象来进行操作。比如数据库连接类，实际上我们只需要创建一个对象或是直接使用静态方法就可以了，没必要去创建多个对象。</p>
+<p>这里还是还原一下我们之前使用的简单单例模式：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Singleton</span> <span class="hljs-variable">INSTANCE</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();   <span class="hljs-comment">//用于引用全局唯一的单例对象，在一开始就创建好</span><br>    <br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span> &#123;&#125;   <span class="hljs-comment">//不允许随便new，需要对象直接找getInstance</span><br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;   <span class="hljs-comment">//获取全局唯一的单例对象</span><br>        <span class="hljs-keyword">return</span> INSTANCE;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，当我们需要获取此对象时，只能通过<code>getInstance()</code>来获取唯一的对象：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">Singleton</span> <span class="hljs-variable">singleton</span> <span class="hljs-operator">=</span> Singleton.getInstance();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>当然，单例模式除了这种写法之外，还有其他写法，这种写法被称为饿汉式单例，也就是说在一开始类加载时就创建好了，我们来看看另一种写法——懒汉式：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton INSTANCE;   <span class="hljs-comment">//在一开始先不进行对象创建</span><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span> &#123;&#125;   <span class="hljs-comment">//不用多说了吧</span><br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;   <span class="hljs-comment">//将对象的创建延后到需要时再进行</span><br>        <span class="hljs-keyword">if</span>(INSTANCE == <span class="hljs-literal">null</span>) &#123;    <span class="hljs-comment">//如果实例为空，那么就进行创建，不为空说明已经创建过了，那么就直接返回</span><br>            INSTANCE = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>        &#125;<br>        <span class="hljs-keyword">return</span> INSTANCE;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，懒汉式就真的是条懒狗，你不去用它，它是不会给你提前准备单例对象的（延迟加载，懒加载），当我们需要获取对象时，才会进行检查并创建。虽然饿汉式和懒汉式写法不同，但是最后都是成功实现了单例模式。</p>
+<p>不过，这里需要特别提醒一下，由于懒汉式是在方法中进行的初始化，在多线程环境下，可能会出现问题（建议学完JUC篇视频教程再来观看）大家可以试想一下，如果这个时候有多个线程同时调用了<code>getInstance()</code>方法，那么会出现什么问题呢？</p>
+<p><img src="w1oN7u3SxG4cEzL.jpg" srcset="/img/loading.gif" lazyload alt="image-20230301111737649"></p>
+<p>可以看到，在多线程环境下，如果三条线程同时调用<code>getInstance()</code>方法，会同时进行<code>INSTANCE == null</code>的判断，那么此时由于确实还没有进行任何实例化，所以导致三条线程全部判断为<code>true</code>（而饿汉式由于在类加载时就创建完成，不会存在这样的问题）此时问题就来了，我们既然要使用单例模式，那么肯定是只希望对象只被初始化一次的，但是现在由于多线程的机制，导致对象被多次创建。</p>
+<p>所以，为了避免线程安全问题，针对于懒汉式单例，我们还得进行一些改进：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;   <span class="hljs-comment">//方法必须添加synchronized关键字加锁</span><br>    <span class="hljs-keyword">if</span>(INSTANCE == <span class="hljs-literal">null</span>) &#123;<br>        INSTANCE = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> INSTANCE;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>既然多个线程要调用，那么我们就直接加一把锁，在方法上添加<code>synchronized</code>关键字即可，这样同一时间只能有一个线程进入了。虽然这样简单粗暴，但是在高并发的情况下，效率肯定是比较低的，我们来看看如何进行优化：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-keyword">if</span>(INSTANCE == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">synchronized</span> (Singleton.class) &#123;    <span class="hljs-comment">//实际上只需要对赋值这一步进行加锁即可</span><br>            INSTANCE = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();   <br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> INSTANCE;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不过这样还不完美，因为这样还是有可能多个线程同时判断为<code>null</code>而进入等锁的状态，所以，我们还得加一层内层判断：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-keyword">if</span>(INSTANCE == <span class="hljs-literal">null</span>) &#123;<br>        <span class="hljs-keyword">synchronized</span> (Singleton.class) &#123;<br>            <span class="hljs-keyword">if</span>(INSTANCE == <span class="hljs-literal">null</span>) INSTANCE = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();  <span class="hljs-comment">//内层还要进行一次检查，双重检查锁定</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> INSTANCE;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不过我们还少考虑了一样内容，其实IDEA此时应该是给了黄标了：</p>
+<p><img src="I9PAi6HRbyMNsJn.jpg" srcset="/img/loading.gif" lazyload alt="image-20230301111754155"></p>
+<p>可以看到，这种情况下，IDEA会要求我们添加一个<code>volatile</code>给<code>INSTANCE</code>，各位还记得这个关键字有什么作用吗？没错，我们还需要保证<code>INSTANCE</code>在线程之间的可见性，这样当其他线程进入之后才会拿<code>INSTANCE</code>由其他线程更新的最新值去判断，这样，就差不多完美了。</p>
+<p>那么，有没有一种更好的，不用加锁的方式也能实现延迟加载的写法呢？我们可以使用静态内部类：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span> &#123;&#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Holder</span> &#123;   <span class="hljs-comment">//由静态内部类持有单例对象，但是根据类加载特性，我们仅使用Singleton类时，不会对静态内部类进行初始化</span><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> <span class="hljs-type">Singleton</span> <span class="hljs-variable">INSTANCE</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span>&#123;   <span class="hljs-comment">//只有真正使用内部类时，才会进行类初始化</span><br>        <span class="hljs-keyword">return</span> Holder.INSTANCE;   <span class="hljs-comment">//直接获取内部类中的</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这种方式显然是最完美的懒汉式解决方案，没有进行任何的加锁操作，也能保证线程安全，不过要实现这种写法，跟语言本身也有一定的关联，并不是所有的语言都支持这种写法。</p>
+<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>原型模式实际上与对象的拷贝息息相关，原型模式使用原型实例指定待创建对象的类型，并且通过复制这个原型来创建新的对象。也就是说，原型对象作为模板，通过克隆操作，来产生更多的对象，就像细胞的复制一样。</p>
+<p>开始之前，我们先介绍一下对象的深拷贝和浅拷贝，首先我们来看浅拷贝：</p>
+<ul>
+<li><p><strong>浅拷贝：</strong> 对于类中基本数据类型，会直接复制值给拷贝对象；对于引用类型，只会复制对象的地址，而实际上指向的还是原来的那个对象，拷贝个基莫。</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> a;  <span class="hljs-comment">//基本类型浅拷贝</span><br>    System.out.println(a == b);<br><br>    <span class="hljs-type">Object</span> <span class="hljs-variable">o</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>();<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> o;    <span class="hljs-comment">//引用类型浅拷贝，拷贝的仅仅是对上面对象的引用</span><br>    System.out.println(o == k);<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>深拷贝：</strong> 无论是基本类型还是引用类型，深拷贝会将引用类型的所有内容，全部拷贝为一个新的对象，包括对象内部的所有成员变量，也会进行拷贝。</p>
+</li>
+</ul>
+<p>在Java中，我们就可以使用Cloneable接口提供的拷贝机制，来实现原型模式：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Cloneable</span>&#123;   <span class="hljs-comment">//注意需要实现Cloneable接口</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException &#123;   <span class="hljs-comment">//提升clone方法的访问权限</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.clone();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>接着我们来看看克隆的对象是不是原来的对象：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException &#123;<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student0</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student1</span> <span class="hljs-operator">=</span> (Student) student0.clone();<br>    System.out.println(student0);<br>    System.out.println(student1);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，通过<code>clone()</code>方法克隆的对象并不是原来的对象，我们来看看如果对象内部有属性会不会一起进行克隆：</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Cloneable</span>&#123;<br>    <br>    String name;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Student</span><span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> name;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.clone();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException &#123;<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student0</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>(<span class="hljs-string">&quot;小明&quot;</span>);<br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student1</span> <span class="hljs-operator">=</span> (Student) student0.clone();<br>    System.out.println(student0.getName() == student1.getName());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，虽然Student对象成功拷贝，但是其内层对象并没有进行拷贝，依然只是对象引用的复制，所以Java为我们提供的<code>clone</code>方法只会进行浅拷贝。那么如何才能实现深拷贝呢？</p>
+<p>​                              </p>
+<p>​             </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> Object <span class="hljs-title function_">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException &#123;   <span class="hljs-comment">//这里我们改进一下，针对成员变量也进行拷贝</span><br>    <span class="hljs-type">Student</span> <span class="hljs-variable">student</span> <span class="hljs-operator">=</span> (Student) <span class="hljs-built_in">super</span>.clone();<br>    student.name = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(name);<br>    <span class="hljs-keyword">return</span> student;   <span class="hljs-comment">//成员拷贝完成后，再返回</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，我们就实现了深拷贝。</p>
+<hr>
+<p>版权声明：本文为柏码知识库版权所有，禁止一切未经授权的转载、发布、出售等行为，违者将被追究法律责任。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.itbaima.cn/document/6386mh7anqt4tzyv">https://www.itbaima.cn/document/6386mh7anqt4tzyv</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="print-no-link">#设计模式</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>设计模式-创建型</div>
+      <div>https://inyxin.github.io/post/88c4bd86-406b-4f82-b97f-94054c971e48/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Inyxin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../../post/b096a378-bcc1-42bf-96dc-658502442b53/" title="设计模式-结构型">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">设计模式-结构型</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../post/3d053257-9a1f-4b4c-b2bc-eacffab49599/" title="面向对象设计原则">
+                        <span class="hidden-mobile">面向对象设计原则</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../js/events.js" ></script>
+<script  src="../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

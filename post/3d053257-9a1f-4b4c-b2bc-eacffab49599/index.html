@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/fluid.png">
+  <link rel="icon" href="../../img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Inyxin">
+  <meta name="keywords" content="code,java">
+  
+    <meta name="description" content="面向对象设计原则hexo template generate by typora plugin templater 单一职责原则单一职责原则（Simple Responsibility Pinciple，SRP）是最简单的面向对象设计原则，它用于控制类的粒度大小。  一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。  比如我们现在有一个 People 类： 123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象设计原则">
+<meta property="og:url" content="https://inyxin.github.io/post/3d053257-9a1f-4b4c-b2bc-eacffab49599/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面向对象设计原则hexo template generate by typora plugin templater 单一职责原则单一职责原则（Simple Responsibility Pinciple，SRP）是最简单的面向对象设计原则，它用于控制类的粒度大小。  一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。  比如我们现在有一个 People 类： 123456789101">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-08T16:05:43.000Z">
+<meta property="article:modified_time" content="2024-07-08T17:05:29.262Z">
+<meta property="article:author" content="Inyxin">
+<meta property="article:tag" content="面向对象">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>面向对象设计原则 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"inyxin.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../js/utils.js" ></script>
+  <script  src="../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../index.html">
+      <strong>Hexo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexo.io/zh-cn/docs/configuration" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Hexo Doc</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../images/page-article.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="面向对象设计原则"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Inyxin
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-09 00:05" pubdate>
+          July 9, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.5k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          38 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">面向对象设计原则</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="面向对象设计原则"><a href="#面向对象设计原则" class="headerlink" title="面向对象设计原则"></a>面向对象设计原则</h2><p><code>hexo template generate by typora plugin templater</code></p>
+<h3 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h3><p>单一职责原则（Simple Responsibility Pinciple，SRP）是最简单的面向对象设计原则，它用于控制类的粒度大小。</p>
+<blockquote>
+<p>一个对象应该只包含单一的职责，并且该职责被完整地封装在一个类中。</p>
+</blockquote>
+<p>比如我们现在有一个 People 类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//一个人类</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">People</span> &#123;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 人类会编程</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;int mian() &#123;&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;   printf(\&quot;Holle Wrold!\&quot;);&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;&#125;&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;啊嘞，怎么运行不起？明明照着老师敲的啊&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 工厂打螺丝也会</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;真开心，能进到富土康打螺丝&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;诶，怎么工友都提桶跑路了&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 送外卖也会</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">ride</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;今天终于通过美团最终面，加入了梦寐以求的大厂了&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;感觉面试挺简单的，就是不知道为啥我同学是现场做一道力扣接雨水，而我是现场问会不会骑车&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;（迫不及待穿上外卖服装）&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们可以看到，这个 People 类可以说是十八般武艺样样精通了，啥都会，但是实际上，我们每个人最终都是在自己所擅长的领域工作，所谓闻道有先后，术业有专攻，会编程的就应该是程序员，会打螺丝的就应该是工人，会送外卖的应该是骑手，显然这个 People 太过臃肿（我们需要修改任意一种行为都需要修改 People 类，它拥有不止一个引起它变化的原因），所以根据单一职责原则，我们下需要进行更明确的划分，同种类型的操作我们一般才放在一起：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Coder</span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 程序员会编程</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;int mian() &#123;&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;   printf(\&quot;Hello World!\&quot;)&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;&#125;&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;啊嘞，怎么运行不起？明明照着老师敲的啊&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Worker</span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 工人会打螺丝</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">work</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;真开心，能进到富土康打螺丝&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;诶，怎么工友都提桶跑路了&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Rider</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 骑手会送外卖</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">ride</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;今天终于通过美团最终面，加入了梦寐以求的大厂&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;感觉面试挺简单的，就是不知道为啥我同学是现场做一道力扣接雨水，我是现场问会不会骑车&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;（迫不及待穿上外卖服装）&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们将类的粒度进行更近一步的划分，这样就很清晰了，包括我们以后在设计 Mapper、Service、Controller 等等，根据不同的业务进行划分，都可以采用单一职责原则，以它作为我们实现<strong>高内聚低耦合</strong>的指导方针。实际上我们的微服务也是参考了单一职责原则，每个微服务只应担负一个职责。</p>
+<h3 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h3><p>开闭原则（Open Close Principle）也是重要的面向对象设计原则。</p>
+<blockquote>
+<p>软件实体应当对扩展开放，对修改关闭。</p>
+</blockquote>
+<p>一个软件实体，比如类、模块和函数应该对扩展开放，对修改关闭。其中，对扩展开放是针对提供方来说的，对修改关闭是针对调用方来说的。</p>
+<p>比如我们的程序员分为 Java 程序员、C#程序员、C 艹程序员、PHP 程序员、前端程序员等，而他们要做的都是去打代码，而具体如何打代码是根据不同语言的程序员来决定的，我们可以将程序员打代码这一个行为抽象成一个统一的接口或是抽象类，这样我们就满足了开闭原则的第一个要求：对扩展开放，不同的程序员可以自由地决定他们该如何进行编程。而具体哪个程序员使用什么语言怎么编程，是自己在负责，不需要其他程序员干涉，所以满足第二个要求：对修改关闭，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coder</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span>;<br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaCoder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Coder</span>&#123;<br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;Java太卷了T_T，快去学Go吧！&quot;</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">PHPCoder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Coder</span>&#123;<br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;PHP是世界上最好的语言&quot;</span>);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">C</span>艹Coder <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Coder</span>&#123;<br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;笑死，Java再牛逼底层不还得找我？&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>通过提供一个 Coder 抽象类，定义出编程的行为，但是不进行实现，而是开放给其他具体类型的程序员来实现，这样就可以根据不同的业务进行灵活扩展了，具有较好的延续性。</p>
+<p>不过，回顾我们这一路的学习，好像处处都在使用开闭原则。</p>
+<h3 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h3><p>里氏替换原则（Liskov Substitution Principle）是对子类型的特别定义。它由芭芭拉·利斯科夫（Barbara Liskov）在 1987 年在一次会议上名为 “数据的抽象与层次” 的演说中首先提出。</p>
+<blockquote>
+<p>所有引用基类的地方必须能透明地使用其子类的对象。</p>
+</blockquote>
+<p><strong>简单的说就是，子类可以扩展父类的功能，但不能改变父类原有的功能：</strong></p>
+<ol>
+<li>子类可以实现父类的抽象方法，但不能覆盖父类的非抽象方法。</li>
+<li>子类可以增加自己特有的方法。</li>
+<li>当子类的方法重载父类的方法时，方法的前置条件（即方法的输入&#x2F;入参）要比父类方法的输入参数更宽松。</li>
+<li>当子类的方法实现父类的方法时（重写&#x2F;重载或实现抽象方法），方法的后置条件（即方法的输出&#x2F;返回值）要比父类更严格或与父类一样。</li>
+</ol>
+<p>比如我们下面的例子：</p>
+<p>​                              </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coder</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;我会打代码&quot;</span>);<br>    &#125;<br><br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaCoder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Coder</span>&#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 子类除了会打代码之外，还会打游戏</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">game</span><span class="hljs-params">()</span>&#123;<br>            System.out.println(<span class="hljs-string">&quot;艾欧尼亚最强王者已上号&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到 JavaCoder 虽然继承自 Coder，<strong>但是并没有对父类方法进行重写，并且还在父类的基础上进行额外扩展，符合里氏替换原则。</strong>但是我们再来看下面的这个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coder</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;我会打代码&quot;</span>);<br>    &#125;<br><br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaCoder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Coder</span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">game</span><span class="hljs-params">()</span>&#123;<br>            System.out.println(<span class="hljs-string">&quot;艾欧尼亚最强王者已上号&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 这里我们对父类的行为进行了重写，现在它不再具备父类原本的能力了</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;我寒窗苦读十六年，到最后还不如培训班三个月出来的程序员&quot;</span>);<br>            System.out.println(<span class="hljs-string">&quot;想来想去，房子车子结婚彩礼，为什么这辈子要活的这么累呢？&quot;</span>);<br>            System.out.println(<span class="hljs-string">&quot;难道来到这世间走这一遭就为了花一辈子时间买个房子吗？一个人不是也能活的轻松快乐吗？&quot;</span>);<br>            System.out.println(<span class="hljs-string">&quot;摆烂了，啊对对对&quot;</span>);  <br>          	<span class="hljs-comment">//好了，emo 结束，继续卷吧，人生因奋斗而美丽，这个世界虽然满目疮痍，但是还是有很多美好值得期待</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，现在我们对父类的方法进行了重写，显然，父类的行为已经被我们给覆盖了，这个子类已经不具备父类的原本的行为，很显然<strong>违背了里氏替换原则。</strong></p>
+<p>要是程序员连敲代码都不会了，还能叫做程序员吗？</p>
+<p>所以，对于这种情况，我们不需要再继承自 Coder 了，我们可以提升一下，将此行为定义到 People 中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">People</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span>;   <span class="hljs-comment">//这个行为还是定义出来，但是不实现</span><br>    <br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Coder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">People</span>&#123;<br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;我会打代码&quot;</span>);<br>        &#125;<br>    &#125;<br><br><br>    <span class="hljs-keyword">class</span> <span class="hljs-title class_">JavaCoder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">People</span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">game</span><span class="hljs-params">()</span>&#123;<br>            System.out.println(<span class="hljs-string">&quot;艾欧尼亚最强王者已上号&quot;</span>);<br>        &#125;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">coding</span><span class="hljs-params">()</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;摆烂了，啊对对对&quot;</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>里氏替换也是实现开闭原则的重要方式之一。</p>
+<h3 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h3><p>依赖倒转原则（Dependence Inversion Principle）也是我们一直在使用的，最明显的就是我们的 Spring 框架了。</p>
+<blockquote>
+<p>高层模块不应依赖于底层模块，它们都应该依赖抽象。抽象不应依赖于细节，细节应该依赖于抽象。</p>
+</blockquote>
+<p>还记得我们在我们之前的学习中为什么要一直使用接口来进行功能定义，然后再去实现吗？我们回顾一下在使用 Spring 框架之前的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">UserController</span> <span class="hljs-variable">controller</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserController</span>();<br>      	<span class="hljs-comment">//该怎么用就这么用</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>        <span class="hljs-comment">//CRUD...</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> &#123;<br>        <span class="hljs-type">UserMapper</span> <span class="hljs-variable">mapper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserMapper</span>();<br>        <span class="hljs-comment">//业务代码....</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> &#123;<br>        <span class="hljs-type">UserService</span> <span class="hljs-variable">service</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserService</span>();<br>        <span class="hljs-comment">//业务代码....</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>但是突然有一天，公司业务需求变化，现在用户相关的业务操作需要使用新的实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">UserController</span> <span class="hljs-variable">controller</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserController</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>        <span class="hljs-comment">//CRUD...</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceNew</span> &#123;   <span class="hljs-comment">//由于 UserServiceNew 发生变化，会直接影响到其他高层模块</span><br>        <span class="hljs-type">UserMapper</span> <span class="hljs-variable">mapper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserMapper</span>();<br>        <span class="hljs-comment">//业务代码....</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> &#123;   <span class="hljs-comment">//焯，干嘛改底层啊，我这又得重写了</span><br>        <span class="hljs-type">UserService</span> <span class="hljs-variable">service</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserService</span>();   <span class="hljs-comment">//哦豁，原来的不能用了</span><br>        <span class="hljs-type">UserServiceNew</span> <span class="hljs-variable">serviceNew</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserServiceNew</span>();   <span class="hljs-comment">//只能修改成新的了</span><br>        <span class="hljs-comment">//业务代码....</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>我们发现，我们的各个模块之间实际上是具有强关联的，一个模块是直接指定依赖于另一个模块，虽然这样结构清晰，但是底层模块的变动，会直接影响到其他依赖于它的高层模块，如果我们的项目变得很庞大，那么这样的修改将是一场灾难。</p>
+<p>而有了 Spring 框架之后，我们的开发模式就发生了变化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">UserController</span> <span class="hljs-variable">controller</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UserController</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>        <span class="hljs-comment">//接口中只做 CRUD 方法定义</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserMapperImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>        <span class="hljs-comment">//实现类完成 CRUD 具体实现</span><br>    &#125;<br><br>    <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserService</span> &#123;<br>        <span class="hljs-comment">//业务代码定义....</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>        <span class="hljs-meta">@Resource</span>   <span class="hljs-comment">//现在由 Spring 来为我们选择一个指定的实现类，然后注入，而不是由我们在类中硬编码进行指定</span><br>        UserMapper mapper;<br>        <br>        <span class="hljs-comment">//业务代码具体实现</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserController</span> &#123;<br>        <span class="hljs-meta">@Resource</span><br>        UserService service;   <span class="hljs-comment">//直接使用接口，就算你改实现，我也不需要再修改代码了</span><br><br>        <span class="hljs-comment">//业务代码....</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，通过使用接口，我们就可以将原有的强关联给弱化，我们只需要知道接口中定义了什么方法然后去使用即可，而具体的操作由接口的实现类来完成，并由 Spring 来为我们注入，而不是我们通过硬编码的方式去指定。</p>
+<h3 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h3><p>接口隔离原则（Interface Segregation Principle, ISP）实际上是对接口的细化。</p>
+<blockquote>
+<p>客户端不应依赖那些它不需要的接口。</p>
+</blockquote>
+<p>我们在定义接口的时候，一定要注意控制接口的粒度，比如下面的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Device</span> &#123;<br>    String <span class="hljs-title function_">getCpu</span><span class="hljs-params">()</span>;<br>    String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span>;<br>    String <span class="hljs-title function_">getMemory</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-comment">//电脑就是一种电子设备，那么我们就实现此接口</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Computer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Device</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getCpu</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;i9-12900K&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;电脑&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMemory</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;32G DDR5&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//电风扇也算是一种电子设备</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Fan</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Device</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getCpu</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;   <span class="hljs-comment">//就一个破风扇，还需要 CPU？</span><br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;风扇&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMemory</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;   <span class="hljs-comment">//风扇也不需要内存吧</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>虽然我们定义了一个 Device 接口，但是由于此接口的粒度不够细，虽然比较契合电脑这种设备，但是不适合风扇这种设备，因为风扇压根就不需要 CPU 和内存，所以风扇完全不需要这些方法。这时我们就必须要对其进行更细粒度的划分：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">SmartDevice</span> &#123;   <span class="hljs-comment">//智能设备才有 getCpu 和 getMemory</span><br>    String <span class="hljs-title function_">getCpu</span><span class="hljs-params">()</span>;<br>    String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span>;<br>    String <span class="hljs-title function_">getMemory</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">NormalDevice</span> &#123;   <span class="hljs-comment">//普通设备只有 getType</span><br>    String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span>;<br>&#125;<br><br><span class="hljs-comment">//电脑就是一种电子设备，那么我们就继承此接口</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Computer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">SmartDevice</span> &#123;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getCpu</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;i9-12900K&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;电脑&quot;</span>;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getMemory</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;32G DDR5&quot;</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//电风扇也算是一种电子设备</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Fan</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">NormalDevice</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;风扇&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，我们就将接口进行了细粒度的划分，不同类型的电子设备就可以根据划分去实现不同的接口了。当然，也不能划分得太小，还是要根据实际情况来进行决定。</p>
+<h3 id="合成复用原则"><a href="#合成复用原则" class="headerlink" title="合成复用原则"></a>合成复用原则</h3><p>合成复用原则（Composite Reuse Principle）的核心就是委派。</p>
+<blockquote>
+<p>优先使用对象组合，而不是通过继承来达到复用的目的。</p>
+</blockquote>
+<p>在一个新的对象里面使用一些已有的对象，使之成为新对象的一部分，新的对象通过向这些对象的委派达到复用已有功能的目的。实际上我们在考虑将某个类通过继承关系在子类得到父类已经实现的方法之外（比如 A 类实现了连接数据库的功能，恰巧 B 类中也需要，我们就可以通过继承来获得 A 已经写好的连接数据库的功能，这样就能直接复用 A 中已经写好的逻辑）我们应该应该优先地去考虑使用合成的方式来实现复用。</p>
+<p>比如下面这个例子：</p>
+<p>​                              </p>
+<p>​        java        复制代码      </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connectDatabase</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是连接数据库操作！&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">A</span>&#123;    <span class="hljs-comment">//直接通过继承的方式，得到 A 的数据库连接逻辑</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是B的方法，我也需要连接数据库！&quot;</span>);<br>        connectDatabase();   <span class="hljs-comment">//直接调用父类方法就行</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>虽然这样看起来没啥毛病，但是还是存在我们之前说的那个问题，耦合度太高了。</p>
+<p>可以看到通过继承的方式实现复用，我们是将类 B 直接指定继承自类 A 的，那么如果有一天，由于业务的更改，我们的数据库连接操作，不再由 A 来负责，而是由新来的 C 去负责，那么这个时候，我们就不得不将需要复用 A 中方法的子类全部进行修改，很显然这样是费时费力的。</p>
+<p>并且还有一个问题就是，通过继承子类会得到一些父类中的实现细节，比如某些字段或是方法，这样直接暴露给子类，并不安全。</p>
+<p>所以，当我们需要实现复用时，可以优先考虑以下操作：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connectDatabase</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是连接数据库操作！&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> &#123;   <span class="hljs-comment">//不进行继承，而是在用的时候给我一个 A，当然也可以抽象成一个接口，更加灵活</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(A a)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是B的方法，我也需要连接数据库！&quot;</span>);<br>        a.connectDatabase();   <span class="hljs-comment">//在通过传入的对象 A 去执行</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>或是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">A</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connectDatabase</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是连接数据库操作！&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">B</span> &#123;<br>    <br>    A a;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">B</span><span class="hljs-params">(A a)</span>&#123;   <span class="hljs-comment">//在构造时就指定好</span><br>        <span class="hljs-built_in">this</span>.a = a;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;我是B的方法，我也需要连接数据库！&quot;</span>);<br>        a.connectDatabase();   <span class="hljs-comment">//也是通过对象 A 去执行</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>通过对象之间的组合，我们就大大降低了类之间的耦合度，并且 A 的实现细节我们也不会直接得到了。</p>
+<h3 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h3><p>迪米特法则（Law of Demeter）又称最少知识原则，是对程序内部数据交互的限制。</p>
+<blockquote>
+<p>每一个软件单位对其他单位都只有最少的知识，而且局限于那些与本单位密切相关的软件单位。</p>
+</blockquote>
+<p>简单来说就是，一个类&#x2F;模块对其他的类&#x2F;模块有越少的交互越好。当一个类发生改动，那么，与其相关的类（比如用到此类啥方法的类）需要尽可能少的受影响（比如修改了方法名、字段名等，可能其他用到这些方法或是字段的类也需要跟着修改）这样我们在维护项目的时候会更加轻松一些。</p>
+<p>其实说白了，还是降低耦合度，我们还是来看一个例子：</p>
+<p>​                              </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>(<span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-number">8080</span>);   <span class="hljs-comment">//假设我们当前的程序需要进行网络通信</span><br>        <span class="hljs-type">Test</span> <span class="hljs-variable">test</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Test</span>();<br>        test.test(socket);   <span class="hljs-comment">//现在需要执行 test 方法来做一些事情</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 比如 test 方法需要得到我们当前 Socket 连接的本地地址</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(Socket socket)</span>&#123;<br>            System.out.println(<span class="hljs-string">&quot;IP地址：&quot;</span>+socket.getLocalAddress());<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，虽然上面这种写法没有问题，我们提供直接提供一个 Socket 对象，然后再由 test 方法来取出 IP 地址，但是这样显然违背了迪米特法则，实际上这里的 <code>test</code> 方法只需要一个 IP 地址即可，我们完全可以直接传入一个字符串，而不是整个 Socket 对象，我们需要保证与其他类的交互尽可能的少。</p>
+<p>就像我们在餐厅吃完了饭，应该是我们自己扫码付款，而不是直接把手机交给老板来帮你操作付款。</p>
+<p>要是某一天，Socket 类中的这些方法发生修改了，那我们就得连带着去修改这些类，很麻烦。</p>
+<p>所以，我们来改进改进：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-type">Socket</span> <span class="hljs-variable">socket</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Socket</span>(<span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-number">8080</span>);<br>        <span class="hljs-type">Test</span> <span class="hljs-variable">test</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Test</span>();<br>        test.test(socket.getLocalAddress().getHostAddress());  <span class="hljs-comment">//在外面解析好就行了</span><br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span> &#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">(String str)</span>&#123;   <span class="hljs-comment">//一个字符串就能搞定，就没必要丢整个对象进来</span><br>            System.out.println(<span class="hljs-string">&quot;IP地址：&quot;</span>+str);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样，类与类之间的耦合度再次降低。</p>
+<hr>
+<p>版权声明：本文为柏码知识库版权所有，禁止一切未经授权的转载、发布、出售等行为，违者将被追究法律责任。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.itbaima.cn/document/6386mh7anqt4tzyv">https://www.itbaima.cn/document/6386mh7anqt4tzyv</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="category-chain-item">设计模式</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="print-no-link">#面向对象</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>面向对象设计原则</div>
+      <div>https://inyxin.github.io/post/3d053257-9a1f-4b4c-b2bc-eacffab49599/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Inyxin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../../post/88c4bd86-406b-4f82-b97f-94054c971e48/" title="设计模式-创建型">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">设计模式-创建型</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../post/5114e513-0f9f-414d-887a-73479298e447/" title="560. 和为 K 的子数组">
+                        <span class="hidden-mobile">560. 和为 K 的子数组</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../js/events.js" ></script>
+<script  src="../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

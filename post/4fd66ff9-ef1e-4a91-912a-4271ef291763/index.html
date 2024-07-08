@@ -1,0 +1,1011 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/fluid.png">
+  <link rel="icon" href="../../img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Inyxin">
+  <meta name="keywords" content="code,java">
+  
+    <meta name="description" content="Docker 容器技术hexo template generate by typora plugin templater  Docker容器技术Docker是一门平台级别的技术，涉及的范围很广，所以，在开始之前，请确保你完成：Java SpringBoot 篇（推荐完成SpringCloud篇再来）视频教程及之前全部路线，否则学习会非常吃力，另外推荐额外掌握：《计算机网络》、《操作系统》相关知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 容器技术">
+<meta property="og:url" content="https://inyxin.github.io/post/4fd66ff9-ef1e-4a91-912a-4271ef291763/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Docker 容器技术hexo template generate by typora plugin templater  Docker容器技术Docker是一门平台级别的技术，涉及的范围很广，所以，在开始之前，请确保你完成：Java SpringBoot 篇（推荐完成SpringCloud篇再来）视频教程及之前全部路线，否则学习会非常吃力，另外推荐额外掌握：《计算机网络》、《操作系统》相关知识。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://inyxin.github.io/post/4fd66ff9-ef1e-4a91-912a-4271ef291763/docker-1720456734236-247.jpg">
+<meta property="article:published_time" content="2024-07-08T16:27:12.000Z">
+<meta property="article:modified_time" content="2024-07-08T16:56:46.552Z">
+<meta property="article:author" content="Inyxin">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://inyxin.github.io/post/4fd66ff9-ef1e-4a91-912a-4271ef291763/docker-1720456734236-247.jpg">
+  
+  
+  
+  <title>Docker 容器技术 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"inyxin.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../js/utils.js" ></script>
+  <script  src="../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../index.html">
+      <strong>Hexo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://hexo.io/zh-cn/docs/configuration" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Hexo Doc</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../images/page-article.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Docker 容器技术"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Inyxin
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-09 00:27" pubdate>
+          July 9, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          64 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Docker 容器技术</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="Docker-容器技术"><a href="#Docker-容器技术" class="headerlink" title="Docker 容器技术"></a>Docker 容器技术</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<p><img src="docker-1720456734236-247.jpg" srcset="/img/loading.gif" lazyload alt="Docker 容器技术"></p>
+<h1 id="Docker容器技术"><a href="#Docker容器技术" class="headerlink" title="Docker容器技术"></a>Docker容器技术</h1><p>Docker是一门平台级别的技术，涉及的范围很广，所以，在开始之前，请确保你完成：<strong>Java SpringBoot 篇</strong>（推荐完成SpringCloud篇再来）视频教程及之前全部路线，否则学习会非常吃力，另外推荐额外掌握：《计算机网络》、《操作系统》相关知识。学一样东西不能完全靠记忆来完成，而是需要结合自己所学的基础知识加以理解，一般来说，单凭记忆能够掌握的东西往往是最廉价的。</p>
+<p><strong>Docker官网：</strong> <a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com</a></p>
+<p><strong>课前准备：</strong> 配置2C2G以上Linux服务器一台，云服务器、虚拟机均可。</p>
+<h2 id="容器技术入门"><a href="#容器技术入门" class="headerlink" title="容器技术入门"></a>容器技术入门</h2><p>随着时代的发展，Docker也逐渐走上了历史舞台，曾经我们想要安装一套环境，需要花费一下午甚至一整天来配置和安装各个部分（比如运行我们自己的SpringBoot应用程序，可能需要安装数据库、安装Redis、安装MQ等，各种各样的环境光是安装就要花费很多时间，真的是搞得心态爆炸），而有了Docker之后，我们的程序和环境部署就变得非常简单了，我们只需要将这些环境一起打包成一个镜像。而到服务器上部署时，可以直接下载镜像实现一键部署，是不是很方便？</p>
+<p>包括我们在学习SpringCloud需要配置的各种组件，可能在自己电脑的环境中运行会遇到各种各样的问题（可能由于电脑上各种环境没配置，导致无法运行），而现在只需要下载镜像就能直接运行，所有的环境全部在镜像中配置完成，开箱即用。</p>
+<p>真的有这么神奇吗？我们来试试看。</p>
+<h3 id="环境安装和部署"><a href="#环境安装和部署" class="headerlink" title="环境安装和部署"></a>环境安装和部署</h3><p>首先我们还是先将Docker环境搭建好（建议和我同一个环境，不然出了问题只能自己想办法了），这里我们使用：</p>
+<ul>
+<li>Ubuntu 22.04 操作系统</li>
+</ul>
+<p>Docker分为免费的CE（Community Edition）社区版本和EE（Enterprise Edition）企业级付费版本，所以我们这里选择docker-ce进行安装。官方安装文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p>首先安装一些工具：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt-get install ca-certificates curl gnupg lsb-release<br></code></pre></td></tr></table></figure>
+
+<p>不过在Ubuntu22.04已经默认安装好了。接着安装官方的GPG key：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo <span class="hljs-built_in">mkdir</span> -p /etc/apt/keyrings<br><br>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br></code></pre></td></tr></table></figure>
+
+<p>最后将Docker的库添加到apt资源列表中：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb [arch=<span class="hljs-subst">$(dpkg --print-architecture)</span> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu <span class="hljs-subst">$(lsb_release -cs)</span> stable&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br></code></pre></td></tr></table></figure>
+
+<p>接着我们更新一次apt：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt update<br></code></pre></td></tr></table></figure>
+
+<p>最后安装Docker CE版本：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo apt install docker-ce<br></code></pre></td></tr></table></figure>
+
+<p>等待安装完成就可以了：</p>
+<p><img src="D1GXAQdUsgmTawq.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630161240162"></p>
+<p><img src="oI26yQiqhABN3UP.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630161341541"></p>
+<p>可以看到安装成功后版本是20.10.17，当然可能你们安装的时候就是更新的版本了。最后我们将当前用户添加到docker用户组中，不然每次使用docker命令都需要sudo执行，很麻烦：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo usermod -aG docker &lt;用户名&gt;<br></code></pre></td></tr></table></figure>
+
+<p>配置好后，我们先退出SSH终端，然后重新连接就可以生效了。</p>
+<p>这样我们Docker 的学习环境就配置好了，现在我们就尝试通过Docker来部署一个Nginx服务器试试看，使用很简单，只需要一个命令就可以了（当然现在看不懂没关系，我们后面会细嗦）：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo docker run -d -p 80:80 nginx<br></code></pre></td></tr></table></figure>
+
+<p><img src="sPVpLI9bXlzdKeO.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630165259663"></p>
+<p>首选它会从镜像仓库中下载对应的镜像，国内访问速度还行，不需要单独配置镜像源。接着下载完成后，就会在后台运行了，我们可以使用浏览器访问试试看：</p>
+<p><img src="fP5TsQnqUbmXoaA.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630165430159"></p>
+<p><img src="lPZYrUn2D1gNjx8.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630165440751"></p>
+<p>可以看到，Nginx服务器已经成功部署了，但是实际上我们并没有在Ubuntu中安装Nginx，而是通过Docker运行的镜像来进行服务器搭建的，是不是感觉玩法挺新奇的。除了Nginx这种简单的应用之外，我们还可以通过Docker来部署复杂应用，之后我们都会一一进行讲解的。</p>
+<h3 id="从虚拟机到容器"><a href="#从虚拟机到容器" class="headerlink" title="从虚拟机到容器"></a>从虚拟机到容器</h3><p>前面我们成功安装了Docker学习环境，以及浅尝了一下Docker为我们带来的应用快速部署。在正式进入学习之前，我们就先从Docker的发展开始说起。</p>
+<p>在Docker出现之前，虚拟化技术可以说是占据了主导地位。首先我们来谈谈为什么会出现虚拟化技术，我们知道在企业中服务器可以说是必不可少的一种硬件设施了，服务器也是电脑，但是不像我们的家用电脑，服务器的配置是非常高的，我们家用电脑的CPU可能最高配也就20核了，内存很少有超过128G的电脑，64G内存的家用电脑可以算奢侈了。而服务器不一样，服务器级别的CPU动辄12核，甚至服务器还能同时安装多块CPU，能直接堆到好几十核：</p>
+<p><img src="DPxA9MsZ3WGl62X.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630171220207"></p>
+<p>我们家用级CPU一般是AMD的锐龙系列和Intel的酷睿系列（比如i3 i5 i7 i9），而服务器CPU一般是Intel的志强（Xeno）系列，这种CPU的特点就是核心数非常多：</p>
+<p><img src="cKlhRZ9Sw1Q4uEX.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630172135408"></p>
+<p>并且服务器CPU相比家用CPU的功耗也会更大，因此服务器CPU的发热量非常高，如果你有幸去过机房，你会听见散热风扇猛烈转动的声音（但是服务器CPU的频率没有家用级CPU高，一般大型游戏要求的是高频率而不是核心数，而且功耗也比较大，所以并不适合做家用电脑，所以以后在网上买台式机，看到什么“i9级”CPU千万别买，是这些黑心商家把国外服务器上淘汰下来的服务器CPU（洋垃圾）装成电脑卖给你，所以会很便宜，同时核心数又能媲美i9，所以还是一分钱一分货实在）</p>
+<p>服务器无论是CPU资源还是内存资源都远超家用电脑，而我们编写的Java后端项目，最后都会运行在这些服务器上，不过有一个问题，服务器既然有这么丰富的硬件资源，就跑咱们这一个小Java后端，是不是有点核弹炸蚊子的感觉了？可能顶多就用了服务器5%的硬件资源，服务器这么牛就运行个这也太浪费了吧。</p>
+<p>所以，为了解决这种资源利用率只有5%-15%的情况，咱们能不能想个办法，把这一台服务器分成多个小服务器使用，每个小服务器只分配一部分的资源，比如分一个小服务器出去，只给2个CPU核心和4G内存。但是由于设计上的问题，我们的电脑只能同时运行一个操作系统，那么怎么办呢？此时虚拟化技术就开始兴起了。</p>
+<p>虚拟化使用软件来模拟硬件并创建虚拟计算机系统。这样一来，企业便可以在单台服务器上运行多个虚拟系统，也就是运行多个操作系统和应用，而这可以实现规模经济以及提高效益。比如我们电脑上经常使用的VMware就是一种民用级虚拟化软件：</p>
+<p><img src="St3hfELQHNdRZmA.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630173915254"></p>
+<p>我们可以使用VMware来创建虚拟机，这些虚拟机实际上都是基于我们当前系统上的VMware软件来运行的，当然VMware也有服务器专用的虚拟化软件，有了虚拟化之后，我们的服务器就像这样：</p>
+<p><img src="BmnC1xETQM4uRHO.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630174945749"></p>
+<p>相当于通过虚拟机模拟了很多来电脑出来，这样我们就可以在划分出来的多台虚拟机上分别安装系统和部署我们的应用程序了，并且我们可以自由分配硬件资源，合理地使用。一般在企业中，不同的应用程序可能会被分别部署到各个服务器上，隔离开来，此时使用虚拟机就非常适合。</p>
+<p>实际上我们在什么腾讯云、阿里云租的云服务器，都是经过虚拟化技术划分出来的虚拟机而已。</p>
+<p>那么，既然虚拟机都这么方便了，容器又是怎么杀出一条血路的呢？我们先来看看什么是容器。</p>
+<p>容器和虚拟机比较类似，都可以为应用提供封装和隔离，都是软件，但是容器中的应用运行是寄托于宿主操作系统的，实际上依然是在直接使用操作系统的资源，当然应用程序之间环境依然是隔离的，而虚拟机则是完全模拟一台真正的电脑出来，直接就是两台不同的电脑。</p>
+<p><img src="31GZSh5DE9Vilet.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630181037698"></p>
+<p>因此容器相比虚拟机就简单多了，并且启动速度也会快很多，开销小了不少。</p>
+<p>不过容器火的根本原因还是它的集装箱思想，我们知道，如果我们要写一个比如论坛、电商这类的Java项目，那么数据库、消息队列、缓存这类中间件是必不可少的，因此我们如果想要将一个服务部署到服务器，那么实际上还要提前准备好各种各样的环境，先安装好MySQL、Redis、RabbitMQ等应用，配置好了环境，再将我们的Java应用程序启动，整个流程下来，光是配置环境就要浪费大量的时间，如果是大型的分布式项目，可能要部署很多台机器，那岂不是我们得一个一个来？项目上个线就要花几天时间，显然是很荒唐的。</p>
+<p>而容器可以打包整个环境，比较MySQL、Redis等以及我们的Java应用程序，可以被一起打包为一个镜像，当我们需要部署服务时，只需要像我们之前那样，直接下载镜像运行即可，不需要再进行额外的配置了，整个镜像中环境是已经配置好的状态，开箱即用。</p>
+<p><img src="NTnU8iSj51CspFw.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630182136717"></p>
+<p>而我们要重点介绍的就是Docker了，可以看到它的图标就是一只鲸鱼，鲸鱼的上面是很多个集装箱，每个集装箱就是我们的整个环境+应用程序，Docker可以将任何应用及其依赖打包为一个轻量级，可移植，自包含的容器，容器可以运行在几乎所有的操作系统上。</p>
+<h3 id="容器工作机制简述"><a href="#容器工作机制简述" class="headerlink" title="容器工作机制简述"></a>容器工作机制简述</h3><p>我们先来看看Docker的整体架构：</p>
+<p><img src="PeaxwNQXkiYSlUv.jpg" srcset="/img/loading.gif" lazyload alt="image-20220630184857540"></p>
+<p>实际上分为三个部分：</p>
+<ul>
+<li>Docker 客户端：也就是我们之前使用的docker命令，都是在客户端上执行的，操作会发送到服务端上处理。</li>
+<li>Docker 服务端：服务端就是启动容器的主体了，一般是作为服务在后台运行，支持远程连接。</li>
+<li>Registry：是存放Docker镜像的仓库，跟Maven一样，也可以分公有和私有仓库，镜像可以从仓库下载到本地存放。</li>
+</ul>
+<p>当我们需要在服务器上部署一个已经打包好的应用和环境，我们只需要下载打包好的镜像就可以了，我们前面执行了：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo docker run -d -p 80:80 nginx<br></code></pre></td></tr></table></figure>
+
+<p>实际上这个命令输入之后：</p>
+<ol>
+<li>Docker客户端将操作发送给服务端，告诉服务端我们要运行nginx这个镜像。</li>
+<li>Docker服务端先看看本地有没有这个镜像，发现没有。</li>
+<li>接着只能从公共仓库Docker Hub去查找下载镜像了。</li>
+<li>下载完成，镜像成功保存到本地。</li>
+<li>Docker服务端加载Nginx镜像，启动容器开始正常运行（注意容器和其他容器之间，和外部之间，都是隔离的，互不影响）</li>
+</ol>
+<p>所以，整个流程中，Docker就像是一搜运输船，镜像就像是集装箱，通过运输船将世界各地的货物送往我们的港口，货物到达港口后，Docker并不关心集装箱里面的是什么，只需要创建容器开箱即用就可以了。相比我们传统的手动安装配置环境，不知道方便了几个层次。</p>
+<p>不过容器依然是寄托于宿主主机的运行的，所以一般在生产环境下，都是通过虚拟化先创建多台主机，然后再到各个虚拟机中部署Docker，这样的话，运维效率就大大提升了。</p>
+<p>从下一章开始，我们就正式地来学习一下Docker的各种操作。</p>
+<hr>
+<h2 id="容器与镜像"><a href="#容器与镜像" class="headerlink" title="容器与镜像"></a>容器与镜像</h2><p>要启动容器最关键的就是镜像，我们来看看镜像相关的介绍。</p>
+<h3 id="初识容器镜像"><a href="#初识容器镜像" class="headerlink" title="初识容器镜像"></a>初识容器镜像</h3><p>首先我们来了解一下镜像的相关操作，比如现在我们希望把某个镜像从仓库下载到本地，这里使用官方的hello-world镜像：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull hello-world<br></code></pre></td></tr></table></figure>
+
+<p>只需要输入<code>pull</code>命令，就可以直接下载到指定的镜像了：</p>
+<p><img src="tZ4S2HYvNKr7qiD.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701111043417"></p>
+<p>可以看到对上面一行有一句Using default tag，实际上一个镜像的名称是由两部分组成的，一个是<code>repository</code>，还有一个是<code>tag</code>，一般情况下约定<code>repository</code>就是镜像名称，<code>tag</code>作为版本，默认为latest，表示最新版本。所以指定版本运行的话：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull 名称:版本<br></code></pre></td></tr></table></figure>
+
+<p>之后为了教学方便，我们就直接使用默认的tag，不去指定版本了。</p>
+<p>镜像下载之后会存放在本地，要启动这个镜像的容器，实际上就像我们之前那样，输入<code>run</code>命令就可以了：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run hello-world<br></code></pre></td></tr></table></figure>
+
+<p>当然如果仅仅是只想创建而不想马上运行的话，可以使用<code>create</code>命令：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker create hello-world<br></code></pre></td></tr></table></figure>
+
+<p>可以看到成功启动了：</p>
+<p><img src="Brl4cnK8WsjP7LV.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701111314331"></p>
+<p>启动之后，会使用当前镜像自动创建一个容器，我们可以输入<code>ps</code>命令来查看当前容器的容器列表：</p>
+<p>​                              </p>
+<p>​                复制代码      </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">docker ps -<span class="hljs-selector-tag">a</span><br></code></pre></td></tr></table></figure>
+
+<p>注意后面要加一个<code>-a</code>表示查看所有容器（其他选项可以使用-h查看），如果不加的话，只会显示当前正在运行的容器，而HelloWorld是一次性的不是Nginx那样的常驻程序，所以容器启动打印了上面的内容之后，容器就停止运行了：</p>
+<p><img src="zMN3TPR7aHu5YGb.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701111840091"></p>
+<p>可以看到容器列表中有我们刚刚创建的hello-world以及我们之前创建的nginx（注意同一个镜像可以创建多个容器），每个容器都有一个随机生成的容器ID写在最前面，后面是容器的创建时间以及当前的运行状态，最后一列是容器的名称，在创建容器时，名称可以由我们指定也可以自动生成，这里就是自动生成的。</p>
+<p>我们可以手动指定名称启动，在使用<code>run</code>命令时，添加<code>--name</code>参数即可：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run --name=lbwnb hello-world<br></code></pre></td></tr></table></figure>
+
+<p><img src="qOblnhr5CJiIBG6.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701125951980"></p>
+<p>我们可以手动开启处于停止状态的容器：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker start &lt;容器名称/容器ID&gt;<br></code></pre></td></tr></table></figure>
+
+<p>注意启动的对象我们要填写容器的ID或是容器的名称才可以，容器ID比较长，可以不写全只写一半，但是你要保证你输入的不完全容器ID是唯一的。</p>
+<p><img src="XfFORtqhK9lcBi7.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701124845982"></p>
+<p>如果想要停止容器直接输入<code>stop</code>命令就可以了：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker stop &lt;容器名称/容器ID&gt;<br></code></pre></td></tr></table></figure>
+
+<p>或是重启：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker restart &lt;容器名称/容器ID&gt;<br></code></pre></td></tr></table></figure>
+
+<p><img src="Q2tor6KRIeUEhO4.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701125025173"></p>
+<p>如果我们不需要使用容器了，那么可以将容器删除，但是注意只有容器处于非运行状态时才可以删除：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">rm</span> &lt;容器名称/容器ID&gt;<br></code></pre></td></tr></table></figure>
+
+<p>当然如果我们希望容器在停止后自动删除，我们可以在运行时添加<code>--rm</code>参数：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run --<span class="hljs-built_in">rm</span> 镜像名称<br></code></pre></td></tr></table></figure>
+
+<p><img src="3MlPUpjoV1Qg8DX.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701125108834"></p>
+<p>删除后，容器将不复存在，当没有任何关于nginx的容器之后，我们可以删除nginx的本地镜像：</p>
+<p><img src="bmHqND36yCUBPVj.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701125204728"></p>
+<p>我们可以使用<code>images</code>命令来检查一下当前本地有那些镜像：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker images<br></code></pre></td></tr></table></figure>
+
+<p><img src="fEscbGJXw4e7YFK.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701125514145"></p>
+<p>至此，我们已经了解了Docker的简单使用，在后面的学习中，我们还会继续认识更多的玩法。</p>
+<h3 id="镜像结构介绍"><a href="#镜像结构介绍" class="headerlink" title="镜像结构介绍"></a>镜像结构介绍</h3><p>前面我们了解了Docker的相关基本操作，实际上容器的基石就是镜像，有了镜像才能创建对应的容器实例，那么我们就先从镜像的基本结构开始说起，我们来看看镜像到底是个什么样的存在。</p>
+<p>我们在打包项目时，实际上往往需要一个基本的操作系统环境，这样我们才可以在这个操作系统上安装各种依赖软件，比如数据库、缓存等，像这种基本的系统镜像，我们称为base镜像，我们的项目之后都会基于base镜像进行打包，当然也可以不需要base镜像，仅仅是基于当前操作系统去执行简单的命令，比如我们之前使用的hello-world就是。</p>
+<p>一般base镜像就是各个Linux操作系统的发行版，比如我们正在使用的Ubuntu，还有CentOS、Kali等等。这里我们就下载一下CentOS的base镜像：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull centos<br></code></pre></td></tr></table></figure>
+
+<p><img src="oFKxiMzA3fs2aIl.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701132622893"></p>
+<p>可以看到，CentOS的base镜像就已经下载完成，不像我们使用完整系统一样，base镜像的CentOS省去了内核，所以大小只有272M，这里需要解释一下base镜像的机制：</p>
+<p><img src="dvmqAjKHkucbLFh.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701133111829"></p>
+<p>Linux操作体系由内核空间和用户空间组成，其中内核空间就是整个Linux系统的核心，Linux启动后首先会加<code>bootfs</code>文件系统，加载完成后会自动卸载掉，之后会加载用户空间的文件系统，这一层是我们自己可以进行操作的部分：</p>
+<ul>
+<li>bootfs包含了BootLoader和Linux内核，用户是不能对这层作任何修改的，在内核启动之后，bootfs会自动卸载。</li>
+<li>rootfs则包含了系统上的常见的目录结构，包括<code>/dev</code>、<code> /proc</code>、 <code>/bin</code>等等以及一些基本的文件和命令，也就是我们进入系统之后能够操作的整个文件系统，包括我们在Ubuntu下使用的apt和CentOS下使用的yum，都是用户空间上的。</li>
+</ul>
+<p>base镜像底层会直接使用宿主主机的内核，也就是说你的Ubuntu内核版本是多少，那么base镜像中的CentOS内核版本就是多少，而rootfs则可以在不同的容器中运行多种不同的版本。所以，base镜像实际上只有CentOS的rootfs，因此只有300M大小左右，当然，CentOS里面包含多种基础的软件，还是比较臃肿的，而某些操作系统的base镜像甚至都不到10M。</p>
+<p>使用<code>uname</code>命令可以查看当前内核版本：</p>
+<p><img src="mZjupCUktL7Ab2R.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701135056123"></p>
+<p>因此，Docker能够同时模拟多种Linux操作系统环境，就不足为奇了，我们可以尝试启动一下刚刚下载的base镜像：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run -it centos<br></code></pre></td></tr></table></figure>
+
+<p>注意这里需要添加<code>-it</code>参数进行启动，其中<code>-i</code>表示在容器上打开一个标准的输入接口，<code>-t</code>表示分配一个伪tty设备，可以支持终端登录，一般这两个是一起使用，否则base容器启动后就自动停止了。</p>
+<p><img src="13BYcCWHsDMrwvq.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701135834325"></p>
+<p>可以看到使用ls命令能够查看所有根目录下的文件，不过很多命令都没有，连clear都没有，我们来看看内核版本：</p>
+<p><img src="PtGwRWfXlTh67qm.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701140018095"></p>
+<p>可以看到内核版本是一样的（这也是缺点所在，如果软件对内核版本有要求的话，那么此时使用Docker就直接寄了），我们输入<code>exit</code>就可以退出容器终端了，可以看到退出后容器也停止了：</p>
+<p><img src="u5MQnWVihlbkyx1.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701140225415"></p>
+<p>当然我们也可以再次启动，注意启动的时候要加上<code>-i</code>才能进入到容器进行交互，否则会在后台运行：</p>
+<p><img src="QCsY5EyGSja6Khl.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701140706977"></p>
+<p>基于base镜像，我们就可以在这基础上安装各种各样的软件的了，几乎所有的镜像都是通过在base镜像的基础上安装和配置需要的软件构建出来的：</p>
+<p><img src="SDwEqz2b7lA9nJa.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701143105247"></p>
+<p>每安装一个软件，就在base镜像上一层层叠加上去，采用的是一种分层的结构，这样多个容器都可以将这些不同的层次自由拼装，比如现在好几个容器都需要使用CentOS的base镜像，而上面运行的软件不同，此时分层结构就很爽了，我们只需要在本地保存一份base镜像，就可以给多个不同的容器拼装使用，是不是感觉很灵活？</p>
+<p>我们看到除了这些软件之外，最上层还有一个可写容器层，这个是干嘛的呢，为什么要放在最上面？</p>
+<p>我们知道，所有的镜像会叠起来组成一个统一的文件系统，如果不同层中存在相同位置的文件，那么上层的会覆盖掉下层的文件，最终我们看到的是一个叠加之后的文件系统。当我们需要修改容器中的文件时，实际上并不会对镜像进行直接修改，而是在最顶上的容器层（最上面一般称为容器层，下面都是镜像层）进行修改，不会影响到下面的镜像，否则镜像就很难实现多个容器共享了。所以各个操作如下：</p>
+<ul>
+<li>文件读取：要读取一个文件，Docker会最上层往下依次寻找，找到后则打开文件。</li>
+<li>文件创建和修改：创建新文件会直接添加到容器层中，修改文件会从上往下依次寻找各个镜像中的文件，如果找到，则将其复制到容器层，再进行修改。</li>
+<li>删除文件：删除文件也会从上往下依次寻找各个镜像中的文件，一旦找到，并不会直接删除镜像中的文件，而是在容器层标记这个删除操作。</li>
+</ul>
+<p>也就是说，我们对整个容器内的文件进行的操作，几乎都是在最上面的容器层进行的，我们是无法干涉到下面所有的镜像层文件的，这样就很好地保护了镜像的完整性，才能实现多个容器共享使用。</p>
+<h3 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h3><p>前面我们已经了解了Docker镜像的结构，实际上所有常用的应用程序都有对应的镜像，我们只需要下载这些镜像然后就可以使用了，而不需要自己去手动安装，顶多需要进行一些特别的配置。当然要是遇到某些冷门的应用，可能没有提供镜像，这时就要我们手动去安装，接着我们就来看看如何构建我们自己的Docker镜像。构建镜像有两种方式，一种是使用<code>commit</code>命令来完成，还有一种是使用Dockerfile来完成，我们先来看第一种。</p>
+<p>这里我们就做一个简单的例子，比如我们现在想要在Ubuntu的base镜像中安装Java环境，并将其打包为新的镜像（这个新的镜像就是一个包含Java环境的Ubuntu系统镜像）</p>
+<p>咱们先启动Ubuntu镜像，然后使用<code>yum</code>命令（跟apt比较类似）来安装Java环境，首先是<code>run</code>命令：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull ubuntu<br></code></pre></td></tr></table></figure>
+
+<p><img src="tP5rhQuqfpxcRHL.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701151405640"></p>
+<p>接着启动：</p>
+<p><img src="l86G4dK71UwcZPi.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701151433520"></p>
+<p>直接使用apt命令来安装Java环境，在这之前先更新一下，因为是最小安装所以本地没有任何软件包：</p>
+<p><img src="RAzQr7P8C9aJwxK.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701151600847"></p>
+<p>接着输入：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">apt install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
+
+<p>等待安装完成：</p>
+<p><img src="Fezitl7PDb19BL4.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701152018041"></p>
+<p>这样，我们就完成了对Java环境的安装了，接着我们就可以退出这个镜像然后将其构建为新的镜像：</p>
+<p><img src="LAIx5GYCJhsbmSo.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701152130041"></p>
+<p>使用<code>commit</code>命令可以将容器保存为新的镜像：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker commit 容器名称/ID 新的镜像名称<br></code></pre></td></tr></table></figure>
+
+<p><img src="sbWLlEoMj2ZPcUV.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701152302171"></p>
+<p><img src="3q4juA8vOJew9W6.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701152418060"></p>
+<p>可以看到安装了软件之后的镜像大小比我们原有的大小大得多，这样我们就可以通过这个镜像来直接启动一个带Java环境的Ubuntu操作系统容器了。不过这种方式虽然自定义度很高，但是Docker官方并不推荐，这样的话使用者并不知道镜像是如何构建出来的，是否里面带了后门都不知道，并且这样去构建效率太低了，如果要同时构建多种操作系统的镜像岂不是要一个一个去敲？我们作为普通用户实际上采用Dokcerfile的方式会更好一些。</p>
+<p>我们来看看如何使用Dockerfile的形式创建一个带Java环境的Ubuntu系统镜像。首先直接新建一个名为<code>Dockerfile</code>的文件：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">touch</span> Dockerfile<br></code></pre></td></tr></table></figure>
+
+<p>接着我们来进行编辑，<code>Dockerfile</code>内部需要我们编写多种指令来告诉Docker我们的镜像的相关信息：</p>
+<p>​                              </p>
+<p>​        dockerfile        复制代码      </p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> &lt;基础镜像&gt;<br></code></pre></td></tr></table></figure>
+
+<p>首先我们需要使用FROM指令来选择当前镜像的基础镜像（必须以这个指令开始），这里我们直接使用<code>ubuntu</code>作为基础镜像即可，当然如果不需要任何基础镜像的话，直接使用<code>scratch</code>表示从零开始构建，这里就不演示了。</p>
+<p>基础镜像设定完成之后，我们就需要在容器中运行命令来安装Java环境了，这里需要使用<code>RUN</code>指令：</p>
+<p>​                              </p>
+<p>​        dockerfile        复制代码      </p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">RUN</span><span class="language-bash"> apt update</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> apt install -y openjdk-8-jdk</span><br></code></pre></td></tr></table></figure>
+
+<p>每条指令执行之后，都会生成一个新的镜像层。</p>
+<p>OK，现在我们的Dockerfile就编写完成了，只需要完成一次构建即可：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker build -t &lt;镜像名称&gt; &lt;构建目录&gt;<br></code></pre></td></tr></table></figure>
+
+<p>执行后，Docker会在构建目录中寻找Dockerfile文件，然后开始依次执行Dockerfile中的指令：</p>
+<p><img src="g6RFwA5t4EsdvnY.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701155443170"></p>
+<p>构建过程的每一步都非常清晰地列出来了，一共三条指令对应三步依次进行，我们稍微等待一段时间进行安装，安装过程中所以的日志信息会直接打印到控制台（注意Docker镜像构建有缓存机制，就算你现在中途退出了，然后重新进行构建，也会直接将之前已经构建好的每一层镜像，直接拿来用，除非修改了Dockerfile文件重新构建，只要某一层发生变化其上层的构建缓存都会失效，当然包括<code>pull</code>时也会有类似的机制）</p>
+<p><img src="foLHIZScQ1KVbvC.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701155812315"></p>
+<p>最后成功安装，会出现在本地：</p>
+<p><img src="95ueUgyaTcrz6Mi.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701155847721"></p>
+<p>可以看到安装出来的大小跟我们之前的是一样的，因为做的事情是一模一样的。我们可以使用<code>history</code>命令来查看构建历史：</p>
+<p><img src="GYyHFcjSKJwvWi6.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701160128689"></p>
+<p>可以看到最上面两层是我们通过使用apt命令生成的内容，就直接作为当前镜像中的两层镜像，每层镜像都有一个自己的ID，不同的镜像大小也不一样。而我们手动通过<code>commit</code>命令来生成的镜像没有这个记录：</p>
+<p><img src="qWUeSF3aKrvwJ8p.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701160406891"></p>
+<p>如果遇到镜像ID为missing的一般是从Docker Hub中下载的镜像会有这个问题，但是问题不大。用我们自己构建的镜像来创建容器就可以直接体验带Java环境的容器了：</p>
+<p><img src="STmdFvBIbN4VAl1.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701161546279"></p>
+<p>有关Dockerfile的其他命令，我们还会在后续的学习中逐步认识。</p>
+<h3 id="发布镜像到远程仓库"><a href="#发布镜像到远程仓库" class="headerlink" title="发布镜像到远程仓库"></a>发布镜像到远程仓库</h3><p>前面我们学习了如何构建一个Docker镜像，我们可以将自己的镜像发布到Docker Hub中，就像Git远程仓库一样，我们可以将自己的镜像上传到这里：<a target="_blank" rel="noopener" href="https://hub.docker.com/repositories%EF%BC%8C%E6%B2%A1%E6%9C%89%E8%B4%A6%E5%8F%B7%E7%9A%84%E5%85%88%E5%8E%BB%E8%BF%9B%E8%A1%8C%E6%B3%A8%E5%86%8C%E3%80%82">https://hub.docker.com/repositories，没有账号的先去进行注册。</a></p>
+<p><img src="3T8xJLgER4cWuQq.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701164609666"></p>
+<p>点击右上角的创建仓库，然后填写信息：</p>
+<p><img src="SkCKJmU6Rw2lfzP.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701164939268"></p>
+<p>创建完成后，我们就有了一个公共的镜像仓库，我们可以将本地的镜像上传了，上传之前我们需要将镜像名称修改得规范一点，这里使用<code>tag</code>命令来重新打标签：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker tag ubuntu-java-file:latest 用户名/仓库名称:版本<br></code></pre></td></tr></table></figure>
+
+<p>这里我们将版本改成1.0版本吧，不用默认的latest了。</p>
+<p><img src="chAPS2DFW5q7GkE.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701165231001"></p>
+<p>修改完成后，会创建一个新的本地镜像，名称就是我们自己定义的了。接着我们需在本地登录一下：</p>
+<p><img src="T3YC4pfaLEo85Oz.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701165446859"></p>
+<p>登录成功后我们就可以上传了：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker push nagocoler/ubuntu-java:1.0<br></code></pre></td></tr></table></figure>
+
+<p><img src="CXoBhpZUl79aDRQ.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701165744647"></p>
+<p>哈哈，500M的东西传上去，还是有点压力的，如果实在太慢各位可以重新做一个简单点的镜像。上传完成后，打开仓库，可以看到已经有一个1.0版本了：</p>
+<p><img src="3UD9y8frEIX1JY6.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701165920060"></p>
+<p><img src="9sVSjcGCo5mTu61.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701170053250"></p>
+<p>注意公共仓库是可以被搜索和下载的，所以我们这里把本地的镜像全部删掉，去下载我们刚刚上传好的镜像。这里我们先搜索一下，搜索使用<code>search</code>命令即可：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker search nagocoler/ubuntu-java<br></code></pre></td></tr></table></figure>
+
+<p><img src="SIUpBOzN5vsiydn.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701170253126"></p>
+<p>我们可以使用pull命令将其下载下来：</p>
+<p>​                              </p>
+<p>​        sh        复制代码      </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull nagocoler/ubuntu-java:1.0<br></code></pre></td></tr></table></figure>
+
+<p><img src="uXBk3WPsDM4aZKo.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701171148334"></p>
+<p>上传之后的镜像是被压缩过的，所以下载的内容就比较少一些。运行试试看：</p>
+<p><img src="RJVdstMnxjSYFoW.jpg" srcset="/img/loading.gif" lazyload alt="image-20220701171253440"></p>
+<p>当然各位也可以让自己的同学或是在其他机器上尝试下载自己的镜像，看看是不是都可以正常运行。</p>
+<p>Docker Hub也可以自行搭建私服，但是这里就不多做介绍了，至此，有关容器和镜像的一些基本操作就讲解得差不多了。</p>
+<p> 前往下一部分继续阅读，当前位于 1 &#x2F; 3 分段</p>
+<p>————————————————</p>
+<p>版权声明：本文为柏码知识库版权所有，禁止一切未经授权的转载、发布、出售等行为，违者将被追究法律责任。</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.itbaima.cn/document/zj9uvg0sp3b0sok8">https://www.itbaima.cn/document/zj9uvg0sp3b0sok8</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/Docker/" class="print-no-link">#Docker</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Docker 容器技术</div>
+      <div>https://inyxin.github.io/post/4fd66ff9-ef1e-4a91-912a-4271ef291763/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Inyxin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>July 9, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../../post/04d02858-cf7a-47b6-88f3-ef79543a7c07/" title="asd">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">asd</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../post/1c1b547d-7703-4fbf-a6ac-730f751693e2/" title="设计模式-行为型">
+                        <span class="hidden-mobile">设计模式-行为型</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../js/events.js" ></script>
+<script  src="../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
