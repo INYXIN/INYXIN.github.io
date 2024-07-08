@@ -16,29 +16,25 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="Hexo 官网 Question :  ​	hexo 处理 本地编写的带有图片的markdown时, 无法正确加载图片的路径 Solution :  安装插件 hexo-typora-img 1npm install hexo-typora-img --save    修改_config.yml  12post_asset_folder: true #启用 资源文件夹relative_link:">
+    <meta name="description" content="145. 二叉树的后序遍历hexo template generate by typora plugin templater Description给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。 示例 1： 12输入：root &#x3D; [1,null,2,3]输出：[3,2,1]  示例 2： 12输入：root &#x3D; []输出：[]  示例 3： 12输入：root &#x3D; [1]输出：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo中Typero图片插入问题">
-<meta property="og:url" content="https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/index.html">
+<meta property="og:title" content="145. 二叉树的后序遍历">
+<meta property="og:url" content="https://inyxin.github.io/post/0293a069-f8d9-4fcd-a321-127459fe4d7d/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo 官网 Question :  ​	hexo 处理 本地编写的带有图片的markdown时, 无法正确加载图片的路径 Solution :  安装插件 hexo-typora-img 1npm install hexo-typora-img --save    修改_config.yml  12post_asset_folder: true #启用 资源文件夹relative_link:">
+<meta property="og:description" content="145. 二叉树的后序遍历hexo template generate by typora plugin templater Description给你一棵二叉树的根节点 root ，返回其节点值的 后序遍历 。 示例 1： 12输入：root &#x3D; [1,null,2,3]输出：[3,2,1]  示例 2： 12输入：root &#x3D; []输出：[]  示例 3： 12输入：root &#x3D; [1]输出：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/image-20240706153100037.png">
-<meta property="og:image" content="https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/image-20240706153226789.png">
-<meta property="og:image" content="https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/image-20240706145214903.png">
-<meta property="article:published_time" content="2024-07-06T06:51:55.000Z">
-<meta property="article:modified_time" content="2024-07-08T07:08:12.602Z">
+<meta property="og:image" content="https://inyxin.github.io/images/leecode.jpg">
+<meta property="article:published_time" content="2024-07-08T10:22:13.000Z">
+<meta property="article:modified_time" content="2024-07-08T11:02:19.582Z">
 <meta property="article:author" content="Inyxin">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Markdown">
-<meta property="article:tag" content="Typora">
-<meta property="article:tag" content="Bug">
+<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="简单">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/image-20240706153100037.png">
+<meta name="twitter:image" content="https://inyxin.github.io/images/leecode.jpg">
   
   
   
-  <title>Hexo中Typero图片插入问题 - Hexo</title>
+  <title>145. 二叉树的后序遍历 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo中Typero图片插入问题"></span>
+            <span id="subtitle" data-typed-text="145. 二叉树的后序遍历"></span>
           
         </div>
 
@@ -232,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-06 14:51" pubdate>
-          July 6, 2024 pm
+        <time datetime="2024-07-08 18:22" pubdate>
+          July 8, 2024 pm
         </time>
       </span>
     
@@ -244,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          98 words
+          189 words
         
       </span>
     
@@ -255,7 +251,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -292,32 +288,30 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo中Typero图片插入问题</h1>
+            <h1 id="seo-header">145. 二叉树的后序遍历</h1>
             
             
               <div class="markdown-body">
                 
-                <p><strong><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo 官网</a></strong></p>
-<p><strong>Question :</strong> </p>
-<p>​	hexo 处理 本地编写的带有图片的markdown时, 无法正确加载图片的路径</p>
-<p><strong>Solution :</strong></p>
-<ol>
-<li><p>安装插件 <code>hexo-typora-img</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-typora-img --save<br></code></pre></td></tr></table></figure>
+                <h3 id="145-二叉树的后序遍历"><a href="#145-二叉树的后序遍历" class="headerlink" title="145. 二叉树的后序遍历"></a>145. 二叉树的后序遍历</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>给你一棵二叉树的根节点 <code>root</code> ，返回其节点值的 <strong>后序遍历</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：root = <span class="hljs-comment">[1,null,2,3]</span><br>输出：<span class="hljs-comment">[3,2,1]</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="image-20240706153100037.png" srcset="/img/loading.gif" lazyload alt="image-20240706153100037"></p>
-</li>
-<li><p>修改_config.yml</p>
-<p><img src="image-20240706153226789.png" srcset="/img/loading.gif" lazyload alt="image-20240706153226789"></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">post_asset_folder:</span> <span class="hljs-literal">true</span> <span class="hljs-comment">#启用 资源文件夹</span><br><span class="hljs-attr">relative_link:</span> <span class="hljs-literal">true</span> <span class="hljs-comment">#把链接改为与根目录的相对位址</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：root = <span class="hljs-comment">[]</span><br>输出：<span class="hljs-comment">[]</span><br></code></pre></td></tr></table></figure>
 
+<p><strong>示例 3：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：root = <span class="hljs-comment">[1]</span><br>输出：<span class="hljs-comment">[1]</span><br></code></pre></td></tr></table></figure>
 
-</li>
-<li><p>修改typora图片配置</p>
-</li>
-</ol>
-<p><img src="image-20240706145214903.png" srcset="/img/loading.gif" lazyload alt="image-20240706145214903"></p>
-<p>这种做法 将当前目录下 与 <strong>abc.md</strong> 同名的文件夹作为 <strong>abc</strong> 的资源目录</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li>树中节点的数目在范围 <code>[0, 100]</code> 内</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p><strong>进阶：</strong>递归算法很简单，你可以通过迭代算法完成吗？</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><h5 id="递归方式"><a href="#递归方式" class="headerlink" title="递归方式"></a>递归方式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode() &#123;&#125;</span><br><span class="hljs-comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span><br><span class="hljs-comment"> *         this.val = val;</span><br><span class="hljs-comment"> *         this.left = left;</span><br><span class="hljs-comment"> *         this.right = right;</span><br><span class="hljs-comment"> *     &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>        <span class="hljs-keyword">final</span> ArrayList&lt;Integer&gt; integers = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title function_">postorderTraversal</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>            <span class="hljs-keyword">if</span> (root==<span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> integers;<br>            <span class="hljs-keyword">if</span> (root.left != <span class="hljs-literal">null</span>) postorderTraversal(root.left);<br>            <span class="hljs-keyword">if</span> (root.right != <span class="hljs-literal">null</span>) postorderTraversal(root.right);<br>            integers.add(root.val);<br>            <span class="hljs-keyword">return</span> integers;<br>        &#125;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -336,12 +330,12 @@
     
       <span class="category-chain">
         
-  <a href="../../categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="../../categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
     <span>></span>
     
-  <a href="../../categories/%E5%B7%A5%E5%85%B7/Markdown/" class="category-chain-item">Markdown</a>
+  <a href="../../categories/%E7%AE%97%E6%B3%95/Leetcode/" class="category-chain-item">Leetcode</a>
   
   
 
@@ -358,13 +352,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../tags/Hexo/" class="print-no-link">#Hexo</a>
+        <a href="../../tags/Leetcode/" class="print-no-link">#Leetcode</a>
       
-        <a href="../../tags/Markdown/" class="print-no-link">#Markdown</a>
-      
-        <a href="../../tags/Typora/" class="print-no-link">#Typora</a>
-      
-        <a href="../../tags/Bug/" class="print-no-link">#Bug</a>
+        <a href="../../tags/%E7%AE%80%E5%8D%95/" class="print-no-link">#简单</a>
       
     </div>
   
@@ -376,8 +366,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo中Typero图片插入问题</div>
-      <div>https://inyxin.github.io/post/8fc22e81-ab43-4043-aef1-e9092fc59e87/</div>
+      <div>145. 二叉树的后序遍历</div>
+      <div>https://inyxin.github.io/post/0293a069-f8d9-4fcd-a321-127459fe4d7d/</div>
     </div>
     <div class="license-meta">
       
@@ -389,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 6, 2024</div>
+          <div>July 8, 2024</div>
         </div>
       
       
@@ -426,9 +416,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../cb717c9eae02/" title="Cpolar-使用教程">
+                      <a href="../../post/22ca3782-bd81-46b5-ba49-ef6d6b47f61a/" title="2022.11月C语言复习题.docx">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Cpolar-使用教程</span>
+                        <span class="hidden-mobile">2022.11月C语言复习题.docx</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -436,8 +426,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../post/0d82c848-4ee7-4650-b0ee-ac9f4aef2ed9/" title="Typero v1.8.10 破解">
-                        <span class="hidden-mobile">Typero v1.8.10 破解</span>
+                      <a href="../../post/f7b981ec-6bba-4292-9a59-8cb044181eda/" title="724. 寻找数组的中心下标">
+                        <span class="hidden-mobile">724. 寻找数组的中心下标</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

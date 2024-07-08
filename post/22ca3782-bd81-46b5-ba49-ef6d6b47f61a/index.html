@@ -1,0 +1,714 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/fluid.png">
+  <link rel="icon" href="../../img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Inyxin">
+  <meta name="keywords" content="code,java">
+  
+    <meta name="description" content="2022.11 月 C 语言复习题.docxhexo template generate by typora plugin templater  用 C 语言编写的代码程序（	D	）。A.	可立即执行				B.	是一个源程序		C.	经过编译即可执行		D.	经过编译解释才能执行 将 C 语言源程序进行（		B	）可得到目标程序。A.	编辑		B.	编译		C.	连接		D.	执行 （	a	）是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022.11月C语言复习题.docx">
+<meta property="og:url" content="https://inyxin.github.io/post/22ca3782-bd81-46b5-ba49-ef6d6b47f61a/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="2022.11 月 C 语言复习题.docxhexo template generate by typora plugin templater  用 C 语言编写的代码程序（	D	）。A.	可立即执行				B.	是一个源程序		C.	经过编译即可执行		D.	经过编译解释才能执行 将 C 语言源程序进行（		B	）可得到目标程序。A.	编辑		B.	编译		C.	连接		D.	执行 （	a	）是">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-08T11:06:41.000Z">
+<meta property="article:modified_time" content="2024-07-08T11:09:17.671Z">
+<meta property="article:author" content="Inyxin">
+<meta property="article:tag" content="复习题">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>2022.11月C语言复习题.docx - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"inyxin.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../js/utils.js" ></script>
+  <script  src="../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../index.html">
+      <strong>Hexo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../images/page-article.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2022.11月C语言复习题.docx"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Inyxin
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-08 19:06" pubdate>
+          July 8, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">2022.11月C语言复习题.docx</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="2022-11-月-C-语言复习题-docx"><a href="#2022-11-月-C-语言复习题-docx" class="headerlink" title="2022.11 月 C 语言复习题.docx"></a>2022.11 月 C 语言复习题.docx</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<ol>
+<li>用 C 语言编写的代码程序（	D	）。<br>A.	可立即执行				B.	是一个源程序		<br>C.	经过编译即可执行		D.	经过编译解释才能执行</li>
+<li>将 C 语言源程序进行（		B	）可得到目标程序。<br>A.	编辑		B.	编译		C.	连接		D.	执行</li>
+<li>（	a	）是 C 语言提供的合法的数据类型关键字。<br>A.	Float		B.	Unsigned		C.	Integer		D.	Char</li>
+<li>   若 int k &#x3D; 7, x &#x3D; 12; 则能使值为 3 的表达式是（	C	）。<br>A.	x%&#x3D;(k%&#x3D; 5)12%&#x3D; 2		B.	x%&#x3D;(k－k%5)12%&#x3D; 5<br>C.	x%&#x3D; k－k%5		D.	(x%&#x3D; k)－(k%&#x3D; 5) 1 - 1<br>X &#x3D; x%k-k%5</li>
+</ol>
+<p>5.C 语言源程序文件经过 C 编译程序编译后生成的目标文件的后缀为（	B	）。<br>A. .c        B.  .obj     C..exe       D..bas<br>6.C 语言语句的结束符是（	B	）。<br>A. 回车符    B. 分号          C. 逗号      D. 句号<br>7.以下程序的功能是给 r 输入数据后计算半径为 r 的圆面积 s。程序在编译时出错，出错的原因是（	D	）。<br>#include &lt;stdio.h&gt;<br>int main()<br>&#x2F;* Beginning <em>&#x2F;<br>{  int r; float s;   &#x2F;&#x2F;float 代表浮点类型，即小数，其对应的格式为%f<br>   scanf(“%d”,&amp;r);<br>   s &#x3D; p <em>r</em> r;<br>   printf(“s &#x3D;%f\n”, s);<br>   return 0;<br>}<br>A.注释语句书写位置错误<br>B.存放圆半径的变量 r 不应该定义为整型<br>C.输出语句中格式描述符非法<br>D.计算圆面积的赋值语句中使用了未定义的变量<br>8.在 C 语言中, 要求参加运算的数必须是整数的运算符是(	A	)。<br>A.%       B.&#x2F;        C.!           D.</em><br>9.若已定义 x 和 y 为 double 类型, 则表达式 “x &#x3D; 1, y &#x3D; x+3&#x2F;2” 的值是(	D	)。<br>A.1       B.	2      C.2.0          D.2.5<br>10.下列变量中合法的是(	C	)。<br>A.        B.3a6b       C._6a7b         D.$ABC<br>11.以下不正确的叙述是(	D	)。<br>A.在 C 程序中所用的变量必须先定义后使用<br>B.程序中, APH 和 aph 是两个不同的变量<br>C.若 a 和 b 类型相同, 在执行了赋值语句 a &#x3D; b; 后 b 中的值将放入 a 中, b 中的值不变<br>D.当输入数值数据时, 对于整型变量只能输入整型值; 对于实型变量只能输入实型值<br>12.若 x &#x3D; 2, y &#x3D; 3 则 x||y 的结果是(	B	)。<br>A.0          B.1            C.2          D.3<br>13.C 语言的 if 语句嵌套时, if 与 else 的配对关系是(	D	)。<br>A. 每个 else 总是与它上面的 if 配对<br>B. 每个 else 总是与最外层的 if 配对<br>C. 每个 else 与 if 的配对是任意的<br>D. 每个 else 总是与它上面的最近的并且尚未与其他 else 匹配的 if 配对<br>14.C 语言的 switch 语句中 case 后(	B	)。<br>A.只能为常量                                    B.只能为常量或常量表达式<br>C.可为常量或表达式或有确定值的变量及表达式     D.可为任何量或表达式<br>15.有以下程序段</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, p;<br><span class="hljs-keyword">do</span><br>&#123;  scanf(<span class="hljs-string">&quot;%d&quot;</span>,&amp;p);<br>n++;<br>&#125;<span class="hljs-keyword">while</span>(p!= <span class="hljs-number">12345</span>&amp;&amp;n &lt; <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
+
+<p>此处 do-while 循环的结束条件是(	D	)。<br>A.p 的值不等于 12345 并且 n 的值小于 3<br>B.p 的值等于 12345 并且 n 的值大于等于 3<br>C.p 的值不等于 12345 或者 n 的值小于 3<br>D.p 的值等于 12345 或者 n 的值大于等于 3<br>16.若 i 为整型变量, 则以下循环执行次数是(	D	)。<br>for(i &#x3D; 2; i &#x3D;&#x3D; 0;)  printf(“%d”, i–);<br>A.无限次     B. 0 次     C. 1 次     D. 2 次<br>17.下面有关 for 循环的正确描述是(	D	)。<br>A.for 循环只能用于循环次数已经确定的情况<br>B.for 循环是先执行循环循环体语句, 后判断表达式<br>C.在 for 循环中, 不能用 break 语句跳出循环体<br>D.for 循环的循环体语句中, 可以包含多条语句, 但必须用花括号括起来<br>18.若有说明: int a [10]; 则对 a 数组元素的正确引用是(	D	)。<br>A. a [10]        B. a [3,5]      C.a(5)       D.a [10-10]<br>19.若二维数组 a 有 m 列, 则在 a [i][j] 前的元素个数为(	A	)。<br>令 m &#x3D; 4 , i &#x3D; 2, j &#x3D; 2<br>A [2][2] 前 有 21 20 13 12 11 10 03 02 01 00  j*m+i<br>A. j <em>m+I        B.i</em> m+j        C.i <em>m+j-1    D.i</em> m+j+1<br>20.若有说明: int a [ ][3] &#x3D;{1,2,3,4,5,6,7}; 则 a 数组第一维的大小是(	B	)。<br>A. 2            B.3            C.4          D.无确定值<br>21. 以下不正确的定义语句是(	B	)。<br>A.double x [5] &#x3D;{2.0,4.0,6.0,8.0,10.0};    B. int y [5] &#x3D;{0,1,3,5,7,9};<br>C.char c1 [ ] &#x3D;{‘1’,’2’,’3’,’4’,’5’};      D. char c2 [ ] &#x3D;{‘\x10’,’\xa’,’\x8’};<br>22.已知 int p(); p 是(	C	)。<br>A.int 型变量                                  B.函数 p 的调用<br>C.一个函数声明, 该函数的返回值是 int 型的值     D.强制类型转换表达式中的变量<br>23. C 语言中的函数(		D)。<br>A.可以嵌套定义                     B.不可以嵌套调用<br>C.可以嵌套调用, 但不能调用自己      D.嵌套调用和调用自己均可<br>24.关于 return 语句, 下列正确的说法是(A)。<br>A. 可以在同一函数中出现多次   B.在主函数中不能出现<br>C. 必须在每个函数中出现       D.只能在除主函数之外的函数中出现一次</p>
+<p>1.C 语言本身不提供输入输出语句, 输入和输出操作是由函数来实现的。（	V	）<br>2.一个 C 程序可以包含若干个函数。（	V	）<br>3．C 程序的注释部分可以出现在程序的任何位置，它对程序的编译和运行不起任何作用。但是可以增加程序的可读性。（	V	）<br>4．C 程序的注释不能是中文文字信息。（	X	）<br>5.while 和 do…while 循环不论什么条件下它们的结果都是相同的。(	X	)<br>6.三种循环(while 语句、 for 语句、 do-while 语句)都可以用来处理同一个问题, 一般它们可以相互代替。(	V	)<br>7.循环嵌套执行时, 先由内层循环进入外层循环。(	X	)<br>8.break 语句只能用于循环语句中。(	X	)<br>9.循环结构中的 continue 语句是使整个循环终止执行。(	X	)<br>10.C 语言的 if 语句嵌套时, if 与 else 的匹配关系是每个 else 与 if 的匹配是任意的。（X		）<br>11.main 函数必须写在一个 C 程序的最前面。（  X  ）<br>12.一个 C 程序可以包含若干的函数。（   V ）<br>13.C 程序的注释部分可以出现在程序的任何位置，它对程序的编译和运行不起任何作用。但是可以增加程序的可读性。（  V ）<br>14.C 程序的注释不能是中文文字信息。（  X ）<br>15.在 C 程序中对用到的所有数据都必须指定其数据类型。（ V  ）<br>16.对几个变量在定义时赋初值可以写成：int a &#x3D; b &#x3D; c &#x3D; 3; （  X ）<br>17.自增运算符(++)或自减运算符(–)只能用于变量，不能用于常量或表达式。（ V ）<br>18.在 C 程序的表达式中，为了明确表达式的运算次序，常使用括号 “（）”。（  V ）</p>
+<p>1.若从键盘输入 58，则以下程序输出的结果是           。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123; <span class="hljs-type">int</span> a;<br> <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a);<br> <span class="hljs-keyword">if</span>(a &gt; <span class="hljs-number">50</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, a);<br> <span class="hljs-keyword">if</span>(a &gt; <span class="hljs-number">40</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, a);<br> <span class="hljs-keyword">if</span>(a &gt; <span class="hljs-number">30</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>58<br>2.程序的功能是使一个字符串按逆序存放，请填空。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">( )</span><br>&#123;<br>    <span class="hljs-type">char</span> str [] =&#123;<span class="hljs-string">&quot;abcdefghijl&quot;</span>&#125;, m;<br>    <span class="hljs-type">int</span> i, j;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>, j = <span class="hljs-built_in">strlen</span>(str); i &lt;   j        ; i++, j--)<br>    &#123;m = str [i];<br>     str [i] =  str [j<span class="hljs-number">-1</span>]           ;<br>     str [j<span class="hljs-number">-1</span>] = m;<br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, str);<br>&#125;<span class="hljs-comment">//交换字符串的第 i 个字符与倒数第 I 个字符</span><br></code></pre></td></tr></table></figure>
+
+<p>4.若有以下程序<br>i</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c">nt <span class="hljs-title function_">f</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span><br>&#123;<br>    <span class="hljs-keyword">return</span>(y-x)*x; <br>&#125;<br>main()<br>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">3</span>, b = <span class="hljs-number">4</span>, c = <span class="hljs-number">5</span>, d;<br>    d = f(f(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>), f(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>));<br><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, d);<br>&#125;<br>F(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)=(<span class="hljs-number">4</span><span class="hljs-number">-3</span>)*<span class="hljs-number">3</span> = <span class="hljs-number">3</span><br>    F(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)=(<span class="hljs-number">5</span><span class="hljs-number">-3</span>)*<span class="hljs-number">3</span> = <span class="hljs-number">6</span><br>    F(<span class="hljs-number">3</span>,<span class="hljs-number">6</span>)=(<span class="hljs-number">6</span><span class="hljs-number">-3</span>)*<span class="hljs-number">3</span> = <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
+
+<p>执行后输出结果是       9<br>5.下列程序的输出结果是(   1,0           )。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;  <span class="hljs-type">int</span> x = <span class="hljs-number">1</span>, a = <span class="hljs-number">0</span>, b = <span class="hljs-number">0</span>;<br>  <span class="hljs-keyword">switch</span> (x)<br>  &#123; <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>: b++; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: a++; <span class="hljs-keyword">break</span>;<span class="hljs-comment">//a = 1</span><br>    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: a++; b++;<br>&#125;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d&quot;</span>, a, b);<br>&#125; <br><span class="hljs-number">6.</span>以下程序的运行结果是(   <span class="hljs-number">12457810</span>  )。<br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123;  <span class="hljs-type">int</span> n;<br><span class="hljs-keyword">for</span>(n = <span class="hljs-number">1</span>; n &lt;= <span class="hljs-number">10</span>; n++)<br>&#123;<br><span class="hljs-keyword">if</span>(n%<span class="hljs-number">3</span> == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>, n);<br>&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>7.下列程序的运行结果是(    1       )。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123; <span class="hljs-type">int</span> i, j, m = <span class="hljs-number">55</span>;<br><span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br><span class="hljs-keyword">for</span>(j = <span class="hljs-number">3</span>; j &lt;= i; j++) <br>m = m%j;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, m);<br><br>i = <span class="hljs-number">1</span>; j = <span class="hljs-number">3</span> &gt; <span class="hljs-number">1</span><br>i = <span class="hljs-number">2</span>; j = <span class="hljs-number">3</span> &gt; <span class="hljs-number">2</span><br>i = <span class="hljs-number">3</span>; j = <span class="hljs-number">3</span> = <span class="hljs-number">3</span>; m = <span class="hljs-number">55</span>%<span class="hljs-number">3</span> = <span class="hljs-number">1</span><br>i = <span class="hljs-number">4</span>; <span class="hljs-keyword">break</span><br>m = <span class="hljs-number">1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>8.程序运行后的输出结果是(     D          )。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123; <span class="hljs-type">char</span> a [ ] =&#123;<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;f&#x27;</span>,<span class="hljs-string">&#x27;g&#x27;</span>,<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;\0&#x27;</span>&#125;;<br> <span class="hljs-type">int</span> i, j;<br> i = <span class="hljs-keyword">sizeof</span>(a)<span class="hljs-number">9</span>; j = <span class="hljs-built_in">strlen</span>(a)<span class="hljs-number">8</span>;<br> <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d\n&quot;</span>, i, j); &#125;<br></code></pre></td></tr></table></figure>
+
+<p>A) 9,9<br>B) 8,9<br>C) 1,8<br>D) 9,8<br>9.以下程序的运行结果是(       10,20       )。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br>func(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)<br>&#123;<br>    <span class="hljs-type">int</span> temp = a;<br>    a = b;<br>    b = temp; &#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span><br>&#123; <br>    <span class="hljs-type">int</span> x, y;<br>    x = <span class="hljs-number">10</span>; y = <span class="hljs-number">20</span>;<br>    func(x, y);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d,%d\n&quot;</span>, x, y); &#125;<br></code></pre></td></tr></table></figure>
+
+<p>四、编程题：</p>
+<p>1.编写程序实现，根据输入的年号和月份，输出该月的天数。	</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-type">int</span> year;<br><span class="hljs-type">int</span> month;<br><span class="hljs-type">int</span> day;<br><span class="hljs-built_in">scanf</span>(“请输入年份 year =%d”,&amp;year);<br><span class="hljs-built_in">scanf</span>(“请输入月份 month =%d”,&amp;month);<br><span class="hljs-keyword">if</span>(month &gt;= <span class="hljs-number">1</span>&amp;&amp;month &lt;= <span class="hljs-number">12</span>)&#123;<br>    <span class="hljs-keyword">switch</span>(month)&#123;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">10</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">12</span>: day = <span class="hljs-number">31</span>; <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: <span class="hljs-keyword">if</span>(year%<span class="hljs-number">4</span> ==<span class="hljs-number">0</span>||year%<span class="hljs-number">100</span>== <span class="hljs-number">0</span>)&#123;day = <span class="hljs-number">29</span>&#125;<span class="hljs-keyword">else</span>&#123;day = <span class="hljs-number">28</span>&#125;; <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">9</span>:;<br>        <span class="hljs-keyword">case</span> <span class="hljs-number">11</span>: day = <span class="hljs-number">30</span>; <span class="hljs-keyword">break</span>;<br>    &#125;<br>    Print(“%d 年%d 月有%d 天”, year, month, day);<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-built_in">printf</span>(“月份错误,<span class="hljs-number">1</span> &lt;= month &lt;= <span class="hljs-number">12</span>”);<br>&#125;<br><span class="hljs-number">2.</span>求 <span class="hljs-number">100</span>～<span class="hljs-number">200</span> 间的全部素数<br>    <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br>    <span class="hljs-type">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> n = <span class="hljs-number">100</span>; n &lt;= <span class="hljs-number">200</span>; n++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++)&#123;<br>            <span class="hljs-keyword">if</span>(i == n)&#123;<br>                print(“%d”, n);<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(n%i == <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<p>3.编写程序实现：一个班 10 名学生，每名学生选修了三门课程，每名学生每门课程有一个成绩，求每门课程 10 名学生平均成绩.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br>Typedf <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br><span class="hljs-type">int</span> num;<br><span class="hljs-type">float</span> score [<span class="hljs-number">3</span>];<br>&#125; student;<br><br>Void <span class="hljs-title function_">main</span><span class="hljs-params">()</span>&#123;<br>	student Students [<span class="hljs-number">10</span>];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++)&#123;<br>	<span class="hljs-built_in">scanf</span>(“请输入第%d 名学生的第%d 门课程分数”,(i+<span class="hljs-number">1</span>),(j+<span class="hljs-number">1</span>), Students [i]-&gt; score [j]);<br>&#125;<br>&#125; <br>Float avg [<span class="hljs-number">3</span>];<br>Float sum [<span class="hljs-number">3</span>];<br>For(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)&#123;<br>	For(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++)&#123;<br>	sum [j] += Students [i]-&gt; score [j];<br>&#125;<br>&#125;<br>Printf(“每门课程的平均分数依次是:\n”)<br>For(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)&#123;<br>	avg [i] = sum [i]/<span class="hljs-number">10</span>;<br><span class="hljs-built_in">printf</span>(“第%d 门课程平均分为 %f 分\n”, i+<span class="hljs-number">1</span>, avg [i]);<br>&#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/" class="category-chain-item">学校课程</a>
+  
+  
+    <span>></span>
+    
+  <a href="../../categories/%E5%AD%A6%E6%A0%A1%E8%AF%BE%E7%A8%8B/%E5%A4%8D%E4%B9%A0%E9%A2%98/" class="category-chain-item">复习题</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/%E5%A4%8D%E4%B9%A0%E9%A2%98/" class="print-no-link">#复习题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2022.11月C语言复习题.docx</div>
+      <div>https://inyxin.github.io/post/22ca3782-bd81-46b5-ba49-ef6d6b47f61a/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Inyxin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 8, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>July 8, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../post/0293a069-f8d9-4fcd-a321-127459fe4d7d/" title="145. 二叉树的后序遍历">
+                        <span class="hidden-mobile">145. 二叉树的后序遍历</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../js/events.js" ></script>
+<script  src="../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
