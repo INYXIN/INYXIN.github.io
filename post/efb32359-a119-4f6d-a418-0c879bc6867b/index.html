@@ -1,0 +1,949 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/fluid.png">
+  <link rel="icon" href="../../img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Inyxin">
+  <meta name="keywords" content="code,java">
+  
+    <meta name="description" content="Web ClientsSpring 教程  1. REST ClientsSpring Framework 为调用 REST 端点提供了以下选择：  WebClient - 具有非阻塞、响应式的流式 API 客户端。 RestTemplate - 具有 template method API 的同步客户端. HTTP Interface - 具有生成的动态代理实现的注解接口。  1.1. WebC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Clients">
+<meta property="og:url" content="https://inyxin.github.io/post/efb32359-a119-4f6d-a418-0c879bc6867b/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Web ClientsSpring 教程  1. REST ClientsSpring Framework 为调用 REST 端点提供了以下选择：  WebClient - 具有非阻塞、响应式的流式 API 客户端。 RestTemplate - 具有 template method API 的同步客户端. HTTP Interface - 具有生成的动态代理实现的注解接口。  1.1. WebC">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-08T12:51:30.000Z">
+<meta property="article:modified_time" content="2024-07-08T12:52:50.367Z">
+<meta property="article:author" content="Inyxin">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Web Clients - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="../../css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="../../css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="../../css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"inyxin.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="../../js/utils.js" ></script>
+  <script  src="../../js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="../../index.html">
+      <strong>Hexo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="../../links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>Links</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('../../images/page-article.webp') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Web Clients"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Inyxin
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-07-08 20:51" pubdate>
+          July 8, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Web Clients</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Web-Clients"><a href="#Web-Clients" class="headerlink" title="Web Clients"></a>Web Clients</h1><p>Spring 教程</p>
+<hr>
+<h2 id="1-REST-Clients"><a href="#1-REST-Clients" class="headerlink" title="1. REST Clients"></a>1. REST Clients</h2><p>Spring Framework 为调用 REST 端点提供了以下选择：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#rest-webclient">WebClient</a> - 具有非阻塞、响应式的流式 API 客户端。</li>
+<li><a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#rest-resttemplate">RestTemplate</a> - 具有 template method API 的同步客户端.</li>
+<li><a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#rest-http-interface">HTTP Interface</a> - 具有生成的动态代理实现的注解接口。</li>
+</ul>
+<h3 id="1-1-WebClient"><a href="#1-1-WebClient" class="headerlink" title="1.1. WebClient"></a>1.1. WebClient</h3><p>WebClient 是一个非阻塞的、响应式的客户端，用于执行 HTTP 请求。 它在 5.0 中引入，提供了 RestTemplate 的替代方案，支持同步、异步和流式场景。 WebClient 支持以下内容:</p>
+<ul>
+<li>非阻塞 I&#x2F;O。</li>
+<li>Reactive Streams 背压.</li>
+<li>高并发，硬件资源少。</li>
+<li>利用 Java 8 lambda 的函数式、流式的 API。</li>
+<li>同步和异步交互。</li>
+<li>流式传输到服务器或从服务器进行流式传输。</li>
+</ul>
+<p>参阅 Spring 官方文档 WebClient 章节获取更多细节.</p>
+<h3 id="1-2-RestTemplate"><a href="#1-2-RestTemplate" class="headerlink" title="1.2. RestTemplate"></a>1.2. RestTemplate</h3><p>RestTemplate 在 HTTP 客户端库上提供了更高级别的 API,它使得在一行中调用 REST 端点变得容易. 它暴露了以下重载方法组:</p>
+<blockquote>
+<p>从 5.0 版本开始， RestTemplate 处于维护模式， 以后只有很小的更改和错误请求被接受. 请考虑使用 WebClient API 替代.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method group</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getForObject</td>
+<td>通过 GET 获取响应.</td>
+</tr>
+<tr>
+<td>getForEntity</td>
+<td>使用 GET 获取 ResponseEntity (即status, headers和body)</td>
+</tr>
+<tr>
+<td>headForHeaders</td>
+<td>使用 HEAD 获取所有 headers</td>
+</tr>
+<tr>
+<td>postForLocation</td>
+<td>使用 POST 创建新资源,并从响应中返回 Location 请求头.</td>
+</tr>
+<tr>
+<td>postForObject</td>
+<td>使用 POST 创建新资源并从响应中返回表示.</td>
+</tr>
+<tr>
+<td>postForEntity</td>
+<td>使用 POST 创建新资源并从响应中返回表示.</td>
+</tr>
+<tr>
+<td>put</td>
+<td>使用 PUT 创建或更新资源.</td>
+</tr>
+<tr>
+<td>patchForObject</td>
+<td>使用 PATCH 更新资源并从响应中返回表示. 请注意,JDK HttpURLConnection 不支持 PATCH,但Apache HttpComponents 和其他一样.</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>使用 DELETE 删除指定 URI 处的资源.</td>
+</tr>
+<tr>
+<td>optionsForAllow</td>
+<td>使用 ALLOW 检索资源的允许 HTTP 方法.</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>上述方法的更通用 (且不太固定) 的版本,在需要时提供额外的灵活性. 它接受 RequestEntity (包括 HTTP 方法,URL,headers 和正文作为输入) 并返回 ResponseEntity.</td>
+</tr>
+<tr>
+<td>这些方法允许使用 ParameterizedTypeReference 而不是 Class 来指定具有泛型的响应类型.</td>
+<td></td>
+</tr>
+<tr>
+<td>execute</td>
+<td>执行请求的最通用方式,通过回调接口完全控制请求准备和响应提取.</td>
+</tr>
+</tbody></table>
+<h4 id="1-2-1-初始化"><a href="#1-2-1-初始化" class="headerlink" title="1.2.1. 初始化"></a>1.2.1. 初始化</h4><p>默认构造函数使用 java.net.HttpURLConnection 来执行请求. 您可以使用 ClientHttpRequestFactory 的实现切换到不同的 HTTP 库. 内置支持以下内容:</p>
+<ul>
+<li>Apache HttpComponents</li>
+<li>Netty</li>
+<li>OkHttp</li>
+</ul>
+<p>例如,要切换到 Apache HttpComponents,您可以使用以下命令:</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">RestTemplate template = <span class="hljs-keyword">new</span> <span class="hljs-type">RestTemplate</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">HttpComponentsClientHttpRequestFactory</span>());<br></code></pre></td></tr></table></figure>
+
+<p>每个 ClientHttpRequestFactory 都暴露特定于底层 HTTP 客户端库的配置选项 - 例如,用于凭据,连接池和其他详细信息.</p>
+<blockquote>
+<p>请注意,HTTP 请求的 java.net 实现在访问表示错误的响应的状态 (例如 401) 时可能引发异常. 如果这是一个问题,请切换到另一个 HTTP 客户端库.</p>
+</blockquote>
+<h5 id="URIs"><a href="#URIs" class="headerlink" title="URIs"></a>URIs</h5><p>许多 RestTemplate 方法都接受 URI 模板和 URI 模板变量， 作为 String 变量参数或 Map&lt;String,String&gt;. 以下示例使用 String 变量参数:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-type">String</span> result = restTemplate.<span class="hljs-built_in">getForObject</span>(<br><br>    <span class="hljs-string">&quot;https://example.com/hotels/&#123;hotel&#125;/bookings/&#123;booking&#125;&quot;</span>, <span class="hljs-type">String</span>.<span class="hljs-keyword">class</span>, <span class="hljs-string">&quot;42&quot;</span>, <span class="hljs-string">&quot;21&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>以下示例使用 Map&lt;String, String&gt;:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-built_in">String</span>&gt; vars = Collections.singletonMap(<span class="hljs-string">&quot;hotel&quot;</span>, <span class="hljs-string">&quot;42&quot;</span>);<br><span class="hljs-built_in">String</span> result = restTemplate.getForObject(    <span class="hljs-string">&quot;https://example.com/hotels/&#123;hotel&#125;/rooms/&#123;hotel&#125;&quot;</span>, <span class="hljs-built_in">String</span>.<span class="hljs-keyword">class</span>, vars);<br></code></pre></td></tr></table></figure>
+
+<p>请注意， URI 模板是自动编码的， 如以下示例所示:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arduino">restTemplate.<span class="hljs-built_in">getForObject</span>(<span class="hljs-string">&quot;https://example.com/hotel list&quot;</span>, <span class="hljs-type">String</span>.<span class="hljs-keyword">class</span>);<br><span class="hljs-comment">// Results in request to &quot;https://example.com/hotel%20list&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>您可以使用 RestTemplate 的 uriTemplateHandler 属性来自定义 URI 的编码方式. 或者， 您可以创建一个 java.net.URI , 并且使用 RestTemplate 中接受 URI 参数的方法之一. 有关使用和编码 URI 的更多详细信息， 请参阅 <a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#mvc-uri-building">URI Links</a>.</p>
+<h5 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h5><p>你可以使用 exchange() 方法指定特殊的请求头, 如下:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-type">String</span> uriTemplate = <span class="hljs-string">&quot;https://example.com/hotels/&#123;hotel&#125;&quot;</span>;URI uri = UriComponentsBuilder.<span class="hljs-built_in">fromUriString</span>(uriTemplate).<span class="hljs-built_in">build</span>(<span class="hljs-number">42</span>);<br>RequestEntity&lt;Void&gt; requestEntity = RequestEntity.<span class="hljs-built_in">get</span>(uri).<span class="hljs-built_in">header</span>(<span class="hljs-string">&quot;MyRequestHeader&quot;</span>, <span class="hljs-string">&quot;MyValue&quot;</span>).<span class="hljs-built_in">build</span>();<br>ResponseEntity&lt;<span class="hljs-type">String</span>&gt; response = <span class="hljs-keyword">template</span>.<span class="hljs-built_in">exchange</span>(requestEntity, <span class="hljs-type">String</span>.<span class="hljs-keyword">class</span>);<br><span class="hljs-type">String</span> responseHeader = response.<span class="hljs-built_in">getHeaders</span>().<span class="hljs-built_in">getFirst</span>(<span class="hljs-string">&quot;MyResponseHeader&quot;</span>);<span class="hljs-type">String</span> body = response.<span class="hljs-built_in">getBody</span>();<br></code></pre></td></tr></table></figure>
+
+<p>您可以通过许多返回 ResponseEntity 的 RestTemplate 方法来获取响应头.</p>
+<h4 id="1-2-2-Body"><a href="#1-2-2-Body" class="headerlink" title="1.2.2. Body"></a>1.2.2. Body</h4><p>在 HttpMessageConverter 的帮助下， 传递到 RestTemplate 方法和从 RestTemplate 方法返回的对象与原始内容进行转换. 在 POST 请求中， 输入对象被序列化到请求主体， 如以下示例所示: URI location &#x3D; template.postForLocation(“<a target="_blank" rel="noopener" href="https://example.com/people%E2%80%9D">https://example.com/people”</a>, person); 您无需显式设置请求的 Content-Type 头. 在大多数情况下， 您可以找到基于源对象类型的兼容消息转换器， 并且所选消息转换器会相应地设置内容类型. 如有必要， 可以使用 exchange 方法显式提供 Content-Type 请求头， 从而影响选择哪种消息转换器. 在 GET 上， 响应主体反序列化为输出 Object， 如以下示例所示: Person person &#x3D; restTemplate.getForObject(“<a target="_blank" rel="noopener" href="https://example.com/people/%7Bid%7D%E2%80%9D">https://example.com/people/{id}”</a>, Person.class, 42); 不需要显式设置请求的 Accept 头. 在大多数情况下， 可以根据预期的响应类型找到兼容的消息转换器， 这有助于填充 Accept 头. 如有必要， 可以使用 exchange 方法显式提供 Accept 头. 默认情况下， RestTemplate 注册所有内置 <a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#rest-message-conversion">消息转换</a>， 这取决于类路径检查， 这些检查有助于确定存在哪些可选转换库. 您还可以将消息转换器设置为显式使用.</p>
+<h4 id="1-2-3-消息转换"><a href="#1-2-3-消息转换" class="headerlink" title="1.2.3. 消息转换"></a>1.2.3. 消息转换</h4><p>WebFlux spring-web 模块包含 HttpMessageConverter ， 用于通过 InputStream 和 OutputStream 读取和写入 HTTP 请求和响应正文. 在客户端 (例如， 在 RestTemplate 中) 和服务器端 (例如， 在 Spring MVC REST 控制器中) 使用 HttpMessageConverter 实例. 框架中提供了主要的媒体 (MIME) 类型的具体实现， 默认情况下， 这些实现在客户端的 RestTemplate 和服务器的 RequestMappingHandlerAdapter 进行了注册 (请参阅 <a target="_blank" rel="noopener" href="https://sca.aliyun.com/learn/spring/web-servlet/rest-clients/?spm=0.29160081.0.0.51f92e5dCHrGI4#mvc-config-message-converters">配置消息转换器</a>) . 以下各节介绍了 HttpMessageConverter 的实现. 对于所有转换器， 都使用默认的媒体类型， 但是您可以通过设置 supportedMediaTypes bean 属性来覆盖它. 下表描述了每种实现:</p>
+<table>
+<thead>
+<tr>
+<th>MessageConverter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StringHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以从 HTTP 请求和响应中读取和写入 String 实例. 默认情况下,此转换器支持所有文本媒体类型 (text&#x2F;*) ,并使用 Content-Type 为 text&#x2F;plain 进行写入.</td>
+</tr>
+<tr>
+<td>FormHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以从 HTTP 请求和响应中读取和写入表单数据. 默认情况下,此转换器读取和写入 application&#x2F;x-www-form-urlencoded 媒体类型. 表单数据从 MultiValueMap&lt;String, String&gt; 读取并写入. 转换器还可以将 MultiValueMap&lt;String, String&gt; 写入 (但不能读) multipart 数据, 从 “MultiValueMap&lt;String,Object&gt;” 读取的数据. 默认情况下, multipart&#x2F;form-data 是支持的. 从 Spring Framework 5.2 开始,可以支持其他的多部分子类型. 编写表格数据. 有关更多详细信息,请查阅 Javadoc 中的 FormHttpMessageConverter.</td>
+</tr>
+<tr>
+<td>ByteArrayHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以从 HTTP 请求和响应中读取和写入字节数组. 默认情况下,此转换器支持所有媒体类型 (<strong>&#x2F;</strong>) ,并使用 Content-Type 为 application&#x2F;octet-stream 进行写入. 您可以通过设置 supportedMediaTypes 属性并覆盖 getContentType(byte[]) 来覆盖它.</td>
+</tr>
+<tr>
+<td>MarshallingHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以使用 org.springframework.oxm 包中的 Spring 的 Marshaller 和 Unmarshaller 抽象来读写 XML. 该转换器需要 Marshaller 和 Unmarshaller 才能使用. 您可以通过构造函数或 bean 属性注入这些. 默认情况下,此转换器支持 text&#x2F;xml 和 application&#x2F;xml.</td>
+</tr>
+<tr>
+<td>MappingJackson2HttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以使用 Jackson 的 ObjectMapper 读写JSON. 您可以根据需要通过使用 Jackson 提供的注解来自定义 JSON 映射. 当您需要进一步控制时 (对于需要为特定类型提供自定义 JSON 序列化器&#x2F;反序列化器的情况) ,您可以通过 ObjectMapper 属性注入自定义 ObjectMapper. 默认情况下,此转换器支持 application&#x2F;json.</td>
+</tr>
+<tr>
+<td>MappingJackson2XmlHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以使用 <a target="_blank" rel="noopener" href="https://github.com/FasterXML/jackson-dataformat-xml">Jackson XML</a> 扩展的 XmlMapper 读写XML. 您可以根据需要通过使用 JAXB 或 Jackson 提供的注解来自定义XML映射. 当您需要进一步控制时 (对于需要为特定类型提供自定义 XML 序列化器&#x2F;反序列化器的情况) ,您可以通过 ObjectMapper 属性注入自定义 XmlMapper. 默认情况下,此转换器支持 application&#x2F;xml.</td>
+</tr>
+<tr>
+<td>SourceHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以从 HTTP 请求和响应中读取和写入 javax.xml.transform.Source. 仅支持 DOMSource,SAXSource 和 StreamSource. 默认情况下,此转换器支持 text&#x2F;xml 和 application&#x2F;xml.</td>
+</tr>
+<tr>
+<td>BufferedImageHttpMessageConverter</td>
+<td>一个 HttpMessageConverter 实现,可以从 HTTP 请求和响应中读取和写入 java.awt.image.BufferedImage. 此转换器读取和写入 Java I&#x2F;O API 支持的媒体类型.</td>
+</tr>
+</tbody></table>
+<h4 id="1-2-4-Jackson-JSON-Views"><a href="#1-2-4-Jackson-JSON-Views" class="headerlink" title="1.2.4. Jackson JSON Views"></a>1.2.4. Jackson JSON Views</h4><p>您可以指定 <a target="_blank" rel="noopener" href="https://www.baeldung.com/jackson-json-view-annotation">Jackson JSON View</a> 来序列化对象属性的一部分， 如以下示例所示:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">MappingJacksonValue value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">MappingJacksonValue</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">User</span>(<span class="hljs-string">&quot;eric&quot;</span>, <span class="hljs-string">&quot;7!jd#h23&quot;</span>));value.<span class="hljs-built_in">setSerializationView</span>(User.WithoutPasswordView.<span class="hljs-keyword">class</span>);<br>RequestEntity&lt;MappingJacksonValue&gt; requestEntity =RequestEntity.<span class="hljs-built_in">post</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">URI</span>(<span class="hljs-string">&quot;https://example.com/user&quot;</span>)).<span class="hljs-built_in">body</span>(value);<br>ResponseEntity&lt;<span class="hljs-type">String</span>&gt; response = <span class="hljs-keyword">template</span>.<span class="hljs-built_in">exchange</span>(requestEntity, <span class="hljs-type">String</span>.<span class="hljs-keyword">class</span>);<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-2-5-Multipart"><a href="#1-2-5-Multipart" class="headerlink" title="1.2.5. Multipart"></a>1.2.5. Multipart</h4><p>要发送 multipart data， 您需要提供一个 MultiValueMap&lt;String, Object&gt;， 其值可能是一个 Object 的部分内容， 一个 Resource 的文件部分， 或一个 HttpEntity 的部分内容的头. 例如:</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs haxe">MultiValueMap&lt;<span class="hljs-keyword">String</span>, Object&gt; parts = <span class="hljs-keyword">new</span> <span class="hljs-type">LinkedMultiValueMap</span>&lt;&gt;();<br>parts.add(<span class="hljs-string">&quot;fieldPart&quot;</span>, <span class="hljs-string">&quot;fieldValue&quot;</span>);parts.add(<span class="hljs-string">&quot;filePart&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-type">FileSystemResource</span>(<span class="hljs-string">&quot;...logo.png&quot;</span>));parts.add(<span class="hljs-string">&quot;jsonPart&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-type">Person</span>(<span class="hljs-string">&quot;Jason&quot;</span>));<br>HttpHeaders headers = <span class="hljs-keyword">new</span> <span class="hljs-type">HttpHeaders</span>();headers.setContentType(MediaType.APPLICATION_XML);parts.add(<span class="hljs-string">&quot;xmlPart&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-type">HttpEntity</span>&lt;&gt;(myBean, headers));<br></code></pre></td></tr></table></figure>
+
+<p>在大多数情况下， 您不必为每个部分指定 Content-Type 头. 内容类型是根据选择用于序列化的 HttpMessageConverter 自动确定的， 或者对于基于文件扩展名的 Resource 是自动确定的. 如有必要， 可以为 MediaType 显式提供 HttpEntity 包装器.</p>
+<p>一旦 MultiValueMap 准备就绪， 您可以将其传递给 RestTemplate， 如下所示:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs arduino">MultiValueMap&lt;<span class="hljs-type">String</span>, Object&gt; parts = ...;<br><br><span class="hljs-keyword">template</span>.<span class="hljs-built_in">postForObject</span>(<span class="hljs-string">&quot;https://example.com/upload&quot;</span>, parts, Void.<span class="hljs-keyword">class</span>);<br></code></pre></td></tr></table></figure>
+
+<p>如果 MultiValueMap 包含至少一个非 String 值， 则 FormHttpMessageConverter 将 Content-Type 设置为 multipart&#x2F;form-data. 如果 MultiValueMap 具有字符串值， 则 Content-Type 默认为 application&#x2F;x-www-form-urlencoded. 如有必要， 还可以显式设置 Content-Type.</p>
+<h3 id="1-3-HTTP-Interface"><a href="#1-3-HTTP-Interface" class="headerlink" title="1.3. HTTP Interface"></a>1.3. HTTP Interface</h3><p>Spring 框架允许您将 HTTP 服务定义为带有用于 HTTP exchanges 的注解方法的 Java 接口。 然后，您可以生成一个实现此接口并执行交换的代理。 这有助于简化 HTTP 远程访问，这通常涉及包装使用底层 HTTP 客户端的细节的外观。 首先，用 @HttpExchange 方法声明一个接口：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">interface</span> <span class="hljs-selector-tag">RepositoryService</span> &#123;<br>    <span class="hljs-variable">@GetExchange</span>(<span class="hljs-string">&quot;/repos/&#123;owner&#125;/&#123;repo&#125;&quot;</span>)    Repository <span class="hljs-built_in">getRepository</span>(<span class="hljs-variable">@PathVariable</span> String owner, <span class="hljs-variable">@PathVariable</span> String repo);<br>    <span class="hljs-comment">// more HTTP exchange methods...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>第二，创建一个将执行声明的 HTTP 交换的代理：</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs abnf">WebClient client <span class="hljs-operator">=</span> WebClient.builder().baseUrl(<span class="hljs-string">&quot;https://api.github.com/&quot;</span>).build()<span class="hljs-comment">;HttpServiceProxyFactory factory = HttpServiceProxyFactory.builder(WebClientAdapter.forClient(client)).build();</span><br>RepositoryService service <span class="hljs-operator">=</span> factory.createClient(RepositoryService.class)<span class="hljs-comment">;</span><br></code></pre></td></tr></table></figure>
+
+<p>@HttpExchange 支持在所有的方法上进行注解：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-variable">@HttpExchange</span>(url = <span class="hljs-string">&quot;/repos/&#123;owner&#125;/&#123;repo&#125;&quot;</span>, accept = <span class="hljs-string">&quot;application/vnd.github.v3+json&quot;</span>)interface RepositoryService &#123;<br>    <span class="hljs-variable">@GetExchange</span>    Repository <span class="hljs-built_in">getRepository</span>(<span class="hljs-variable">@PathVariable</span> String owner, <span class="hljs-variable">@PathVariable</span> String repo);<br>    <span class="hljs-variable">@PatchExchange</span>(contentType = MediaType.APPLICATION_FORM_URLENCODED_VALUE)    void <span class="hljs-built_in">updateRepository</span>(<span class="hljs-variable">@PathVariable</span> String owner, <span class="hljs-variable">@PathVariable</span> String repo,                          <span class="hljs-variable">@RequestParam</span> String name, <span class="hljs-variable">@RequestParam</span> String description, <span class="hljs-variable">@RequestParam</span> String homepage);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-3-1-方法参数"><a href="#1-3-1-方法参数" class="headerlink" title="1.3.1. 方法参数"></a>1.3.1. 方法参数</h4><p>带注解的 HTTP 交换方法支持具有以下方法参数：</p>
+<table>
+<thead>
+<tr>
+<th>方法参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>URI</td>
+<td>动态设置请求的 URL，覆盖注解的 url 属性。</td>
+</tr>
+<tr>
+<td>HttpMethod</td>
+<td>动态设置请求的 HTTP 方法，覆盖注解的 method 属性</td>
+</tr>
+<tr>
+<td>@RequestHeader</td>
+<td>添加请求头或多个请求头。参数可以是 Map&lt;String, ?&gt; 或 MultiValueMap&lt;String, ?&gt; （多个请求头）、 Collection&lt;?&gt; 或单个值。 非字符串值支持类型转换。</td>
+</tr>
+<tr>
+<td>@PathVariable</td>
+<td>添加一个变量以扩展请求 URL 中的占位符。 参数可以是具有多个变量或单个值的 Map&lt;String, ?&gt;。 非字符串值支持类型转换。</td>
+</tr>
+<tr>
+<td>@RequestBody</td>
+<td>将请求的主体作为要序列化的对象提供，或者 Reactive Streams Publisher 提供，例如 Mono、Flux 或通过配置的 ReactiveAdapterRegistry 支持的任何其他异步类型。</td>
+</tr>
+<tr>
+<td>@RequestParam</td>
+<td>添加请求参数或多个参数。 参数可以是具有多个参数的 Map&lt;String, ?&gt; or MultiValueMap&lt;String, ?&gt; 、Collection&lt;?&gt; 或单个值。 非字符串值支持类型转换。 当 “content-type” 设置为 “application&#x2F;x-www-form-urlencoded” 时，请求参数在请求体中进行编码。 否则，它们将作为 URL 查询参数添加。</td>
+</tr>
+<tr>
+<td>@RequestPart</td>
+<td>添加请求部分，可以是 String（表单字段）、Resource（文件部分）、Object（要编码的实体，例如 JSON）、HttpEntity（部分内容和标头）、Spring Part 或 Reactive Streams Publisher 以上任何一项。</td>
+</tr>
+<tr>
+<td>@CookieValue</td>
+<td>添加一个 cookie 或多个 cookie。 参数可以是具有多个 cookie 的 Map&lt;String, ?&gt; 或 MultiValueMap&lt;String, ?&gt;、Collection&lt;?&gt; 或单个值。 非字符串值支持类型转换。</td>
+</tr>
+</tbody></table>
+<h4 id="1-3-2-返回值"><a href="#1-3-2-返回值" class="headerlink" title="1.3.2. 返回值"></a>1.3.2. 返回值</h4><p>带注解的 HTTP 交换方法支持以下返回值：:</p>
+<table>
+<thead>
+<tr>
+<th>方法返回值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void, Mono</td>
+<td>执行请求，不返回任何内容</td>
+</tr>
+<tr>
+<td>HttpHeaders, Mono</td>
+<td>执行请求，返回响应头（如果存在）</td>
+</tr>
+<tr>
+<td>, Mono</td>
+<td>执行请求，将响应内容解码为指定类型的流</td>
+</tr>
+<tr>
+<td>, Flux</td>
+<td>执行请求，将响应内容解码为指定类型的流</td>
+</tr>
+<tr>
+<td>ResponseEntity, Mono<ResponseEntity></td>
+<td>执行请求，并返回具有 status 和 headers 的 ResponseEntity。</td>
+</tr>
+<tr>
+<td>ResponseEntity, Mono<ResponseEntity></td>
+<td>执行请求，将响应内容解码为声明的返回类型，并返回具有 status, headers 和解码正文的 ResponseEntity。</td>
+</tr>
+<tr>
+<td>Mono&lt;ResponseEntity<Flux></td>
+<td>执行请求，将响应内容解码为声明元素类型的流，并返回具有 status, headers 和解码的响应正文流的 ResponseEntity。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>您还可以使用在 ReactiveAdapterRegistry 中注册的任何其他异步或反应类型。</p>
+</blockquote>
+<h4 id="1-3-3-异常处理"><a href="#1-3-3-异常处理" class="headerlink" title="1.3.3. 异常处理"></a>1.3.3. 异常处理</h4><p>默认情况下，WebClient 为 4xx 和 5xx HTTP 状态代码引发 WebClientResponseException。 要对此进行自定义，您可以注册一个响应状态处理程序，该处理程序适用于通过客户端执行的所有响应：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">WebClient</span> <span class="hljs-variable">webClient</span> <span class="hljs-operator">=</span> WebClient.builder().defaultStatusHandler(HttpStatusCode::isError, resp -&gt; ...).build();<br><span class="hljs-type">WebClientAdapter</span> <span class="hljs-variable">clientAdapter</span> <span class="hljs-operator">=</span> WebClientAdapter.forClient(webClient);<span class="hljs-type">HttpServiceProxyFactory</span> <span class="hljs-variable">factory</span> <span class="hljs-operator">=</span> HttpServiceProxyFactory.builder(clientAdapter).build();<br></code></pre></td></tr></table></figure>
+
+<p>有关更多详细信息和选项，例如 suppressing 错误状态代码，请参阅 WebClient.Builder 中 defaultStatusHandler 的 Javadoc。</p>
+<blockquote>
+<p>Rod Johnson, Juergen Hoeller, Keith Donald, Colin Sampaleanu, Rob Harrop, Thomas Risberg, Alef Arendsen, Darren Davison, Dmitriy Kopylenko, Mark Pollack, Thierry Templier, Erwin Vervaet, Portia Tung, Ben Hale, Adrian Colyer, John Lewis, Costin Leau, Mark Fisher, Sam Brannen, Ramnivas Laddad, Arjen Poutsma, Chris Beams, Tareq Abedrabbo, Andy Clement, Dave Syer, Oliver Gierke, Rossen Stoyanchev, Phillip Webb, Rob Winch, Brian Clozel, Stephane Nicoll, Sebastien Deleuze, Jay Bryant, Mark Paluch</p>
+</blockquote>
+<blockquote>
+<p>Copyright © 2002 - 2024 VMware, Inc. All Rights Reserved.</p>
+</blockquote>
+<blockquote>
+<p>Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/%E5%90%8E%E7%AB%AF/" class="category-chain-item">后端</a>
+  
+  
+    <span>></span>
+    
+  <a href="../../categories/%E5%90%8E%E7%AB%AF/Java/" class="category-chain-item">Java</a>
+  
+  
+    <span>></span>
+    
+  <a href="../../categories/%E5%90%8E%E7%AB%AF/Java/Spring-%E6%95%99%E7%A8%8B/" class="category-chain-item">Spring 教程</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/Spring/" class="print-no-link">#Spring</a>
+      
+        <a href="../../tags/web/" class="print-no-link">#web</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Web Clients</div>
+      <div>https://inyxin.github.io/post/efb32359-a119-4f6d-a418-0c879bc6867b/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Inyxin</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>July 8, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Updated on</div>
+          <div>July 8, 2024</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="../../post/5eba1caa-2b0b-423d-9e75-b17d9e3086ba/" title="定时任务">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">定时任务</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="../../post/f5196226-0df7-4ea9-b4c1-bd505131031f/" title="Resources 资源">
+                        <span class="hidden-mobile">Resources 资源</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="../../js/events.js" ></script>
+<script  src="../../js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="../../js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="../../js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="../../js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
