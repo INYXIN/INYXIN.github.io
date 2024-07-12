@@ -16,23 +16,25 @@
   <meta name="author" content="Inyxin">
   <meta name="keywords" content="code,java">
   
-    <meta name="description" content="asdhexo template generate by typora plugin templater">
+    <meta name="description" content="21.合并两个有序链表hexo template generate by typora plugin templater Description将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。  示例 1：  12输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]输出：[1,1,2,3,4,4]  示例 2： 12输入：l1 &#x3D; [], l2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="asd">
-<meta property="og:url" content="https://inyxin.github.io/post/04d02858-cf7a-47b6-88f3-ef79543a7c07/index.html">
+<meta property="og:title" content="21.合并两个有序链表">
+<meta property="og:url" content="https://inyxin.github.io/post/87f453c3-c442-4726-a077-dc248516c603/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="asdhexo template generate by typora plugin templater">
+<meta property="og:description" content="21.合并两个有序链表hexo template generate by typora plugin templater Description将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。  示例 1：  12输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]输出：[1,1,2,3,4,4]  示例 2： 12输入：l1 &#x3D; [], l2">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-07-08T16:44:08.000Z">
-<meta property="article:modified_time" content="2024-07-08T16:44:40.111Z">
+<meta property="og:image" content="https://inyxin.github.io/images/leecode.jpg">
+<meta property="article:published_time" content="2024-07-12T15:57:49.000Z">
+<meta property="article:modified_time" content="2024-07-12T15:58:07.635Z">
 <meta property="article:author" content="Inyxin">
-<meta property="article:tag" content="code">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Leetcode">
+<meta property="article:tag" content="简单">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://inyxin.github.io/images/leecode.jpg">
   
   
   
-  <title>asd - Hexo</title>
+  <title>21.合并两个有序链表 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +224,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="asd"></span>
+            <span id="subtitle" data-typed-text="21.合并两个有序链表"></span>
           
         </div>
 
@@ -238,8 +240,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-07-09 00:44" pubdate>
-          July 9, 2024 am
+        <time datetime="2024-07-12 23:57" pubdate>
+          July 12, 2024 pm
         </time>
       </span>
     
@@ -250,7 +252,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1 words
+          199 words
         
       </span>
     
@@ -261,7 +263,7 @@
         
         
         
-          1 mins
+          2 mins
         
       </span>
     
@@ -298,12 +300,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">asd</h1>
+            <h1 id="seo-header">21.合并两个有序链表</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="asd"><a href="#asd" class="headerlink" title="asd"></a>asd</h3><p><code>hexo template generate by typora plugin templater</code></p>
+                <h3 id="21-合并两个有序链表"><a href="#21-合并两个有序链表" class="headerlink" title="21.合并两个有序链表"></a>21.合并两个有序链表</h3><p><code>hexo template generate by typora plugin templater</code></p>
+<h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<p><strong>示例 1：</strong></p>
+<p><img src="merge_ex1.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：l1 = <span class="hljs-comment">[1,2,4]</span>, l2 = <span class="hljs-comment">[1,3,4]</span><br>输出：<span class="hljs-comment">[1,1,2,3,4,4]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：l1 = <span class="hljs-comment">[]</span>, l2 = <span class="hljs-comment">[]</span><br>输出：<span class="hljs-comment">[]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：l1 = <span class="hljs-comment">[]</span>, l2 = <span class="hljs-comment">[0]</span><br>输出：<span class="hljs-comment">[0]</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>两个链表的节点数目范围是 <code>[0, 50]</code></li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+<li><code>l1</code> 和 <code>l2</code> 均按 <strong>非递减顺序</strong> 排列</li>
+</ul>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode() &#123;&#125;</span><br><span class="hljs-comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span><br><span class="hljs-comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">mergeTwoLists</span><span class="hljs-params">(ListNode list1, ListNode list2)</span> &#123;<br>        <span class="hljs-keyword">if</span>(list1 == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> list2;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(list2 == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> list1;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(list1.val &lt; list2.val)&#123;<br>            list1.next = mergeTwoLists(list1.next,list2);<br>            <span class="hljs-keyword">return</span> list1;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            list2.next = mergeTwoLists(list2.next,list1);<br>            <span class="hljs-keyword">return</span> list2;<br>        &#125;<br>        <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -312,6 +333,43 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  
+  
+    <span>></span>
+    
+  <a href="../../categories/%E7%AE%97%E6%B3%95/Leetcode/" class="category-chain-item">Leetcode</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="../../tags/Leetcode/" class="print-no-link">#Leetcode</a>
+      
+        <a href="../../tags/%E7%AE%80%E5%8D%95/" class="print-no-link">#简单</a>
+      
+    </div>
   
 </div>
 
@@ -321,8 +379,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>asd</div>
-      <div>https://inyxin.github.io/post/04d02858-cf7a-47b6-88f3-ef79543a7c07/</div>
+      <div>21.合并两个有序链表</div>
+      <div>https://inyxin.github.io/post/87f453c3-c442-4726-a077-dc248516c603/</div>
     </div>
     <div class="license-meta">
       
@@ -334,13 +392,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 9, 2024</div>
+          <div>July 12, 2024</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>Updated on</div>
-          <div>July 9, 2024</div>
+          <div>July 12, 2024</div>
         </div>
       
       
@@ -371,18 +429,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../post/bd155093-7287-4a33-ab3f-6f114eadc1bd/" title="MySQL高级">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL高级</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../post/4fd66ff9-ef1e-4a91-912a-4271ef291763/" title="Docker 容器技术">
-                        <span class="hidden-mobile">Docker 容器技术</span>
+                      <a href="../../post/0b95425c-86c8-43f6-bec0-8dc6fee1f81d/" title="11.盛最多水的容器">
+                        <span class="hidden-mobile">11.盛最多水的容器</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
